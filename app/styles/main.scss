@@ -1,15 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:100,400);
 
+$global-font: 'Josefin Slab', 'serif';
+
 html,body,#map-canvas {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    font-family: 'Josefin Slab', 'serif';
+    font-family: $global-font;
     font-size: 18px;
     overflow: hidden;
 }
 
-#overlay{
+a {
+    text-decoration: none;   
+}
+
+#overlay {
     display: none;
     position:fixed;
     width:100%;
@@ -30,6 +36,11 @@ html,body,#map-canvas {
     padding: 15px;
     margin: -175px 0 0 -300px;
     z-index: 1000;
+    $rounded-corner-radius:6px;
+    background-color: rgba(245, 245, 245, 0.9);
+    -webkit-border-radius: $rounded-corner-radius; 
+    -moz-border-radius: $rounded-corner-radius; 
+    border-radius: $rounded-corner-radius;
     h1 {
         margin-top: 5px;
         margin-bottom: 5px;
@@ -134,8 +145,6 @@ nav {
 	margin-left:10px;
 }
 
-nav 
-
 #PBTlogo { 
     float: left;
     margin-right: 10px;
@@ -144,35 +153,50 @@ nav
     margin-top: .2em;
 }
 
-.info-window {
-/*    border-radius: 16px 16px 16px 16px;*/
-/*    border: 2px solid red;*/
-}
-
 .info-window-inner {
-    font-family: 'Josefin Slab', 'serif';
-}
-
-.info-window-inner h2 {
-    text-transform: uppercase;
+    $rounded-corner-radius: 6px;
+    font-family: $global-font;
+    padding: 10px;
+    background-color: rgba(245, 245, 245, 0.8);
+    -webkit-border-radius: $rounded-corner-radius; 
+    -moz-border-radius: $rounded-corner-radius; 
+    border-radius: $rounded-corner-radius;
     text-align: center;
-    font-size: 2em;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    h2 {
+        text-transform: uppercase;
+        font-size: 2em;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .phocalstream-link {
+        font-size: 1.5em;
+        width: 33%;
+        margin: 10px auto;
+        border: 1px solid gray;
+        background-color: lightgray;
+        -webkit-border-radius: $rounded-corner-radius; 
+        -moz-border-radius: $rounded-corner-radius; 
+        border-radius: $rounded-corner-radius;
+        &:hover {
+            background-color: #e6e6e6;
+            a { 
+                color: #ac0505;
+            }
+        }
+    }
+    a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: black;
+        margin: 10px 0px;
+    }
+    .timelapse-video {
+        height: 400px;
+        width: 600px;
+    }
 }
 
-.info-window-inner a {
-    text-decoration: none;
-    text-align: right;
-    color: black;
-    font-size: 1.2em;
-    margin-top: 5px;
-    margin-bottom: 0px;
-}
-
-.info-window-inner a:hover {
-    color: #ac0505;
-}
 
 //From old pbt-about page
 

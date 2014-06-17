@@ -6,7 +6,8 @@
     "jquery": "~2.1.1",
     "bootstrap-sass-official": "~3.1.1+2",
     "modernizr": "~2.8.2",
-    "jquery-ui": "~1.10.4"
+    "jquery-ui": "~1.10.4",
+    "infobox": "http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js"
   },
   "version": "0.0.0",
   "authors": [
