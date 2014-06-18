@@ -25,16 +25,17 @@
         <!------ Set the max-width of topcontainer to the width of the main body of content ------>
         <ul id="nav-wrapper">
             <a href="http://www.plattebasintimelapse.org" id="PBTlogo">
-                <img src="images/PBTlogo.png">
+                <img src="images/app/PBTlogo.png">
             </a>
-            <li><a href="http://www.plattebasintimelapse.com" title="stories" >STORIES</a></li>
-            <li><a href="http://www.plattebasintimelapse.com/news-page" title="news" >NEWS</a></li>
-            <li><a href="http://www.plattebasintimelapse.com/" title="blog" >BLOG</a></li>
-            <li><a href="http://www.flickr.com/groups/plattebasin" title="pictures" >PICTURES</a></li>
-            <li><a href="../about" title="about" >ABOUT</a></li>
+            <li><a href="http://www.plattebasintimelapse.com" title="Stories" >Stories</a></li>
+            <li><a href="http://www.plattebasintimelapse.com/news-page" title="News" >News</a></li>
+            <li><a href="http://www.plattebasintimelapse.com/" title="Blog" >Blog</a></li>
+            <li><a href="http://www.flickr.com/groups/plattebasin" title="Pictures" >Pictures</a></li>
+            <li><a href="../about" title="About" >About</a></li>
             
-            <div class="social-media">
-                <a target="_blank" href="https://www.facebook.com/PlatteBasinTimelapse"><img src="images/facebook.png" /></a>
+            <div class="social-media-links">
+                <a target="_blank" href="https://www.facebook.com/PlatteBasinTimelapse"><img src="images/app/facebook.png" /></a>
+<!--                <a target="_blank" href="https://www.facebook.com/PlatteBasinTimelapse"><img src="images/facebook.png" /></a>-->
             </div>
         </ul>
     </nav>
@@ -44,23 +45,18 @@
     <div class="map-box shadow" id="legend">
         <div id="legend-wrapper">
             <h2>Explore the Platte Basin</h2>
-            <form action="">
-                <input type="checkbox" name="snowpack">snowpack
-                <br>
-                <input type="checkbox" name="precipitation">precipitation
-                <br>
-                <input type="checkbox" name="groundwater">groundwater
-                <br>
-                <input type="checkbox" name="urban">urban use
-                <br>
-                <input type="checkbox" name="recreation">recreation
-                <br>
-                <input type="checkbox" name="wildlife">wildlife
-                <br>
-                <input type="checkbox" name="agriculture">agriculture
-                <br>
-                <input type="checkbox" name="power">power generation
-            </form>
+            <p id="select-heading">Select:</p>
+            <div class="btn-group" data-toggle="buttons" data-toggle="button">
+                <label class="btn btn-default btn-sm">
+                    <input type="checkbox" name="options" id="btn-stories"> Stories
+                </label>
+                <label class="btn btn-default btn-sm">
+                    <input type="checkbox" name="options" id="btn-timelapse"> Timelapse
+                </label>
+                <label class="btn btn-default btn-sm">
+                    <input type="checkbox" name="options" id="btn-pictures"> Stills
+                </label>
+            </div>
             <p>Each location is a video that you can playback. Travel through an entire watershed visually through time. Using innovatinve timelapse technolgogy, one can learn about the vast Platte Basin.</p>
         </div>
     </div>
@@ -72,7 +68,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis dignissim vehicula. Ut magna urna, interdum at libero non, congue volutpat mauris. Duis bibendum leo dolor, et porta augue tincidunt sit amet.</p>
         <h3>YAAAY</h3>
         <p>To learn more about the project: <a target="_blank" href="/about">ABOUT</a></p>
-        <h5>Click to continue.</h5>
+        <h5>Close to continue.</h5>
     </div>
 
         <!-- build:js scripts/vendor.js -->
@@ -80,6 +76,7 @@
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
         <script src="../bower_components/infobox/index.js"></script>
+        <script src="../bower_components/markerclusterer_compiled/index.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

@@ -1,6 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:100,400);
+@import './bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
 
 $global-font: 'Josefin Slab', 'serif';
+$first-breakpoint: 1199px;
+$second-breakpoint: 599px;
 
 html,body,#map-canvas {
     height: 100%;
@@ -11,10 +14,9 @@ html,body,#map-canvas {
     overflow: hidden;
 }
 
-a {
+a,a:hover {
     text-decoration: none;   
 }
-
 #overlay {
     display: none;
     position:fixed;
@@ -53,7 +55,7 @@ a {
     height: 30px;
     top: 15px;
     right: 15px;
-    background-image: url("../images/close-opening.png");
+    background-image: url("../images/app/close.png");
     cursor: pointer;
 }
 
@@ -68,21 +70,30 @@ a {
 
 #legend {
     position: absolute;
-    width: 200px;
+    width: 250px;
     right: -150px;
     top: 140px;
     padding: 10px;
+    text-align:center;
     
     h2 {
-        font-size: 1.4em;
+        font-size: 1.6em;
         font-weight: normal;
         margin-top: 0px;
         margin-bottom: 5px;
     }
     
+    .btn-group {
+        padding: 10px;
+        padding-top: 0px;
+    }
+    
     p {
         font-size: .8em;
     }
+    #select-heading {
+        margin-bottom:0px;
+    }   
 
 }
 
@@ -108,69 +119,84 @@ nav {
     left: 0px;
     top: 0px;
     background-color: #3c3c3c;
+    opacity: .8;
     z-index: 10;
-    li {
-        list-style: none;
-        display: block;
-        float: left;
-        margin: .1em;
-        margin-top: .6em;
-        a {
-            text-shadow: 0 2px 1px rgba(0,0,0,0.5);
+    
+    ul {
+        padding-left: 10px;
+        height: 50px;
+        li {
+            list-style: none;
             display: block;
-            text-decoration: none;
-            color: #DFDEDE; 
-            font-size: 1.4em;
-            font-weight: 100;
-            margin: 0 .5em;
-            
-            &:hover {
-                color: #efefef;
-                margin-top: .1em;
+            float: left;
+            padding: 8px 0px;
+            text-transform: uppercase;
+
+            a {
+                text-shadow: 0 2px 1px rgba(0,0,0,0.5);
+                display: block;
+                height: auto;
+                width: auto;
+                text-decoration: none;
+                color: #DFDEDE;
+                font-size: 1.4em;
+                font-weight: 100;
+                margin: 0 .5em;
+                transition: all .25s ease-in-out;
+                -moz-transition: all .25s ease-in-out;
+                -webkit-transition: all .25s ease-in-out;
+
+                &:hover {
+                    color: #efefef;
+                    margin-top: .1em;
+                    transition: all .25s ease-in-out;
+                    -moz-transition: all .25s ease-in-out;
+                    -webkit-transition: all .25s ease-in-out;
+                }
+            }
+        }
+
+        .social-media-links {
+            float: right;
+            padding: 10px;
+            img {
+                height: 30px;
             }
         }
     }
-    
-    .social-media {
-        float: right;
-        margin-top: 0px;
-        img {
-            height: 30px;
-        }
-    }
-}
-
-#nav-wrapper {
-	margin-top: 3px;
-	margin-left:10px;
 }
 
 #PBTlogo { 
     float: left;
-    margin-right: 10px;
     border-right: solid 2px #6C6C6C;
     padding-right: 10px;
-    margin-top: .2em;
+    margin-top: .3em;
 }
 
 .info-window-inner {
     $rounded-corner-radius: 6px;
     font-family: $global-font;
+    font-size: 1.4em;
+    width: 600px;
+    @media (max-width: $first-breakpoint) {
+        width: 400px;
+    }
     padding: 10px;
     background-color: rgba(245, 245, 245, 0.8);
     -webkit-border-radius: $rounded-corner-radius; 
     -moz-border-radius: $rounded-corner-radius; 
     border-radius: $rounded-corner-radius;
-    text-align: center;
+    text-align: left;
     h2 {
         text-transform: uppercase;
-        font-size: 2em;
+        font-size: 1.8em;
+        text-align: center;
         margin-top: 10px;
         margin-bottom: 5px;
     }
     .phocalstream-link {
-        font-size: 1.5em;
-        width: 33%;
+        font-size: 1.2em;
+        width: 40%;
         margin: 10px auto;
         border: 1px solid gray;
         background-color: lightgray;
@@ -189,11 +215,29 @@ nav {
         width: 100%;
         height: 100%;
         color: black;
-        margin: 10px 0px;
+        padding: 10px 0px;
+        text-align: center;
+        @media (max-width: $first-breakpoint) {
+            font-size: .6em;
+        }
     }
-    .timelapse-video {
-        height: 400px;
-        width: 600px;
+    img {
+        width: 100%;   
+    }
+}
+
+.tl-location .timelapse-video {
+    height: 390px;
+    width: 100%;
+    @media (max-width: $first-breakpoint) {
+        height: 256px;
+    }
+}
+.story-location .timelapse-video {
+    height: 330px;
+    width: 100%;
+    @media (max-width: $first-breakpoint) {
+        height: 216px;
     }
 }
 

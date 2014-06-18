@@ -7,7 +7,8 @@
     "bootstrap-sass-official": "~3.1.1+2",
     "modernizr": "~2.8.2",
     "jquery-ui": "~1.10.4",
-    "infobox": "http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js"
+    "infobox": "http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js",
+    "markerclusterer_compiled": "http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer_compiled.js"
   },
   "version": "0.0.0",
   "authors": [
