@@ -1,5 +1,8 @@
 <!doctype html>
-<html class="no-js">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <title>pbt explorer</title>
@@ -21,6 +24,9 @@
 
     </head>
     <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
     <nav class="shadow" id="nav">
         <!------ Set the max-width of topcontainer to the width of the main body of content ------>
         <ul id="nav-wrapper">
@@ -35,7 +41,7 @@
             
             <div class="social-media-links">
                 <a target="_blank" href="https://www.facebook.com/PlatteBasinTimelapse"><img src="images/app/facebook.png" /></a>
-<!--                <a target="_blank" href="https://www.facebook.com/PlatteBasinTimelapse"><img src="images/facebook.png" /></a>-->
+<!--                <a target="_blank" href="https://www.facebook.com/PlatteBasinTimelapse"><img src="images/app/facebook.png" /></a>-->
             </div>
         </ul>
     </nav>
@@ -76,7 +82,7 @@
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
         <script src="../bower_components/infobox/index.js"></script>
-        <script src="../bower_components/markerclusterer_compiled/index.js"></script>
+        <script src="../bower_components/oms.min/index.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

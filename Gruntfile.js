@@ -408,6 +408,7 @@ module.exports = function (grunt) {
             'mocha'
         ]);
     });
+    
 
     grunt.registerTask('build', [
         'clean:dist',

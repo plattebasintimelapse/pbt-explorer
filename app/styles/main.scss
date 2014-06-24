@@ -1,5 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:100,400);
-@import './bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
 
 $global-font: 'Josefin Slab', 'serif';
 $first-breakpoint: 1199px;
@@ -101,6 +111,11 @@ a,a:hover {
     padding: 10px;
 }
 
+#border-style {
+    color: blue;
+    
+}
+
 
 #toggle {
     position: absolute;
@@ -158,9 +173,22 @@ nav {
 
         .social-media-links {
             float: right;
-            padding: 10px;
+            a {
+                display: inline-block;
+                padding: 10px;
+            }
             img {
                 height: 30px;
+                opacity: .9;
+                transition: all .25s ease-in-out;
+                -moz-transition: all .25s ease-in-out;
+                -webkit-transition: all .25s ease-in-out;
+            }
+            &:hover {
+                opacity: .2;
+                transition: all .25s ease-in-out;
+                -moz-transition: all .25s ease-in-out;
+                -webkit-transition: all .25s ease-in-out;
             }
         }
     }

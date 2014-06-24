@@ -8,7 +8,7 @@
     "modernizr": "~2.8.2",
     "jquery-ui": "~1.10.4",
     "infobox": "http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js",
-    "markerclusterer_compiled": "http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0.2/src/markerclusterer_compiled.js"
+    "oms.min": "http://jawj.github.io/OverlappingMarkerSpiderfier/bin/oms.min.js"
   },
   "version": "0.0.0",
   "authors": [
