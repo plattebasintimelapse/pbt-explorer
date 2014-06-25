@@ -437,7 +437,7 @@ function createTLMarker(longtermTLLocation, map) {
     tlMarkers.push(marker);
 
     var boxText = document.createElement('div');
-    boxText.className = 'info-window-inner tl-location map-box shadow';
+    boxText.className = 'info-window-inner tl-location map-box box-shadow';
     boxText.innerHTML = marker.html;
 
     var myOptions = {
@@ -659,10 +659,11 @@ function watchLegendChange() {
 $(window).load(function () {
     introPrompt();
     watchLegendChange();
+    legend.hover(slideOut, slideIn);
 });
 
 $(document).ready(function () {
-    legend.hover(slideOut, slideIn);
+    
     
 });
 

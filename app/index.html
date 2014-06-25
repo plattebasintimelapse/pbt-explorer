@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>pbt explorer</title>
+        <title>Platte Basin Timelapse</title>
         <meta name="description" content="The main web app for the PBT project.">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
@@ -23,11 +23,11 @@
         <!-- endbuild -->
 
     </head>
-    <body>
+    <body id="map-page">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="shadow" id="nav">
+    <nav class="box-shadow" id="nav">
         <!------ Set the max-width of topcontainer to the width of the main body of content ------>
         <ul id="nav-wrapper">
             <a href="http://www.plattebasintimelapse.org" id="PBTlogo">
@@ -48,9 +48,10 @@
 
     <div id="map-canvas"></div>
     
-    <div class="map-box shadow" id="legend">
+    <div class="map-box box-shadow" id="legend">
         <div id="legend-wrapper">
             <h2>Explore the Platte Basin</h2>
+            
             <p id="select-heading">Select:</p>
             <div class="btn-group" data-toggle="buttons" data-toggle="button">
                 <label class="btn btn-default btn-sm">
@@ -63,11 +64,17 @@
                     <input type="checkbox" name="options" id="btn-pictures"> Stills
                 </label>
             </div>
+            
             <p>Each location is a video that you can playback. Travel through an entire watershed visually through time. Using innovatinve timelapse technolgogy, one can learn about the vast Platte Basin.</p>
+            
+            <form action="">
+                <input type="text" name="Search" placeholder="search">
+<!--                <input type="submit" value="Search">-->
+            </form>
         </div>
     </div>
     
-    <div class="map-box shadow" id="intro">
+    <div class="map-box box-shadow" id="intro">
         <div id="intro-close"></div>
         <h1>Greetings!</h1>
         <p>There will be lots of info here about the projects and other things to read and to understand and it will be super cool!</p>

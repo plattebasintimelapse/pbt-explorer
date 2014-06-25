@@ -13,15 +13,25 @@
 
 $global-font: 'Josefin Slab', 'serif';
 $first-breakpoint: 1199px;
-$second-breakpoint: 599px;
+$second-breakpoint: 959px;
+$third-breakpoint: 767px;
+$fourth-breakpoint: 320px;
 
-html,body,#map-canvas {
+html,body {
     height: 100%;
     margin: 0px;
     padding: 0px;
     font-family: $global-font;
     font-size: 18px;
+}
+
+#map-page {
     overflow: hidden;
+}
+
+#map-canvas {
+    overflow: hidden;
+    height: 100%;
 }
 
 a,a:hover {
@@ -74,7 +84,7 @@ a,a:hover {
     border: solid 1px #2f2f2f; 
 }
 
-.shadow {
+.box-shadow {
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3);
 }
 
@@ -272,67 +282,195 @@ nav {
 
 //From old pbt-about page
 
-.container-fluid {
-    margin:0; 
-    padding: 0;
+#about-page {
+    overflow: visible !important;
+    text-align: center;
+    
+    .container-fluid {
+        margin:0; 
+        padding: 0;
+    }
+
+    .row {
+        margin: 0;   
+    }
+
+    #lead-image {
+        background: url('/images/about/mormon.jpg') no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 600px;
+    }
+
+    #lead-container {
+        position: absolute;
+        top: 25%;
+        right: 10%;
+        text-align: right; 
+        color: #F0F0F0;
+        font-weight: 100;
+        width: 920px;
+        @media (max-width: $first-breakpoint) {width: 760px;}
+        @media (max-width: $second-breakpoint) {width: 560px;}
+        @media (max-width: $third-breakpoint) {width: 460px;}
+        @media (max-width: $fourth-breakpoint) {width: 280px;}
+    }
+
+    #lead-title {
+        border-bottom: thin solid #F0F0F0;
+        padding-bottom: 30px;
+        margin: 5px 0;
+        font-size: 5.4em;
+        @media (max-width: $first-breakpoint) {font-size: 4.4em;}
+        @media (max-width: $second-breakpoint) {font-size: 3.2em;}
+        @media (max-width: $third-breakpoint) {font-size: 2.6em;}
+        @media (max-width: $fourth-breakpoint) {font-size: 2em;}
+    }
+
+    #lead-copy {
+        margin-top: 30px;
+        font-size: 3.6em;
+        @media (max-width: $first-breakpoint) {font-size:  2.8em;}
+        @media (max-width: $second-breakpoint) {font-size: 2.2em;}
+        @media (max-width: $third-breakpoint) {font-size: 1.8em;}
+        @media (max-width: $fourth-breakpoint) {font-size: 1.6em;}
+    }
 }
 
-.row {
- margin: 0;   
+.shadow {
+	  		text-shadow: 1px 1px 4px #424242;
+  	   -moz-text-shadow: 1px 1px 4px #424242;
+	-webkit-text-shadow: 1px 1px 4px #424242;
 }
 
-.title {
-    position: relative; 
-    color: #F0F0F0;
-    font-weight: 100;
+
+
+.row-sources {
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
 }
 
-.row-outcome {
-    border-bottom: solid 1px gray;   
+#about-platte {
+    #about-platte-container {
+        width: 85%;
+        margin: 10px auto;
+        padding: 20px 0;
+        text-align: center;
+        
+        border-bottom: solid 1px gray;
+        h1 {
+            font-size: 2.6em;
+        }
+        p {
+            font-size: 1.6em;
+        }
+    }
+        
 }
 
-.keyword-container {
-    width: 25%;
-    padding: 10px;
-    margin: 0 auto;
-    margin-bottom: 80px;
-    text-align: left;
+#row-outcome {
+    
+    #row-outcome-container {
+        width: 85%;
+        margin: 0 auto;
+
+        .keyword-container {
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: justify;
+            h3 {
+                text-align: center;
+                font-size: 1.8em;
+            }
+        }
+
+        .outcome-btn {
+            font-size: 1.2em;
+            width: 40%;
+            margin: 10px auto;
+            border: 1px solid gray;
+            background-color: #f2f2f2;
+            text-align: center;
+            -webkit-border-radius: 4px; 
+            -moz-border-radius: 4px; 
+            border-radius: 4px;
+            &:hover {
+                background-color: #e6e6e6;
+                a { 
+                    color: #ac0505;
+                }
+            }
+        }
+    }     
 }
 
-.keyword-container h3 {
-    text-align: center;   
-}
-
-.fact-container {
-    padding: 0px;   
-    border: 1px solid white;
+.grid-container {
+    position: relative;
+    float: left;
+    width: (100%  / 4);
+    @media (max-width: $first-breakpoint) {width: (100%  / 3);}
+    @media (max-width: $second-breakpoint) {width: (100%  / 2);}
+    @media (max-width: $fourth-breakpoint) {width: (100%  / 1);}
     height: 300px;
     padding: 0px;
 }
 
-.fact-cover {
+.grid-panel-cover {
     position: relative;
-    background: lightblue url('/images/thing.png') no-repeat left top;
-    height: inherit;
+    width: 100%;
+    height: 100%;
+    background-color: #efefef;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75%;
     z-index: 2;
 }
 
-.fact {
+#allcities{background-image: url('/images/about/icons/allcities.png'); }
+#basin{background-image: url('/images/about/icons/basin.png'); }
+#states{ background-image: url('/images/about/icons/states.png');}
+#streams{background-image: url('/images/about/icons/streams.png'); }
+#urban{background-image: url('/images/about/icons/urban.png'); }
+
+.grid-behind {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     text-align: center;
     padding: 30px;
-    position: absolute;   
     z-index: 1;
+    
+    p {
+        font-size: 2em;
+        margin-top: 15%;
+    }
 }
 
 .row-jack-creek-gif {
     width: 100%;
     margin:0;
+    
+    .title {
+        position: absolute;
+//        top: 10px;
+        left: 20%;
+        color: #F0F0F0;
+        margin: 150px auto;
+        h1 {
+            font-size: 3.4em;
+        }
+    }
 }
 
 .jack-creek-gif {
-    background: url('/images/jackcreek.gif') no-repeat left top;
-    height: inherit;
-    width: inherit;
+    background: url('/images/about/jackcreek.gif') no-repeat left top;
+    height: 100%;
+    width: 100%;
 }
- 	
 
