@@ -430,7 +430,7 @@ function createTLMarker(longtermTLLocation, map) {
         map: map,
         icon: circle,
         title: longtermTLLocation.location,
-        html: '<h2>' + longtermTLLocation.location + '</h2>' + '<p>' + longtermTLLocation.description + '</p>' + iFrameContentForInfoBox + '<div class="phocalstream-link"><a target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
+        html: '<h2 class="center">' + longtermTLLocation.location + '</h2>' + '<p>' + longtermTLLocation.description + '</p>' + iFrameContentForInfoBox + '<div class="phocalstream-link"><a class="center" target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
     });
     
     oms.addMarker(marker);
