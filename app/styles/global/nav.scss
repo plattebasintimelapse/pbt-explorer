@@ -1,0 +1,81 @@
+.navbar {
+    border-radius: 0px;
+//    width: 100%;
+//    height: 50px;
+    opacity: .9;
+    text-align: center;
+    
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.navbar-inverse {
+    background-color: #3c3c3c;
+    border: 0;
+}
+
+.navbar-collapse {
+    background-color: rgba(60, 60, 60, 0.7);
+    border: 0;
+}
+
+.navbar-toggle {
+    margin-right: 15px;
+    margin-left: 15px; 
+}
+
+.navbar {
+    ul {
+        li {
+            list-style: none;
+            text-transform: uppercase;
+
+            a {
+                text-shadow: 0 2px 1px rgba(0,0,0,0.5);
+                height: auto;
+                width: auto;
+                font-size: 1.6em;
+                font-weight: 400;
+                margin-top: 4px;
+                transition: all .25s ease-in-out;
+                -moz-transition: all .25s ease-in-out;
+                -webkit-transition: all .25s ease-in-out;
+
+                &:hover {
+                    transition: all .25s ease-in-out;
+                    -moz-transition: all .25s ease-in-out;
+                    -webkit-transition: all .25s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+#social-media-links {
+    a {
+        display: inline-block;
+        padding: 10px 2px;
+    }
+    img {
+        height: 30px;
+        opacity: .9;
+        transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -webkit-transition: all .25s ease-in-out;
+    }
+    &:hover {
+        opacity: .2;
+        transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -webkit-transition: all .25s ease-in-out;
+    }
+}
+
+#PBTlogo { 
+    float: left;
+    border-right: solid 2px #6C6C6C;
+    padding-right: 10px;
+    margin-top: .3em;
+}

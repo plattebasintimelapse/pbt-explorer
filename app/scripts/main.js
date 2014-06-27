@@ -489,7 +489,7 @@ function createStoryMarker(storyLocation, map) {
     storyMarkers.push(marker);
 
     var boxText = document.createElement('div');
-    boxText.className = 'info-window-inner story-location map-box shadow';
+    boxText.className = 'info-window-inner story-location map-box box-shadow';
     boxText.innerHTML = marker.html;
 
     var myOptions = {
