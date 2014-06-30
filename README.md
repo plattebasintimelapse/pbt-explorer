@@ -11,7 +11,7 @@ The main app for the Platte Basin Timelapse project, powering the core of the we
 * [Yeoman](http://yeoman.io/)
 * [Sass](http://sass-lang.com/)
  
-#### Install
+#### Install dependencies
 
 Clone repository - https://github.com/plattebasintimelapse/pbt-explorer
 
@@ -26,10 +26,6 @@ To install grunt tasks from packages.json
 To install bower components from bower.json
   
   	bower install
-
-Install Sass for CSS Preprocessing
-  
-  	sudo gem install sass
   
 ### Development Operations
 
