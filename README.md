@@ -5,13 +5,13 @@ The main app for the Platte Basin Timelapse project, powering the core of the we
 
 ### Requirements
 
-Install
 * [Node](http://nodejs.org/)
 * [Bower](http://bower.io/)
 * [Grunt](http://gruntjs.com/)
 * [Yeoman](http://yeoman.io/)
 * [Sass](http://sass-lang.com/)
  
+#### Install
 
 Clone repository - https://github.com/plattebasintimelapse/pbt-explorer
 
@@ -31,4 +31,12 @@ Install Sass for CSS Preprocessing
   
   	sudo gem install sass
   
-  
+### Development Operations
+
+Run local server 
+    
+    grunt serve
+    
+Build deployment to `dist` directory
+
+    grunt
