@@ -3,10 +3,13 @@
 var map;
 var oms;
 var ib = new InfoBox();
+
+// array of Google Markers
 var tlMarkers = [];
 var storyMarkers = [];
 var pictureMarkers = [];
 
+// array of Javascript objects to build Google Markers, created from JSON HTTP requests to Google doc
 var longtermTLLocations = [];
 var storyLocations = [];
 
@@ -86,7 +89,7 @@ function initialize() {
 
     });
     
-}
+} //end initialize
 
 function getContent() {
     $.getJSON("https://spreadsheets.google.com/feeds/list/1XZx5wnIEaFy7sJ85KI4cJOPrgx4o87ZilsDxp9VNfhs/od6/public/values?alt=json", function(data) {
@@ -462,8 +465,10 @@ function createTLMarker(longtermTLLocation, map) {
         
 //        map.setCenter(marker.getPosition());
     });
+    
     return marker;
-}
+    
+} //end createTLMarker
 
 function createStoryMarker(storyLocation, map) {
 
@@ -514,8 +519,10 @@ function createStoryMarker(storyLocation, map) {
         
 //        map.setCenter(marker.getPosition());
     });
+    
     return marker;
-}
+    
+} //end createStoryMarker
 
 function createPictureMarker(pictureLocation, map) {
 
@@ -541,7 +548,7 @@ function createPictureMarker(pictureLocation, map) {
     pictureMarkers.push(marker);
 
     var boxText = document.createElement('div');
-    boxText.className = 'info-window-inner story-location map-box shadow';
+    boxText.className = 'info-window-inner story-location map-box box-shadow';
     boxText.innerHTML = marker.html;
 
     var myOptions = {
@@ -566,8 +573,10 @@ function createPictureMarker(pictureLocation, map) {
         
 //        map.setCenter(marker.getPosition());
     });
+    
     return marker;
-}
+    
+}//end createPictureMarker
 
 function setTLMarkers(map,markers) {
     for (var i = 0; i < markers.length; i++) {
@@ -586,9 +595,6 @@ function setPictureMarkers(map,markers) {
         createPictureMarker(markers[i],map);   
     }
 }
-
-
-google.maps.event.addDomListener(window, 'load', initialize);
 
 //function createClusters() {
 //    var mcOptions = {gridSize: 20};
@@ -656,8 +662,11 @@ function watchLegendChange() {
     });
 }
 
+google.maps.event.addDomListener(window, 'load', initialize);
+
 $(window).load(function () {
-    introPrompt();
+//    introPrompt();
+    setTimeout(function() {zoomMap(6);}, 500);
     watchLegendChange();
     legend.hover(slideOut, slideIn);
 });
