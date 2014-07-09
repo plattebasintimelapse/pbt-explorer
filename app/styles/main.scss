@@ -33,6 +33,10 @@ html,body {
     font-size: 18px;
 }
 
+body {
+    overflow: hidden;
+}
+
 .container-fluid {
     margin:0; 
     padding: 0;
