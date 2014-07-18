@@ -102,9 +102,12 @@
 .info-window-inner {
     font-family: $global-font;
     font-size: 1.4em;
-    width: 600px;
+    width: 840px;
     @media (max-width: $first-breakpoint) {
-        width: 400px;
+        width: 700px;
+    }
+    @media (max-width: $third-breakpoint) {
+        width: 300px;
     }
     padding: 10px;
     background-color: rgba(245, 245, 245, 0.8);
@@ -115,12 +118,16 @@
     h2 {
         text-transform: uppercase;
         font-size: 1.8em;
+        font-weight:100;
         margin-top: 10px;
         margin-bottom: 5px;
     }
     .phocalstream-link {
         font-size: 1.2em;
         width: 40%;
+        @media (max-width: $third-breakpoint) {
+            width: 60%;
+        }
         margin: 10px auto;
         border: 1px solid gray;
         background-color: lightgray;
@@ -141,6 +148,9 @@
         color: black;
         padding: 10px 0px;
         @media (max-width: $first-breakpoint) {
+            font-size: .8em;
+        }
+        @media (max-width: $third-breakpoint) {
             font-size: .6em;
         }
     }
@@ -149,15 +159,28 @@
     }
 }
 
+.timelapse-video-container {
+    padding: 0 100px;
+    @media (max-width: $first-breakpoint) {
+        padding: 0 120px;
+    }
+    @media (max-width: $third-breakpoint) {
+        padding: 0;
+    }
+}
+
 .tl-location .timelapse-video {
-    height: 390px;
+    height: 420px;
     width: 100%;
     @media (max-width: $first-breakpoint) {
-        height: 256px;
+        height: 300px;
+    }
+    @media (max-width: $third-breakpoint) {
+        height: 180px;
     }
 }
 .story-location .timelapse-video {
-    height: 330px;
+    height: 360px;
     width: 100%;
     @media (max-width: $first-breakpoint) {
         height: 216px;

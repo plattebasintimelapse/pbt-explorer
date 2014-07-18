@@ -3,7 +3,7 @@
 }
 
 #lead-image {
-    background: url('/images/about/mormon.jpg') no-repeat center center;
+    background: url('/images/about/jackcreek.gif') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -59,10 +59,11 @@
 
 
  .big-text{
-    width: 85%;
+//    width: 85%;
     margin: 10px auto;
     padding: 20px 0;
     border-bottom: solid 1px gray;
+     text-align: right;
      
     h1 {
         font-size: 2.6em;
@@ -182,8 +183,13 @@
     }
 }
 
+#basin-img-container {
+//    padding: 80px; 
+    margin-top: 150px;
+}
+
 .jack-creek-gif {
-    background: url('/images/about/jackcreek.gif') no-repeat left top;
-    height: 100%;
+    background: url('/images/about/mormon.jpg') no-repeat left top;
+    height: 500px;
     width: 100%;
 }
