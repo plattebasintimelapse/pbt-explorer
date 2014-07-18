@@ -102,6 +102,9 @@
 .info-window-inner {
     font-family: $global-font;
     font-size: 1.4em;
+    @media (max-width: $third-breakpoint) {
+            font-size: 1.1em;
+        }
     width: 840px;
     @media (max-width: $first-breakpoint) {
         width: 700px;
@@ -117,7 +120,11 @@
     text-align: left;
     h2 {
         text-transform: uppercase;
+        text-align: center;
         font-size: 1.8em;
+        @media (max-width: $third-breakpoint) {
+            font-size: 1.6em;
+        }
         font-weight:100;
         margin-top: 10px;
         margin-bottom: 5px;
@@ -159,8 +166,22 @@
     }
 }
 
+.story-location {
+    text-align: center;
+}
+
 .timelapse-video-container {
     padding: 0 100px;
+    @media (max-width: $first-breakpoint) {
+        padding: 0 120px;
+    }
+    @media (max-width: $third-breakpoint) {
+        padding: 0;
+    }
+}
+
+.video-container {
+    padding: 0 90px;
     @media (max-width: $first-breakpoint) {
         padding: 0 120px;
     }
