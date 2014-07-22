@@ -3,18 +3,14 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:100,400);
 
 // bower:scss
-@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
 
 // Global imports
 @import "global/variables.scss";
-@import "global/nav.scss";
 
 // Module imports
 @import "modules/map.scss";
-@import "modules/about.scss";
-
-
 
 .browsehappy {
     margin: 0.2em 0;

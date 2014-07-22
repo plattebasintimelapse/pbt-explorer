@@ -5,11 +5,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Platte Basin Timelapse</title>
-        <meta name="description" content="The main web app for the PBT project.">
+        <title>Explore the Platte Basin</title>
+        <meta name="description" content="Explore the Platte Basin with this interactive map and..">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <!-- endbower -->
@@ -27,84 +26,8 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-    <nav class="navbar navbar-inverse navbar-fixed-top box-shadow"  role="navigation" id="nav">
-        <div class="container-fluid">
-            <div>
-                <a href="/" id="PBTlogo"><img src="/images/app/PBTlogo.png"></a>
-            </div>
-            
-            <div class="pull-right" id="social-media-links">
-                <a target="_blank" href="https://www.facebook.com/PlatteBasinTimelapse"><img src="/images/app/facebook.png" /></a>
-<!--                <a target="_blank" href="https://www.facebook.com/PlatteBasinTimelapse"><img src="/images/app/facebook.png" /></a>-->
-            </div>
-            
-            <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#pbt-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="pbt-navbar-collapse">
-                <ul class="nav navbar-nav">
-                    
-                    <li><a href="http://www.plattebasintimelapse.com" title="Stories" >Stories</a></li>
-                    <li><a href="http://www.plattebasintimelapse.com/news-page" title="News" >News</a></li>
-                    <li><a href="/" title="Map" >Map</a></li>
-                    <li><a href="http://www.plattebasintimelapse.com/" title="Blog" >Blog</a></li>
-                    <li><a href="http://www.flickr.com/groups/plattebasin" title="Pictures" >Pictures</a></li>
-                    <li><a href="/about" title="About" >About</a></li>
-                </ul>
-                
-            </div>
-
-                
-
-        </div>
-    </nav>
 
     <div id="map-canvas"></div>
-    
-<!--
-    <div class="map-box box-shadow" id="legend">
-        <div id="legend-wrapper">
-            <h2>Explore the Platte Basin</h2>
-            
-            <p id="select-heading">Select:</p>
-            <div class="btn-group" data-toggle="buttons" data-toggle="button">
-                <label class="btn btn-default btn-sm">
-                    <input type="checkbox" name="options" id="btn-stories"> Stories
-                </label>
-                <label class="btn btn-default btn-sm">
-                    <input type="checkbox" name="options" id="btn-timelapse"> Timelapse
-                </label>
-                <label class="btn btn-default btn-sm">
-                    <input type="checkbox" name="options" id="btn-pictures"> Stills
-                </label>
-            </div>
-            
-            <p>Each location is a video that you can playback. Travel through an entire watershed visually through time. Using innovatinve timelapse technolgogy, one can learn about the vast Platte Basin.</p>
-            
-            <form action="">
-                <input type="text" name="Search" placeholder="search">
-                <input type="submit" value="Search">
-            </form>
-        </div>
-    </div>
--->
-    
-<!--
-    <div class="map-box box-shadow" id="intro">
-        <div id="intro-close"></div>
-        <h1>Greetings!</h1>
-        <p>There will be lots of info here about the projects and other things to read and to understand and it will be super cool!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis dignissim vehicula. Ut magna urna, interdum at libero non, congue volutpat mauris. Duis bibendum leo dolor, et porta augue tincidunt sit amet.</p>
-        <h3>YAAAY</h3>
-        <p>To learn more about the project: <a target="_blank" href="/about">ABOUT</a></p>
-        <h5>Close to continue.</h5>
-    </div>
--->
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
@@ -116,28 +39,8 @@
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
 
         <!-- build:js scripts/plugins.js -->
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->

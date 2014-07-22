@@ -32,7 +32,7 @@ function initialize() {
     });
 
     var mapOptions = {
-        zoom: 5,
+        zoom: 7,
         maxZoom: 13,
         minZoom: 5,
         center: new google.maps.LatLng(41.643387, -101.612224),
@@ -129,7 +129,8 @@ function createTLMarker(longtermTLLocation, map) {
         map: map,
         icon: circle,
         title: longtermTLLocation.location,
-        html: '<h2 class="center">' + longtermTLLocation.location + '</h2>' + '<div class="timelapse-video-container">' + iFrameContentForInfoBox + '</div>' + '<p>' + longtermTLLocation.description + '</p>' + '<div class="phocalstream-link"><a class="center" target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
+        html: '<h2 class="center">' + longtermTLLocation.location + '</h2>' + '<div class="timelapse-video-container">' + iFrameContentForInfoBox + '</div>' + '<p>' + longtermTLLocation.description + '</p>' 
+//        + '<div class="phocalstream-link"><a class="center" target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
     });
     
     bounds.extend(latlong);
@@ -160,8 +161,7 @@ function createTLMarker(longtermTLLocation, map) {
         ib.close();
         ib.setOptions(myOptions);
         ib.open(map, marker);
-        
-//        map.setCenter(marker.getPosition());
+        map.setCenter(marker.getPosition());
     });
     
     return marker;
