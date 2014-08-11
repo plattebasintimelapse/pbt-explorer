@@ -11,6 +11,7 @@
         <link rel="shortcut icon" href="/favicon.ico">
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -34,7 +35,7 @@
         <h1>Explore the Platte Basin</h1>
         <p>The Platte Basin drains roughly 90,000 square miles in parts of three states. From the snow-capped peaks and alpine tundra of the Colorado Rockies to the braided river floodplain and tallgrass prairie along Nebraska's eastern border, the Platte drops nearly 12,000 feet before joining the Missouri River.</p>
         <p>Timelapse cameras have been installed at important locations throughout this geography, taking photographs once every hour, every daylight hour of everyday.</p>
-        <p>Explore the Platte by c</p>
+        <p>Click each marker to view a (<span class="fa fa-video-camera"></span>) timelapse video or examine a (<span class="fa fa-camera"></span>) still image.</p>
         <h5>Close to continue.</h5>
     </div>
         
@@ -43,15 +44,17 @@
             <h2>Explore the Platte Basin</h2>
             
             <p class="select-heading">Select:</p>
-            <div class="btn-group-xs" data-toggle="buttons" data-toggle="button">
-                <label class="btn btn-default">
+            <div class="btn-group" data-toggle="buttons">
+<!--
+                <label class="btn btn-default btn-sm">
                     <input type="checkbox" name="options" id="btn-stories"> Stories
                 </label>
-                <label class="btn btn-default">
-                    <input type="checkbox" name="options" id="btn-timelapse"> Timelapse
+-->
+                <label class="btn btn-default btn-sm">
+                    <input type="checkbox" name="options" id="btn-timelapse"> <span class="fa fa-video-camera"></span>
                 </label>
-                <label class="btn btn-default">
-                    <input type="checkbox" name="options" id="btn-stills"> Stills
+                <label class="btn btn-default btn-sm">
+                    <input type="checkbox" name="options" id="btn-stills"> <span class="fa fa-camera"></span>
                 </label>
             </div>
             
@@ -71,26 +74,23 @@
             <h3>The Sub-Basins of the Platte Watershed</h3>
             
             <p class="select-heading">Zoom to:</p>
-            <div id="basin-btn-group" class="btn-group-md" data-toggle="buttons" data-toggle="button">
-                <label class="btn btn-default">
-                    <input type="checkbox" name="options" id="btn-all">All
-                </label>
-                <label class="btn btn-default">
-                    <input type="checkbox" name="options" id="btn-northplatte">North Platte
-                </label>
-                <label class="btn btn-default">
-                    <input type="checkbox" name="options" id="btn-southplatte"> South Platte
-                </label>
-                <label class="btn btn-default">
-                    <input type="checkbox" name="options" id="btn-theloups"> The Loups
-                </label>
-                <label class="btn btn-default">
-                    <input type="checkbox" name="options" id="btn-centralplatte"> Central Platte
-                </label>
-                <label class="btn btn-default">
-                    <input type="checkbox" name="options" id="btn-lowerplatte"> Lower Platte
-                </label>
+            <div id="basin-btn-group" class="btn-group" data-toggle="buttons" data-toggle="button">
+                <button type="button" class="btn btn-default" id="btn-all">All</button>
+                <button type="button" class="btn btn-default" id="btn-northplatte">North Platte</button>
+                <button type="button" class="btn btn-default" id="btn-southplatte"> South Platte</button>
+                <button type="button" class="btn btn-default" id="btn-theloups"> The Loups</button>
+                <button type="button" class="btn btn-default" id="btn-centralplatte"> Central Platte</button>
+                <button type="button" class="btn btn-default" id="btn-lowerplatte"> Lower Platte</button>
             </div>
+ 
+        </div>
+    </div>
+        
+    <div class="map-box box-shadow" id="mobile-warning">
+        <div class="map-box-wrapper">
+            <h2>I'm sorry. This page is not optimize for mobile viewing.</h2>
+            
+            <p>Try again on your desktop computer or tablet device.</p>
         </div>
     </div>
 
@@ -100,6 +100,18 @@
         <script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
         <script src="../bower_components/infobox/index.js"></script>
         <script src="../bower_components/oms.min/index.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
