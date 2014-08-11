@@ -1,6 +1,5 @@
-
 #map-page {
-    overflow: hiddefn;
+    overflow: hidden;
 }
 
 #map-canvas {
@@ -22,21 +21,24 @@
 
 #intro {
     position:absolute;
-    width: 600px;
-    height: 350px;
+    max-width: 600px;
+    width: 80%;
+//    height: 450px;
     left: 50%;
     top: 140%;
     padding: 15px;
     margin: -175px 0 0 -300px;
     z-index: 1000;
+    font-family: $global-font;
+    font-size: .9em;
     $rounded-corner-radius:6px;
     background-color: rgba(245, 245, 245, 0.9);
     -webkit-border-radius: $rounded-corner-radius; 
     -moz-border-radius: $rounded-corner-radius; 
     border-radius: $rounded-corner-radius;
     h1 {
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin: 5px auto;
+        text-align:center;
     }
 }
 
@@ -56,12 +58,17 @@
 }
 
 #legend {
-    position: absolute;
-    width: 250px;
-    right: -150px;
-    top: 140px;
+    position:fixed;
+    top: 30%;
+    right:-200px;
+    width: 200px;
+    
+    font-size:.6em;
+    
     padding: 10px;
     text-align:center;
+    
+    border: none; 
     
     h2 {
         font-size: 1.6em;
@@ -78,25 +85,36 @@
     p {
         font-size: .8em;
     }
-    #select-heading {
+    .select-heading {
         margin-bottom:0px;
     }   
 
 }
 
-#legend-wrapper {
+.map-box-wrapper {
     padding: 10px;
 }
 
-
-#toggle {
-    position: absolute;
-    top: 10px;
-    left: -20px;
-    width: 20px;
-    background-color: #f5f5f5;
-    box-shadow: 5px 5px 15px 5px #888888;
-    border: solid 1px #888;
+#location-select {
+    position: fixed;
+    bottom: -100px;
+    width: 100%;
+    
+    border: none;
+    border-top: solid 1px #2f2f2f; 
+    
+    h3 {
+        display: inline;
+        text-transform: uppercase;
+        margin-right: 40px;
+    }
+    .select-heading {
+        display: inline;
+    }
+    
+    #basin-btn-group {
+        display:inline;
+    }
 }
 
 .info-window-inner {

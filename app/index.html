@@ -28,6 +28,71 @@
         <![endif]-->
 
     <div id="map-canvas"></div>
+        
+    <div class="map-box box-shadow" id="intro">
+        <div id="intro-close"></div>
+        <h1>Explore the Platte Basin</h1>
+        <p>The Platte Basin drains roughly 90,000 square miles in parts of three states. From the snow-capped peaks and alpine tundra of the Colorado Rockies to the braided river floodplain and tallgrass prairie along Nebraska's eastern border, the Platte drops nearly 12,000 feet before joining the Missouri River.</p>
+        <p>Timelapse cameras have been installed at important locations throughout this geography, taking photographs once every hour, every daylight hour of everyday.</p>
+        <p>Explore the Platte by c</p>
+        <h5>Close to continue.</h5>
+    </div>
+        
+    <div class="map-box box-shadow" id="legend">
+        <div class="map-box-wrapper">
+            <h2>Explore the Platte Basin</h2>
+            
+            <p class="select-heading">Select:</p>
+            <div class="btn-group-xs" data-toggle="buttons" data-toggle="button">
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-stories"> Stories
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-timelapse"> Timelapse
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-stills"> Stills
+                </label>
+            </div>
+            
+            <p>Each location is a video that you can playback. Travel through an entire watershed visually through time. Using innovatinve timelapse technolgogy, one can learn about the vast Platte Basin.</p>
+            
+<!--
+            <form action="">
+                <input type="text" name="Search" placeholder="search">
+                <input type="submit" value="Search">
+            </form>
+-->
+        </div>
+    </div>
+        
+    <div class="map-box box-shadow" id="location-select">
+        <div class="map-box-wrapper">
+            <h3>The Sub-Basins of the Platte Watershed</h3>
+            
+            <p class="select-heading">Zoom to:</p>
+            <div id="basin-btn-group" class="btn-group-md" data-toggle="buttons" data-toggle="button">
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-all">All
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-northplatte">North Platte
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-southplatte"> South Platte
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-theloups"> The Loups
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-centralplatte"> Central Platte
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" name="options" id="btn-lowerplatte"> Lower Platte
+                </label>
+            </div>
+        </div>
+    </div>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->

@@ -4,15 +4,21 @@ var map;
 var oms;
 var ib = new InfoBox();
 var bounds;
+var north_bounds;
+var south_bounds;
+var loups_bounds;
+var central_bounds;
+var lower_bounds;
 
 // array of Google Markers
 var tlMarkers = [];
 var storyMarkers = [];
-var pictureMarkers = [];
+var stillMarkers = [];
 
 // array of Javascript objects to build Google Markers, created from JSON HTTP requests to Google doc
 var longtermTLLocations = [];
 var storyLocations = [];
+var stillLocations = [];
 
 
 
@@ -72,40 +78,59 @@ function initialize() {
     });
     platteBasinLayer.setMap(map);
     
+    //initizalize bounds
     bounds = new google.maps.LatLngBounds();
+    north_bounds = new google.maps.LatLngBounds();
+    south_bounds = new google.maps.LatLngBounds();
+    loups_bounds = new google.maps.LatLngBounds();
+    central_bounds = new google.maps.LatLngBounds();
+    lower_bounds = new google.maps.LatLngBounds();
 
     getContent();
-//    setPictureMarkers(map, pictureLocations);
     
     var infowindow = new google.maps.InfoWindow({
         content: "Loading..."
 
+        
     });
     
 } //end initialize
 
 function getContent() {
+    
+    // TL Content
     $.getJSON("https://spreadsheets.google.com/feeds/list/1XZx5wnIEaFy7sJ85KI4cJOPrgx4o87ZilsDxp9VNfhs/od6/public/values?alt=json", function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
-            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], long: Number(data.feed.entry[i]['gsx$long']['$t']), lat: Number(data.feed.entry[i]['gsx$lat']['$t']), vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t'], phocalstreamID: data.feed.entry[i]['gsx$phocalstreamid']['$t']};
+            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], lat: Number(data.feed.entry[i]['gsx$lat']['$t']), long: Number(data.feed.entry[i]['gsx$long']['$t']), sub_basin: data.feed.entry[i]['gsx$basin']['$t'], vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t'], phocalstreamID: data.feed.entry[i]['gsx$phocalstreamid']['$t']};
             
             longtermTLLocations.push(tempLocation);
 
         }
         setTLMarkers(map, longtermTLLocations);
-//        createClusters();
     });
     
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json", function(data) {
+    // Still Content
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1Ko2Fnm2hLN-B_BpTkza-Mmp5X3c1aDBbwusvTpwo5Hc/od6/public/values?alt=json", function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
-            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], long: Number(data.feed.entry[i]['gsx$long']['$t']), lat: Number(data.feed.entry[i]['gsx$lat']['$t']), vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t']};
+            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], lat: Number(data.feed.entry[i]['gsx$lat']['$t']), long: Number(data.feed.entry[i]['gsx$long']['$t']), sub_basin: data.feed.entry[i]['gsx$basin']['$t'], picSource: data.feed.entry[i]['gsx$source']['$t']};
             
-            storyLocations.push(tempLocation);
+            stillLocations.push(tempLocation);
+            console.log(tempLocation);
 
         }
-//        setStoryMarkers(map, storyLocations);
-        
-    });    
+        setStillMarkers(map, stillLocations);
+    });
+    
+//    $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json", function(data) {
+//        for (var i = 0; i < data.feed.entry.length; i++) {
+//            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], long: Number(data.feed.entry[i]['gsx$long']['$t']), lat: Number(data.feed.entry[i]['gsx$lat']['$t']), vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t']};
+//            
+//            storyLocations.push(tempLocation);
+//
+//        }
+////        setStoryMarkers(map, storyLocations);
+//        
+//    });    
 }
 
 function createTLMarker(longtermTLLocation, map) {
@@ -123,7 +148,7 @@ function createTLMarker(longtermTLLocation, map) {
         strokeColor: '#f45555',
         strokeWeight: 1
     };
-    var latlong = new google.maps.LatLng(longtermTLLocation.long, longtermTLLocation.lat)
+    var latlong = new google.maps.LatLng(longtermTLLocation.lat, longtermTLLocation.long);
     var marker = new google.maps.Marker({
         position: latlong,
         map: map,
@@ -133,7 +158,25 @@ function createTLMarker(longtermTLLocation, map) {
 //        + '<div class="phocalstream-link"><a class="center" target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
     });
     
+    //add to whole basin bounds
     bounds.extend(latlong);
+    
+    //add to sub-basin bounds
+    if (longtermTLLocation.sub_basin == "north") {
+        north_bounds.extend(latlong);
+    }
+    if (longtermTLLocation.sub_basin == "south") {
+        south_bounds.extend(latlong);
+    }
+    if (longtermTLLocation.sub_basin == "loups") {
+        loups_bounds.extend(latlong);
+    }
+    if (longtermTLLocation.sub_basin == "central") {
+        central_bounds.extend(latlong);
+    }
+    if (longtermTLLocation.sub_basin == "lower") {
+        lower_bounds.extend(latlong);
+    }
     
     oms.addMarker(marker);
     tlMarkers.push(marker);
@@ -222,28 +265,28 @@ function createStoryMarker(storyLocation, map) {
     
 } //end createStoryMarker
 
-function createPictureMarker(pictureLocation, map) {
-
-    // Content for InfoBox
-    var tempFillText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pellentesque dictum ligula, non vehicula sem ultricies nec. Phasellus luctus augue in pretium tempus.';
+function createStillMarker(stillLocation, map) {
     
     var circle ={
         path: google.maps.SymbolPath.CIRCLE,
-        fillColor: '#f45555',
+        fillColor: '#55b1f4',
         fillOpacity: .8,
-        scale: 4,
-        strokeColor: '#f45555',
+        scale: 5,
+        strokeColor: '#55b1f4',
         strokeWeight: 1
     };
+    var latlong = new google.maps.LatLng(stillLocation.lat, stillLocation.long);
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(pictureLocation.long, pictureLocation.lat),
+        position: latlong,
         map: map,
         icon: circle,
-        title: pictureLocation.location,
-        html: '<h2>' + pictureLocation.location + '</h2>' + '<img src=images/uploads/' + pictureLocation.image + ' /> <p>' + tempFillText + '</p>'
+        title: stillLocation.location,
+        html: '<h2>' + stillLocation.location + '</h2>' + '<img src=' + stillLocation.picSource + ' /> <p>' + stillLocation.description + '</p>'
     });
     
-    pictureMarkers.push(marker);
+    console.log(stillLocation.location);
+    
+    stillMarkers.push(marker);
 
     var boxText = document.createElement('div');
     boxText.className = 'info-window-inner story-location map-box box-shadow';
@@ -257,7 +300,7 @@ function createPictureMarker(pictureLocation, map) {
         zIndex: null,
         closeBoxMargin: "15px;",
         closeBoxURL: "images/app/close.png",
-        infoBoxClearance: new google.maps.Size(150, 150),
+        infoBoxClearance: new google.maps.Size(100, 100),
         isHidden: false,
         alignBottom: true,
         pane: "floatPane",
@@ -274,7 +317,7 @@ function createPictureMarker(pictureLocation, map) {
     
     return marker;
     
-}//end createPictureMarker
+}//end createStillMarker
 
 function setTLMarkers(map,markers) {
     for (var i = 0; i < markers.length; i++) {
@@ -288,18 +331,15 @@ function setStoryMarkers(map,markers) {
     }
 }
 
-function setPictureMarkers(map,markers) {
+function setStillMarkers(map,markers) {
     for (var i = 0; i < markers.length; i++) {
-        createPictureMarker(markers[i],map);   
+        createStillMarker(markers[i],map);   
     }
 }
 
-function zoomMap() {
-    map.setZoom(6);
-}
-
-var introDiv = $('#intro');
-var legend = $('#legend');
+var intro = $('#intro');
+var side_legend = $('#legend');
+var bottom_legend = $('#location-select');
 
 function removeOverlay(){
     $('#overlay').fadeOut(1000);
@@ -309,25 +349,19 @@ function removeOverlay(){
 }
 
 function introPrompt() {
-    introDiv.animate({'top':'45%'},500, 'swing');
+    intro.animate({'top':'45%'},500, 'swing');
     $('<div/>').attr({'id' : 'overlay'}).appendTo('body').fadeIn(1000);
 
     //on close
     $('#intro-close').click(function(){
         removeOverlay();
-        introDiv.animate({'top':'140%'},500, 'swing').fadeOut(500);
+        intro.animate({'top':'140%'},500, 'swing').fadeOut(500);
 
-        setTimeout(function() {introDiv.remove();}, 1000);
-        setTimeout(function() {zoomMap(6);}, 500);
+        setTimeout(function() {intro.remove();}, 1000);
+        setTimeout(function() {side_legend.animate({'right':'15px'},500, 'swing');}, 500);
+        setTimeout(function() {bottom_legend.animate({'bottom':'0'},1000, 'swing');}, 500);
+        setTimeout(function() {$('header').animate({'top':'0'},500, 'swing');}, 500);
     });
-}
-
-function slideOut() {
-    legend.animate({'right':'20px'},500, 'swing');
-}
-
-function slideIn() {
-    legend.animate({'right':'-170px'},500, 'swing');
 }
 
 function toggleMarkers(m) {
@@ -342,18 +376,39 @@ function toggleMarkers(m) {
 
 function watchLegendChange() {
     $('#btn-timelapse').parent().addClass('active');
-    $('#btn-pictures').parent().addClass('active');
-    $('#btn-stories').parent().addClass('active');
+    $('#btn-stills').parent().addClass('active');
+//    $('#btn-stories').parent().addClass('active');
     $('#btn-timelapse').change(function() {
         toggleMarkers(tlMarkers);
     });
-    $('#btn-pictures').change(function() {
-        toggleMarkers(pictureMarkers);
+    $('#btn-stills').change(function() {
+        toggleMarkers(stillMarkers);
     });
     $('#btn-stories').change(function() {
         toggleMarkers(storyMarkers);
     });
+    
+    $('#btn-all').click(function() {
+        map.fitBounds(bounds);
+    });
+    $('#btn-northplatte').click(function() {
+        map.fitBounds(north_bounds);
+    });
+    $('#btn-southplatte').click(function() {
+        map.fitBounds(south_bounds);
+    });
+    $('#btn-theloups').click(function() {
+        map.fitBounds(loups_bounds);
+    });
+    $('#btn-centralplatte').click(function() {
+        map.fitBounds(central_bounds);
+    });
+    $('#btn-lowerplatte').click(function() {
+        map.fitBounds(lower_bounds);
+    });
 }
+
+    
 
 google.maps.event.addDomListener(window, 'load', initialize);
 google.maps.event.addDomListener(window, "resize", function() {
@@ -364,14 +419,10 @@ google.maps.event.addDomListener(window, "resize", function() {
 });
 
 $(window).load(function () {
-//    introPrompt();
-//    setTimeout(function() {zoomMap(6);}, 500);
-//    watchLegendChange();
-//    legend.hover(slideOut, slideIn);
+    introPrompt();
+    watchLegendChange();
 });
 
 $(document).ready(function () {
-    
-    
 });
 
