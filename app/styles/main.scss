@@ -20,8 +20,6 @@
     padding: 0.2em 0;
 }
 
-
-
 html,body {
     height: 100%;
     margin: 0px;
@@ -54,6 +52,22 @@ a,a:hover {
 	-webkit-text-shadow: 1px 1px 4px #424242;
 }
 
-.center {
+#mobile-warning {
+    $mobile-warning-width: 300px;
+    
+    display:none;
+    position:fixed;
+    z-index:$above-overlay-z-index;
+    width: $mobile-warning-width;
+    top: 90px;
+    left: 50%;
+    margin-left: -( $mobile-warning-width / 2);
+    
     text-align: center;
+    
+    @media (max-width: $third-breakpoint) {
+        display: block;
+        
+    }
+    
 }

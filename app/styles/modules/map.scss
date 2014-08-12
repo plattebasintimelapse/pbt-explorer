@@ -16,8 +16,11 @@
     left:0;
     background-color: black;
     opacity:0.6;
-    z-index: 999;
+    z-index: $overlay-z-index;
     
+    @media (max-width: $third-breakpoint) {
+        display: block;
+    }
 }
 
 #intro {
@@ -29,7 +32,7 @@
     top: 140%;
     padding: 15px;
     margin: -175px 0 0 -300px;
-    z-index: 1000;
+    z-index: $above-overlay-z-index;
     font-family: $global-font;
     font-size: .9em;
     $rounded-corner-radius:6px;
@@ -46,18 +49,6 @@
         width: 500px;
     }
     @media (max-width: $third-breakpoint) {
-//        left: 5%;
-//        top:10%;
-//        width: 300px;
-//        margin:0px;
-//        
-//        h1 {
-//            font-size: 22px;   
-//        }
-//        
-//        p {
-//            font-size: 16px;
-//        }   
         display: none;
     }
 }
@@ -77,21 +68,26 @@
     border: solid 1px #2f2f2f; 
 }
 
+.map-box-wrapper {
+    padding: 10px;
+}
+
 #legend {
     position:fixed;
     top: 30%;
     right:-200px;
-    width: 200px;
+    width: 180px;
+    z-index: 1;
     
     font-size:.6em;
-    
-    padding: 10px;
     text-align:center;
     
+    padding: 10px;
+
     border: none; 
     
     h2 {
-        font-size: 1.6em;
+        font-size: 1.8em;
         font-weight: normal;
         margin-top: 0px;
         margin-bottom: 5px;
@@ -103,20 +99,18 @@
     }
     
     p {
-        font-size: .8em;
+        font-size: 1em;
+        text-align: left;
     }
     .select-heading {
         margin-bottom:0px;
+        text-align:center;
     }   
     
     @media (max-width: $third-breakpoint) {
         display: none;
     }
 
-}
-
-.map-box-wrapper {
-    padding: 10px;
 }
 
 #location-select {
@@ -127,37 +121,21 @@
     border: none;
     border-top: solid 1px #2f2f2f; 
     
-    h3 {
+    .location-title {
         display: inline;
+        font-size: 1.2em;
         text-transform: uppercase;
-        margin-right: 40px;
+        margin:10px 30px 10px 10px;
     }
     .select-heading {
         display: inline;
-    }
-    
-    #basin-btn-group {
-//        display:inline;
+        padding-right:10px;
+        font-size:.8em;
     }
     
     @media (max-width: $third-breakpoint) {
         display: none;
     }
-}
-
-#mobile-warning {
-    display:none;
-    position:fixed;
-    top: 10px;
-        right: 30%;
-    
-    width: 300px;
-    
-    @media (max-width: $third-breakpoint) {
-        display: block;
-        
-    }
-    
 }
 
 .info-window-inner {
@@ -173,6 +151,7 @@
     @media (max-width: $third-breakpoint) {
         width: 300px;
     }
+    z-index: 100;
     padding: 10px;
     background-color: rgba(245, 245, 245, 0.8);
     -webkit-border-radius: $rounded-corner-radius; 

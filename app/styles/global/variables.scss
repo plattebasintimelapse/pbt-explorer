@@ -5,6 +5,10 @@ $global-font: 'Lora', 'serif';
 $map-box-color: #f5f5f5;
 $rounded-corner-radius: 6px;
 
+//Overlay
+$overlay-z-index:999;
+$above-overlay-z-index:1000;
+
 
 // Breakpoints
 $first-breakpoint: 1199px;

@@ -115,7 +115,6 @@ function getContent() {
             var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], lat: Number(data.feed.entry[i]['gsx$lat']['$t']), long: Number(data.feed.entry[i]['gsx$long']['$t']), sub_basin: data.feed.entry[i]['gsx$basin']['$t'], picSource: data.feed.entry[i]['gsx$source']['$t']};
             
             stillLocations.push(tempLocation);
-            console.log(tempLocation);
 
         }
         setStillMarkers(map, stillLocations);
@@ -142,10 +141,10 @@ function createTLMarker(longtermTLLocation, map) {
     
     var circle ={
         path: google.maps.SymbolPath.CIRCLE,
-        fillColor: '#f45555',
+        fillColor: '#6aaac3',
         fillOpacity: .8,
         scale: 8,
-        strokeColor: '#f45555',
+        strokeColor: 'rgba(106, 170, 195, 0.8)',
         strokeWeight: 1
     };
     var latlong = new google.maps.LatLng(longtermTLLocation.lat, longtermTLLocation.long);
@@ -269,10 +268,10 @@ function createStillMarker(stillLocation, map) {
     
     var circle ={
         path: google.maps.SymbolPath.CIRCLE,
-        fillColor: '#55b1f4',
+        fillColor: '#f45555',
         fillOpacity: .8,
-        scale: 5,
-        strokeColor: '#55b1f4',
+        scale: 3,
+        strokeColor: '#f45555',
         strokeWeight: 1
     };
     var latlong = new google.maps.LatLng(stillLocation.lat, stillLocation.long);
@@ -408,19 +407,24 @@ function watchLegendChange() {
     });
 }
 
-    
-
 google.maps.event.addDomListener(window, 'load', initialize);
 google.maps.event.addDomListener(window, "resize", function() {
     var center = map.getCenter();
     google.maps.event.trigger(map, "resize");
     map.setCenter(center); 
     map.fitBounds(bounds);
+
+    if ($( window ).width() <= 767 && s) {
+        $('<div/>').attr({'id' : 'overlay'}).appendTo('body').fadeIn(1000);
+        s = false;
+    }
 });
+var s = true;
 
 $(window).load(function () {
     introPrompt();
     watchLegendChange();
+    
 });
 
 $(document).ready(function () {

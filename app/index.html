@@ -9,9 +9,10 @@
         <meta name="description" content="Explore the Platte Basin with this interactive map and..">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
-        <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css" />
+<!--        <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css" />-->
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -50,37 +51,32 @@
                     <input type="checkbox" name="options" id="btn-stories"> Stories
                 </label>
 -->
-                <label class="btn btn-default btn-sm">
-                    <input type="checkbox" name="options" id="btn-timelapse"> <span class="fa fa-video-camera"></span>
+                <label class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="bottom" title="Timelapse">
+                    <input type="checkbox" name="options" id="btn-timelapse">
+                    <span class="fa fa-video-camera"></span>
                 </label>
-                <label class="btn btn-default btn-sm">
-                    <input type="checkbox" name="options" id="btn-stills"> <span class="fa fa-camera"></span>
+                <label class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="bottom" title="Stills">
+                    <input type="checkbox" name="options" id="btn-stills">
+                    <span class="fa fa-camera"></span>
                 </label>
             </div>
             
             <p>Each location is a video that you can playback. Travel through an entire watershed visually through time. Using innovatinve timelapse technolgogy, one can learn about the vast Platte Basin.</p>
-            
-<!--
-            <form action="">
-                <input type="text" name="Search" placeholder="search">
-                <input type="submit" value="Search">
-            </form>
--->
         </div>
     </div>
         
     <div class="map-box box-shadow" id="location-select">
         <div class="map-box-wrapper">
-            <h3>The Sub-Basins of the Platte Watershed</h3>
+            <p class="location-title">The Sub-Basins of the Platte Watershed</p>
             
             <p class="select-heading">Zoom to:</p>
-            <div id="basin-btn-group" class="btn-group" data-toggle="buttons" data-toggle="button">
-                <button type="button" class="btn btn-default" id="btn-all">All</button>
-                <button type="button" class="btn btn-default" id="btn-northplatte">North Platte</button>
-                <button type="button" class="btn btn-default" id="btn-southplatte"> South Platte</button>
-                <button type="button" class="btn btn-default" id="btn-theloups"> The Loups</button>
-                <button type="button" class="btn btn-default" id="btn-centralplatte"> Central Platte</button>
-                <button type="button" class="btn btn-default" id="btn-lowerplatte"> Lower Platte</button>
+            <div id="basin-btn-group" class="btn-group">
+                <button type="button" class="btn btn-default btn-sm" id="btn-all">All</button>
+                <button type="button" class="btn btn-default btn-sm" id="btn-northplatte">North Platte</button>
+                <button type="button" class="btn btn-default btn-sm" id="btn-southplatte"> South Platte</button>
+                <button type="button" class="btn btn-default btn-sm" id="btn-theloups"> The Loups</button>
+                <button type="button" class="btn btn-default btn-sm" id="btn-centralplatte"> Central Platte</button>
+                <button type="button" class="btn btn-default btn-sm" id="btn-lowerplatte"> Lower Platte</button>
             </div>
  
         </div>
@@ -88,8 +84,9 @@
         
     <div class="map-box box-shadow" id="mobile-warning">
         <div class="map-box-wrapper">
-            <h2>I'm sorry. This page is not optimize for mobile viewing.</h2>
-            
+            <i class="fa fa-frown-o fa-4x"></i>
+            <h2>I'm sorry.</h2>
+            <h4>This page is not optimized for mobile devices.</h4>
             <p>Try again on your desktop computer or tablet device.</p>
         </div>
     </div>
@@ -100,22 +97,20 @@
         <script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
         <script src="../bower_components/infobox/index.js"></script>
         <script src="../bower_components/oms.min/index.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>-->
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>-->
         <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>-->
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>-->
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>-->
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>-->
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>-->
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>-->
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>-->
         <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+<!--        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>-->
         <!-- endbower -->
         <!-- endbuild -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
         <!-- build:js scripts/plugins.js -->
         <!-- endbuild -->
@@ -123,6 +118,10 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+        
+        <script>
+            $('label').tooltip();
+        </script>
 
 </body>
 </html>
