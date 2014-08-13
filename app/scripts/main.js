@@ -15,12 +15,16 @@ var tlMarkers = [];
 var storyMarkers = [];
 var stillMarkers = [];
 
-// array of Javascript objects to build Google Markers, created from JSON HTTP requests to Google doc
+// array of Javascript objects to build Google Markers, created from JSON HTTP requests to Google doc sreadsheet
 var longtermTLLocations = [];
 var storyLocations = [];
 var stillLocations = [];
 
 
+/**
+ * Builds Google map, sets spidifier for markers, displays Platte Basin from Google Fushion table, 
+ * sets marker bounds, calls getContent()
+ */
 
 function initialize() {
     var styles = [{"featureType": "water","stylers": [{ "color": "#446980"}, {"weight": 2}]
@@ -96,6 +100,11 @@ function initialize() {
     
 } //end initialize
 
+
+/**
+ * Uses getJSON method to call google docs spreadsheet for each content type, pushes to Javascript Object array,
+ * and calls set___Markers() method
+ */
 function getContent() {
     
     // TL Content
@@ -129,9 +138,38 @@ function getContent() {
 //        }
 ////        setStoryMarkers(map, storyLocations);
 //        
-//    });    
+//    });
+    
+} //end getContent
+
+/**
+ * Three Functions
+ * Loops through Javascript Object array to create___Markers() method
+ */
+
+function setTLMarkers(map,markers) {
+    for (var i = 0; i < markers.length; i++) {
+        createTLMarker(markers[i],map);
+    }
 }
 
+function setStoryMarkers(map,markers) {
+    for (var i = 0; i < markers.length; i++) {
+        createStoryMarker(markers[i],map);   
+    }
+}
+
+function setStillMarkers(map,markers) {
+    for (var i = 0; i < markers.length; i++) {
+        createStillMarker(markers[i],map);
+    }
+}
+
+/**
+ * Three Functions
+ * Creates Google Markers with InfoBox to display content, adds to region marker bounds, adds to spidifier feature,
+ * pushes to marker array for later manipulation, and sets event listeners
+ */
 function createTLMarker(longtermTLLocation, map) {
     
     // Content for InfoBox
@@ -283,8 +321,6 @@ function createStillMarker(stillLocation, map) {
         html: '<h2>' + stillLocation.location + '</h2>' + '<img src=' + stillLocation.picSource + ' /> <p>' + stillLocation.description + '</p>'
     });
     
-    console.log(stillLocation.location);
-    
     stillMarkers.push(marker);
 
     var boxText = document.createElement('div');
@@ -317,24 +353,6 @@ function createStillMarker(stillLocation, map) {
     return marker;
     
 }//end createStillMarker
-
-function setTLMarkers(map,markers) {
-    for (var i = 0; i < markers.length; i++) {
-        createTLMarker(markers[i],map);
-    }
-}
-
-function setStoryMarkers(map,markers) {
-    for (var i = 0; i < markers.length; i++) {
-        createStoryMarker(markers[i],map);   
-    }
-}
-
-function setStillMarkers(map,markers) {
-    for (var i = 0; i < markers.length; i++) {
-        createStillMarker(markers[i],map);   
-    }
-}
 
 var intro = $('#intro');
 var side_legend = $('#legend');
