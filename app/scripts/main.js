@@ -407,7 +407,6 @@ function watchLegendChange() {
     });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
 google.maps.event.addDomListener(window, "resize", function() {
     var center = map.getCenter();
     google.maps.event.trigger(map, "resize");
@@ -422,11 +421,12 @@ google.maps.event.addDomListener(window, "resize", function() {
 var s = true;
 
 $(window).load(function () {
-    introPrompt();
-    watchLegendChange();
-    
+    if ($( window ).width() > 767) {
+        initialize();
+        introPrompt();
+        watchLegendChange();
+    }
 });
 
 $(document).ready(function () {
 });
-
