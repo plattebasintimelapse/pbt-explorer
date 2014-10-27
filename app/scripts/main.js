@@ -318,7 +318,7 @@ function createStillMarker(stillLocation, map) {
         map: map,
         icon: circle,
         title: stillLocation.location,
-        html: '<h2>' + stillLocation.location + '</h2>' + '<img src=' + stillLocation.picSource + ' /> <p>' + stillLocation.description + '</p>'
+        html: '<h2>' + stillLocation.location + '</h2>' + '<img class="unveil" src=' + stillLocation.picSource + ' /> <p>' + stillLocation.description + '</p>'
     });
     
     stillMarkers.push(marker);
@@ -346,6 +346,12 @@ function createStillMarker(stillLocation, map) {
         ib.close();
         ib.setOptions(myOptions);
         ib.open(map, this);
+
+        var t = ib.getContent().getElementsByClassName('unveil')[0];
+        console.log( t );
+        var jt = $(t);
+        console.log( jt );
+        jt.trigger('unveil');
         
 //        map.setCenter(marker.getPosition());
     });
@@ -357,6 +363,12 @@ function createStillMarker(stillLocation, map) {
 var intro = $('#intro');
 var side_legend = $('#legend');
 var bottom_legend = $('#location-select');
+
+//$(function() {
+//    $("img.lazy").lazyload({
+//        container: $(".info-window-inner")
+//    });
+//});
 
 function removeOverlay(){
     $('#overlay').fadeOut(1000);
@@ -445,6 +457,7 @@ $(window).load(function () {
         watchLegendChange();
     }
 });
-
+s
 $(document).ready(function () {
+//    $('.unveil').unveil();
 });

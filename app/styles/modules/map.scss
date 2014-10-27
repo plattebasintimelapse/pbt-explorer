@@ -25,13 +25,11 @@
 
 #intro {
     position:absolute;
-    max-width: 600px;
-    width: 80%;
-//    height: 450px;
+    width: 550px;
     left: 50%;
     top: 140%;
     padding: 15px;
-    margin: -175px 0 0 -300px;
+    margin: -175px 0 0 -275px;
     z-index: $above-overlay-z-index;
     font-family: $global-font;
     font-size: .9em;
@@ -63,6 +61,20 @@
     cursor: pointer;
 }
 
+.intro-span {
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+#tl-span {
+    background: rgba(106, 170, 195, 0.7);
+}
+
+#still-span {
+    background: rgba(244, 85, 85, 0.7);
+    
+}
+
 .map-box {
     background-color: $map-box-color;
     border: solid 1px #2f2f2f; 
@@ -76,13 +88,13 @@
     position:fixed;
     top: 30%;
     right:-200px;
-    width: 180px;
+    width: 120px;
     z-index: 1;
     
     font-size:.6em;
     text-align:center;
     
-    padding: 10px;
+//    padding: 10px;
 
     border: none; 
     
