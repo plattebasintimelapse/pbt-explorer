@@ -163,6 +163,9 @@
     @media (max-width: $third-breakpoint) {
         width: 300px;
     }
+    &.still-info-window-inner {
+        width: 560px;
+    }
     z-index: 100;
     padding: 10px;
     background-color: rgba(245, 245, 245, 0.8);

@@ -81,7 +81,7 @@ function initialize() {
         }
     });
     platteBasinLayer.setMap(map);
-    
+
     //initizalize bounds
     bounds = new google.maps.LatLngBounds();
     north_bounds = new google.maps.LatLngBounds();
@@ -91,13 +91,11 @@ function initialize() {
     lower_bounds = new google.maps.LatLngBounds();
 
     getContent();
-    
+
     var infowindow = new google.maps.InfoWindow({
         content: "Loading..."
-
-        
     });
-    
+
 } //end initialize
 
 
@@ -106,40 +104,40 @@ function initialize() {
  * and calls set___Markers() method
  */
 function getContent() {
-    
+
     // TL Content
     $.getJSON("https://spreadsheets.google.com/feeds/list/1XZx5wnIEaFy7sJ85KI4cJOPrgx4o87ZilsDxp9VNfhs/od6/public/values?alt=json", function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
             var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], lat: Number(data.feed.entry[i]['gsx$lat']['$t']), long: Number(data.feed.entry[i]['gsx$long']['$t']), sub_basin: data.feed.entry[i]['gsx$basin']['$t'], vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t'], phocalstreamID: data.feed.entry[i]['gsx$phocalstreamid']['$t']};
-            
+
             longtermTLLocations.push(tempLocation);
 
         }
         setTLMarkers(map, longtermTLLocations);
     });
-    
+
     // Still Content
     $.getJSON("https://spreadsheets.google.com/feeds/list/1Ko2Fnm2hLN-B_BpTkza-Mmp5X3c1aDBbwusvTpwo5Hc/od6/public/values?alt=json", function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
             var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], lat: Number(data.feed.entry[i]['gsx$lat']['$t']), long: Number(data.feed.entry[i]['gsx$long']['$t']), sub_basin: data.feed.entry[i]['gsx$basin']['$t'], picSource: data.feed.entry[i]['gsx$source']['$t']};
-            
+
             stillLocations.push(tempLocation);
 
         }
         setStillMarkers(map, stillLocations);
     });
-    
+
 //    $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json", function(data) {
 //        for (var i = 0; i < data.feed.entry.length; i++) {
 //            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], long: Number(data.feed.entry[i]['gsx$long']['$t']), lat: Number(data.feed.entry[i]['gsx$lat']['$t']), vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t']};
-//            
+//
 //            storyLocations.push(tempLocation);
 //
 //        }
 ////        setStoryMarkers(map, storyLocations);
 //        
 //    });
-    
+
 } //end getContent
 
 /**
@@ -155,7 +153,7 @@ function setTLMarkers(map,markers) {
 
 function setStoryMarkers(map,markers) {
     for (var i = 0; i < markers.length; i++) {
-        createStoryMarker(markers[i],map);   
+        createStoryMarker(markers[i],map);
     }
 }
 
@@ -171,12 +169,12 @@ function setStillMarkers(map,markers) {
  * pushes to marker array for later manipulation, and sets event listeners
  */
 function createTLMarker(longtermTLLocation, map) {
-    
+
     // Content for InfoBox
     var iFrameContentForInfoBox = '<iframe class="timelapse-video" src="http://player.vimeo.com/video/' + longtermTLLocation.vimeoURL + '"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
     var phocalstreamAccessTag = 'EXPLORE ALL IMAGES';                                             //The text a user clicks on to access Phocalstream images
     var phocalstreamBaseURL = 'http://images.plattebasintimelapse.com/photo/cameracollection?siteId=';     //The base url for phocalstreamAccessTag anchor tag
-    
+
     var circle ={
         path: google.maps.SymbolPath.CIRCLE,
         fillColor: '#6aaac3',
@@ -194,10 +192,10 @@ function createTLMarker(longtermTLLocation, map) {
         html: '<h2 class="center">' + longtermTLLocation.location + '</h2>' + '<div class="timelapse-video-container">' + iFrameContentForInfoBox + '</div>' + '<p>' + longtermTLLocation.description + '</p>' 
 //        + '<div class="phocalstream-link"><a class="center" target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
     });
-    
+
     //add to whole basin bounds
     bounds.extend(latlong);
-    
+
     //add to sub-basin bounds
     if (longtermTLLocation.sub_basin == "north") {
         north_bounds.extend(latlong);
@@ -214,7 +212,7 @@ function createTLMarker(longtermTLLocation, map) {
     if (longtermTLLocation.sub_basin == "lower") {
         lower_bounds.extend(latlong);
     }
-    
+
     oms.addMarker(marker);
     tlMarkers.push(marker);
 
@@ -236,23 +234,23 @@ function createTLMarker(longtermTLLocation, map) {
         pane: "floatPane",
         enableEventPropagation: false
     };
-    
+
     google.maps.event.addListener(marker, "click", function (e) {
         ib.close();
         ib.setOptions(myOptions);
         ib.open(map, marker);
         map.setCenter(marker.getPosition());
     });
-    
+
     return marker;
-    
+
 } //end createTLMarker
 
 function createStoryMarker(storyLocation, map) {
 
     // Content for InfoBox
     var iFrameContentForInfoBox = '<iframe class="timelapse-video" src="http://player.vimeo.com/video/' + storyLocation.vimeoURL + '"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-    
+
     var circle ={
         path: google.maps.SymbolPath.CIRCLE,
         fillColor: '#f45555',
@@ -268,7 +266,7 @@ function createStoryMarker(storyLocation, map) {
         title: storyLocation.location,
         html: '<h2>' + storyLocation.location + '</h2>' + '<div class="video-container">' + iFrameContentForInfoBox + '</div>' + '<p>' + storyLocation.description + '</p>' 
     });
-    
+
     storyMarkers.push(marker);
 
     var boxText = document.createElement('div');
@@ -294,16 +292,16 @@ function createStoryMarker(storyLocation, map) {
         ib.close();
         ib.setOptions(myOptions);
         ib.open(map, this);
-        
+
 //        map.setCenter(marker.getPosition());
     });
-    
+
     return marker;
-    
+
 } //end createStoryMarker
 
 function createStillMarker(stillLocation, map) {
-    
+
     var circle ={
         path: google.maps.SymbolPath.CIRCLE,
         fillColor: '#f45555',
@@ -320,11 +318,11 @@ function createStillMarker(stillLocation, map) {
         title: stillLocation.location,
         html: '<h2>' + stillLocation.location + '</h2>' + '<img class="unveil" src=' + stillLocation.picSource + ' /> <p>' + stillLocation.description + '</p>'
     });
-    
+
     stillMarkers.push(marker);
 
     var boxText = document.createElement('div');
-    boxText.className = 'info-window-inner story-location map-box box-shadow';
+    boxText.className = 'info-window-inner still-info-window-inner story-location map-box box-shadow';
     boxText.innerHTML = marker.html;
 
     var myOptions = {
@@ -352,23 +350,15 @@ function createStillMarker(stillLocation, map) {
         var jt = $(t);
         console.log( jt );
         jt.trigger('unveil');
-        
-//        map.setCenter(marker.getPosition());
     });
-    
+
     return marker;
-    
+
 }//end createStillMarker
 
 var intro = $('#intro');
 var side_legend = $('#legend');
 var bottom_legend = $('#location-select');
-
-//$(function() {
-//    $("img.lazy").lazyload({
-//        container: $(".info-window-inner")
-//    });
-//});
 
 function removeOverlay(){
     $('#overlay').fadeOut(1000);
@@ -416,7 +406,7 @@ function watchLegendChange() {
     $('#btn-stories').change(function() {
         toggleMarkers(storyMarkers);
     });
-    
+
     $('#btn-all').click(function() {
         map.fitBounds(bounds);
     });
