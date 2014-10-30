@@ -23,7 +23,7 @@ Clone repository - https://github.com/plattebasintimelapse/pbt-explorer
 
 	git clone <repo>
 
-To install grunt tasks from packages.json
+To install grunt tasks from package.json
 
   	sudo npm install
 

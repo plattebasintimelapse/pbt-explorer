@@ -184,10 +184,11 @@ function createTLMarker(longtermTLLocation, map) {
         strokeWeight: 1
     };
     var latlong = new google.maps.LatLng(longtermTLLocation.lat, longtermTLLocation.long);
+    var tl_image = 'images/app/tl.png';
     var marker = new google.maps.Marker({
         position: latlong,
         map: map,
-        icon: circle,
+        icon: tl_image,
         title: longtermTLLocation.location,
         html: '<h2 class="center">' + longtermTLLocation.location + '</h2>' + '<div class="timelapse-video-container">' + iFrameContentForInfoBox + '</div>' + '<p>' + longtermTLLocation.description + '</p>' 
 //        + '<div class="phocalstream-link"><a class="center" target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
@@ -311,10 +312,11 @@ function createStillMarker(stillLocation, map) {
         strokeWeight: 1
     };
     var latlong = new google.maps.LatLng(stillLocation.lat, stillLocation.long);
+    var still_image = 'images/app/still.png';
     var marker = new google.maps.Marker({
         position: latlong,
         map: map,
-        icon: circle,
+        icon: still_image,
         title: stillLocation.location,
         html: '<h2>' + stillLocation.location + '</h2>' + '<img class="unveil" src=' + stillLocation.picSource + ' /> <p>' + stillLocation.description + '</p>'
     });

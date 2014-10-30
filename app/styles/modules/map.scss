@@ -72,12 +72,11 @@
 
 #still-span {
     background: rgba(244, 85, 85, 0.7);
-    
 }
 
 .map-box {
     background-color: $map-box-color;
-    border: solid 1px #2f2f2f; 
+    border: solid 1px #2f2f2f;
 }
 
 .map-box-wrapper {
@@ -117,8 +116,8 @@
     .select-heading {
         margin-bottom:0px;
         text-align:center;
-    }   
-    
+    }
+
     @media (max-width: $third-breakpoint) {
         display: none;
     }
@@ -129,10 +128,10 @@
     position: fixed;
     bottom: -100px;
     width: 100%;
-    
+
     border: none;
     border-top: solid 1px #2f2f2f; 
-    
+
     .location-title {
         display: inline;
         font-size: 1.2em;
@@ -144,7 +143,7 @@
         padding-right:10px;
         font-size:.8em;
     }
-    
+
     @media (max-width: $third-breakpoint) {
         display: none;
     }
