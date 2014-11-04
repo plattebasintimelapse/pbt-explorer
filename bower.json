@@ -9,7 +9,7 @@
     "infobox": "http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js",
     "oms.min": "http://jawj.github.io/OverlappingMarkerSpiderfier/bin/oms.min.js",
     "bootstrap-sass-official": "~3.2.0",
-    "fontawesome": "~4.1.0"
+    "fontawesome": "~4.2.0"
   },
   "version": "0.0.0",
   "authors": [

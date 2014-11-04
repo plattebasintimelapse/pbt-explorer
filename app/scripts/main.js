@@ -10,93 +10,18 @@ var loups_bounds;
 var central_bounds;
 var lower_bounds;
 
-// array of Google Markers
-var tlMarkers = [];
-var storyMarkers = [];
-var stillMarkers = [];
-
 // array of Javascript objects to build Google Markers, created from JSON HTTP requests to Google doc sreadsheet
 var longtermTLLocations = [];
 var storyLocations = [];
 var stillLocations = [];
 
+// array of Google Markers
+var tlMarkers = [];
+var storyMarkers = [];
+var stillMarkers = [];
 
-/**
- * Builds Google map, sets spidifier for markers, displays Platte Basin from Google Fushion table, 
- * sets marker bounds, calls getContent()
- */
 
-function initialize() {
-    var styles = [{"featureType": "water","stylers": [{ "color": "#446980"}, {"weight": 2}]
-    }, {"featureType": "road","stylers": [{"visibility": "simplified"}]
-    }, {"featureType": "road.highway","stylers": [{"visibility": "off"}, {"color": "#202909"}, {"weight": 0.8}]
-    }, {"featureType": "road.highway","elementType": "labels","stylers": [{"visibility": "off"}]
-    }, {"featureType": "poi","stylers": [{"visibility": "off"}]
-    }, {"featureType": "administrative","stylers": [{"visibility": "on"}]
-    }, {"featureType": "water","elementType": "labels","stylers": [{"visibility": "off"}]
-    }, {}, {"featureType": "road","elementType": "labels","stylers": [{"visibility": "off"}]
-    }, {"featureType": "transit","stylers": [{"visibility": "off"}]
-    }];
-    var styledMap = new google.maps.StyledMapType(styles, {
-        name: "Styled Map"
-    });
 
-    var mapOptions = {
-        zoom: 7,
-        maxZoom: 13,
-        minZoom: 5,
-        center: new google.maps.LatLng(41.643387, -101.612224),
-        mapTypeControl: false,
-        panControl: false,
-        zoomControl: true,
-        zoomControlOptions: {
-            style: google.maps.ZoomControlStyle.LARGE,
-            position: google.maps.ControlPosition.LEFT_CENTER
-        },
-        scaleControl: false,
-        streetViewControl: false
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    map.mapTypes.set('map_style', styledMap);
-    map.setMapTypeId('map_style');
-    
-    var spiderfierOptions = {
-        keepSpiderfied: true,
-        legWeight: 1
-    };
-    oms = new OverlappingMarkerSpiderfier(map, spiderfierOptions);
-
-//     load in Platte Basin watershed map layer from Google Fushion Table
-    var platteBasinLayer = new google.maps.FusionTablesLayer({
-        map: map,
-        suppressInfoWindows: true,
-        query: {
-            select: "col2",
-            from: "1JvJgh-o4GfNRLKAreWD9UiFJa5N0rqpS_Wq3xSNf",
-            where: "col1 \x3d \x27Streams\x27"
-        },
-        options: {
-            styleId: 2,
-            templateId: 2
-        }
-    });
-    platteBasinLayer.setMap(map);
-
-    //initizalize bounds
-    bounds = new google.maps.LatLngBounds();
-    north_bounds = new google.maps.LatLngBounds();
-    south_bounds = new google.maps.LatLngBounds();
-    loups_bounds = new google.maps.LatLngBounds();
-    central_bounds = new google.maps.LatLngBounds();
-    lower_bounds = new google.maps.LatLngBounds();
-
-    getContent();
-
-    var infowindow = new google.maps.InfoWindow({
-        content: "Loading..."
-    });
-
-} //end initialize
 
 
 /**
@@ -108,7 +33,16 @@ function getContent() {
     // TL Content
     $.getJSON("https://spreadsheets.google.com/feeds/list/1XZx5wnIEaFy7sJ85KI4cJOPrgx4o87ZilsDxp9VNfhs/od6/public/values?alt=json", function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
-            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], lat: Number(data.feed.entry[i]['gsx$lat']['$t']), long: Number(data.feed.entry[i]['gsx$long']['$t']), sub_basin: data.feed.entry[i]['gsx$basin']['$t'], vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t'], phocalstreamID: data.feed.entry[i]['gsx$phocalstreamid']['$t']};
+            var tempLocation = {
+                location: data.feed.entry[i]['gsx$title']['$t'],
+                description: data.feed.entry[i]['gsx$description']['$t'],
+                lat: Number(data.feed.entry[i]['gsx$lat']['$t']),
+                long: Number(data.feed.entry[i]['gsx$long']['$t']),
+                sub_basin: data.feed.entry[i]['gsx$basin']['$t'],
+                vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t'],
+                phocalstreamID: data.feed.entry[i]['gsx$phocalstreamid']['$t'],
+                themes: data.feed.entry[i]['gsx$themes']['$t']
+            };
 
             longtermTLLocations.push(tempLocation);
 
@@ -119,7 +53,15 @@ function getContent() {
     // Still Content
     $.getJSON("https://spreadsheets.google.com/feeds/list/1Ko2Fnm2hLN-B_BpTkza-Mmp5X3c1aDBbwusvTpwo5Hc/od6/public/values?alt=json", function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
-            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], lat: Number(data.feed.entry[i]['gsx$lat']['$t']), long: Number(data.feed.entry[i]['gsx$long']['$t']), sub_basin: data.feed.entry[i]['gsx$basin']['$t'], picSource: data.feed.entry[i]['gsx$source']['$t']};
+            var tempLocation = {
+                location: data.feed.entry[i]['gsx$title']['$t'],
+                description: data.feed.entry[i]['gsx$description']['$t'],
+                lat: Number(data.feed.entry[i]['gsx$lat']['$t']),
+                long: Number(data.feed.entry[i]['gsx$long']['$t']),
+                sub_basin: data.feed.entry[i]['gsx$basin']['$t'],
+                picSource: data.feed.entry[i]['gsx$source']['$t'],
+                themes: data.feed.entry[i]['gsx$themes']['$t']
+            };
 
             stillLocations.push(tempLocation);
 
@@ -127,16 +69,24 @@ function getContent() {
         setStillMarkers(map, stillLocations);
     });
 
-//    $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json", function(data) {
-//        for (var i = 0; i < data.feed.entry.length; i++) {
-//            var tempLocation = {location: data.feed.entry[i]['gsx$title']['$t'], description: data.feed.entry[i]['gsx$description']['$t'], long: Number(data.feed.entry[i]['gsx$long']['$t']), lat: Number(data.feed.entry[i]['gsx$lat']['$t']), vimeoURL: data.feed.entry[i]['gsx$vimeoid']['$t']};
-//
-//            storyLocations.push(tempLocation);
-//
-//        }
-////        setStoryMarkers(map, storyLocations);
-//        
-//    });
+   $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json", function(data) {
+       for (var i = 0; i < data.feed.entry.length; i++) {
+           var tempLocation = {
+                title: data.feed.entry[i]['gsx$title']['$t'],
+                description: data.feed.entry[i]['gsx$description']['$t'],
+                lat: Number(data.feed.entry[i]['gsx$lat']['$t']),
+                long: Number(data.feed.entry[i]['gsx$long']['$t']),
+                sub_basin: data.feed.entry[i]['gsx$basin']['$t'],
+                link: data.feed.entry[i]['gsx$link']['$t'],
+                themes: data.feed.entry[i]['gsx$themes']['$t']
+            };
+
+           storyLocations.push(tempLocation);
+
+       }
+       setStoryMarkers(map, storyLocations);
+
+   });
 
 } //end getContent
 
@@ -175,21 +125,24 @@ function createTLMarker(longtermTLLocation, map) {
     var phocalstreamAccessTag = 'EXPLORE ALL IMAGES';                                             //The text a user clicks on to access Phocalstream images
     var phocalstreamBaseURL = 'http://images.plattebasintimelapse.com/photo/cameracollection?siteId=';     //The base url for phocalstreamAccessTag anchor tag
 
-    var circle ={
-        path: google.maps.SymbolPath.CIRCLE,
+    var camera = {
+        path: fontawesome.markers.CAMERA_RETRO,
         fillColor: '#6aaac3',
-        fillOpacity: .8,
-        scale: 8,
-        strokeColor: 'rgba(106, 170, 195, 0.8)',
-        strokeWeight: 1
+        fillOpacity: 1,
+        scale: .4,
+        strokeColor: '#6aaac3',
+        strokeWeight: .4,
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point(0, -20)
     };
     var latlong = new google.maps.LatLng(longtermTLLocation.lat, longtermTLLocation.long);
-    var tl_image = 'images/app/tl.png';
+    var tl_image = 'images/app/video.png';
     var marker = new google.maps.Marker({
         position: latlong,
         map: map,
         icon: tl_image,
         title: longtermTLLocation.location,
+        category: longtermTLLocation.themes,
         html: '<h2 class="center">' + longtermTLLocation.location + '</h2>' + '<div class="timelapse-video-container">' + iFrameContentForInfoBox + '</div>' + '<p>' + longtermTLLocation.description + '</p>' 
 //        + '<div class="phocalstream-link"><a class="center" target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
     });
@@ -249,23 +202,15 @@ function createTLMarker(longtermTLLocation, map) {
 
 function createStoryMarker(storyLocation, map) {
 
-    // Content for InfoBox
-    var iFrameContentForInfoBox = '<iframe class="timelapse-video" src="http://player.vimeo.com/video/' + storyLocation.vimeoURL + '"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-
-    var circle ={
-        path: google.maps.SymbolPath.CIRCLE,
-        fillColor: '#f45555',
-        fillOpacity: .8,
-        scale: 8,
-        strokeColor: '#f45555',
-        strokeWeight: 1
-    };
+    var latlong = new google.maps.LatLng(storyLocation.lat, storyLocation.long);
+    var book_image = 'images/app/book.png';
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(storyLocation.long, storyLocation.lat),
+        position: latlong,
         map: map,
-        icon: circle,
-        title: storyLocation.location,
-        html: '<h2>' + storyLocation.location + '</h2>' + '<div class="video-container">' + iFrameContentForInfoBox + '</div>' + '<p>' + storyLocation.description + '</p>' 
+        icon: book_image,
+        title: storyLocation.title,
+        category: storyLocation.themes,
+        html: '<h2>' + storyLocation.title + '</h2>' + '<p>' + storyLocation.description + '</p>' + '<a target="_blank" href=' + storyLocation.link + '>Read the Story</a>'
     });
 
     storyMarkers.push(marker);
@@ -303,21 +248,14 @@ function createStoryMarker(storyLocation, map) {
 
 function createStillMarker(stillLocation, map) {
 
-    var circle ={
-        path: google.maps.SymbolPath.CIRCLE,
-        fillColor: '#f45555',
-        fillOpacity: .8,
-        scale: 3,
-        strokeColor: '#f45555',
-        strokeWeight: 1
-    };
     var latlong = new google.maps.LatLng(stillLocation.lat, stillLocation.long);
-    var still_image = 'images/app/still.png';
+    var still_image = 'images/app/camera.png';
     var marker = new google.maps.Marker({
         position: latlong,
         map: map,
         icon: still_image,
         title: stillLocation.location,
+        category: stillLocation.themes,
         html: '<h2>' + stillLocation.location + '</h2>' + '<img class="unveil" src=' + stillLocation.picSource + ' /> <p>' + stillLocation.description + '</p>'
     });
 
@@ -348,9 +286,9 @@ function createStillMarker(stillLocation, map) {
         ib.open(map, this);
 
         var t = ib.getContent().getElementsByClassName('unveil')[0];
-        console.log( t );
+        // console.log( t );
         var jt = $(t);
-        console.log( jt );
+        // console.log( jt );
         jt.trigger('unveil');
     });
 
@@ -358,9 +296,9 @@ function createStillMarker(stillLocation, map) {
 
 }//end createStillMarker
 
-var intro = $('#intro');
-var side_legend = $('#legend');
-var bottom_legend = $('#location-select');
+var $intro = $('#intro');
+var $side_legend = $('#legend');
+var $bottom_legend = $('#location-select');
 
 function removeOverlay(){
     $('#overlay').fadeOut(1000);
@@ -370,17 +308,17 @@ function removeOverlay(){
 }
 
 function introPrompt() {
-    intro.animate({'top':'45%'},500, 'swing');
+    $intro.animate({'top':'45%'},500, 'swing');
     $('<div/>').attr({'id' : 'overlay'}).appendTo('body').fadeIn(1000);
 
     //on close
     $('#intro-close').click(function(){
         removeOverlay();
-        intro.animate({'top':'140%'},500, 'swing').fadeOut(500);
+        $intro.animate({'top':'140%'},500, 'swing').fadeOut(500);
 
-        setTimeout(function() {intro.remove();}, 1000);
-        setTimeout(function() {side_legend.animate({'right':'15px'},500, 'swing');}, 500);
-        setTimeout(function() {bottom_legend.animate({'bottom':'0'},1000, 'swing');}, 500);
+        setTimeout(function() {$intro.remove();}, 1000);
+        setTimeout(function() {$side_legend.animate({'right':'15px'},500, 'swing');}, 500);
+        setTimeout(function() {$bottom_legend.animate({'bottom':'0'},1000, 'swing');}, 500);
         setTimeout(function() {$('header').animate({'top':'0'},500, 'swing');}, 500);
     });
 }
@@ -388,25 +326,93 @@ function introPrompt() {
 function toggleMarkers(m) {
     for (var i = 0; i < m.length; i++) {
         if(m[i].getVisible()) {
-          m[i].setVisible(false); 
-        }else {
-          m[i].setVisible(true); 
+            m[i].setVisible(false);
+        }else{
+            m[i].setVisible(true);
         }
     }
 }
 
-function watchLegendChange() {
+function displayMarkers(m) {
+    for (var i = 0; i < m.length; i++) {
+        m[i].setVisible(true);
+    }
+}
+
+function hideMarkers(m) {
+    for (var i = 0; i < m.length; i++) {
+        m[i].setVisible(false);
+    }
+}
+
+function toggleGroup(m, selection) {
+    for (var i = 0; i < m.length; i++) {
+        if ('all' == selection){
+            m[i].setVisible(true);
+        } else {
+            var c = m[i].get('category');
+            if ( c.indexOf(selection) > -1 ) {
+                m[i].setVisible(true);
+            } else {
+                m[i].setVisible(false);
+            }
+        }
+    }
+}
+
+(function () {
     $('#btn-timelapse').parent().addClass('active');
     $('#btn-stills').parent().addClass('active');
-//    $('#btn-stories').parent().addClass('active');
+    $('#btn-stories').parent().addClass('active');
+
+    var tl_on = true,
+    stills_on = true,
+    stories_on = true;
+
     $('#btn-timelapse').change(function() {
-        toggleMarkers(tlMarkers);
+        $('.theme-select input[value=all').prop('checked', true);
+        if (tl_on) {
+            hideMarkers(tlMarkers);
+            tl_on = false;
+        } else {
+            displayMarkers(tlMarkers);
+            tl_on = true;
+        }
     });
     $('#btn-stills').change(function() {
-        toggleMarkers(stillMarkers);
+        $('.theme-select input[value=all').prop('checked', true);
+        if (stills_on) {
+            hideMarkers(stillMarkers);
+            stills_on = false;
+        } else {
+            displayMarkers(stillMarkers);
+            stills_on = true;
+        }
     });
     $('#btn-stories').change(function() {
-        toggleMarkers(storyMarkers);
+        $('.theme-select input[value=all').prop('checked', true);
+        if (stories_on) {
+            hideMarkers(storyMarkers);
+            stories_on = false;
+        } else {
+            displayMarkers(storyMarkers);
+            stories_on = true;
+        }
+    });
+
+    $('.theme-select input').change(function() {
+        var t = $(this).attr('value');
+        if (tl_on) {
+            toggleGroup(tlMarkers, t);
+        }
+
+        if (stories_on) {
+            toggleGroup(storyMarkers, t);
+        }
+
+        if (stills_on) {
+            toggleGroup(stillMarkers, t);
+        }
     });
 
     $('#btn-all').click(function() {
@@ -427,7 +433,84 @@ function watchLegendChange() {
     $('#btn-lowerplatte').click(function() {
         map.fitBounds(lower_bounds);
     });
-}
+})();
+
+/**
+ * Builds Google map, sets spidifier for markers, displays Platte Basin from Google Fushion table,
+ * sets marker bounds, calls getContent()
+ */
+
+function initialize() {
+    var styles = [{"featureType": "water","stylers": [{ "color": "#446980"}, {"weight": 2}]
+    }, {"featureType": "road","stylers": [{"visibility": "simplified"}]
+    }, {"featureType": "road.highway","stylers": [{"visibility": "off"}, {"color": "#202909"}, {"weight": 0.8}]
+    }, {"featureType": "road.highway","elementType": "labels","stylers": [{"visibility": "off"}]
+    }, {"featureType": "poi","stylers": [{"visibility": "off"}]
+    }, {"featureType": "administrative","stylers": [{"visibility": "on"}]
+    }, {"featureType": "water","elementType": "labels","stylers": [{"visibility": "off"}]
+    }, {}, {"featureType": "road","elementType": "labels","stylers": [{"visibility": "off"}]
+    }, {"featureType": "transit","stylers": [{"visibility": "off"}]
+    }];
+    var styledMap = new google.maps.StyledMapType(styles, {
+        name: "Styled Map"
+    });
+
+    var mapOptions = {
+        zoom: 7,
+        maxZoom: 13,
+        minZoom: 5,
+        center: new google.maps.LatLng(41.643387, -101.612224),
+        mapTypeControl: false,
+        panControl: false,
+        zoomControl: true,
+        zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.LARGE,
+            position: google.maps.ControlPosition.LEFT_CENTER
+        },
+        scaleControl: false,
+        streetViewControl: false
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    map.mapTypes.set('map_style', styledMap);
+    map.setMapTypeId('map_style');
+
+    var spiderfierOptions = {
+        keepSpiderfied: true,
+        legWeight: 1
+    };
+    oms = new OverlappingMarkerSpiderfier(map, spiderfierOptions);
+
+//     load in Platte Basin watershed map layer from Google Fushion Table
+    var platteBasinLayer = new google.maps.FusionTablesLayer({
+        map: map,
+        suppressInfoWindows: true,
+        query: {
+            select: "col2",
+            from: "1JvJgh-o4GfNRLKAreWD9UiFJa5N0rqpS_Wq3xSNf",
+            where: "col1 \x3d \x27Streams\x27"
+        },
+        options: {
+            styleId: 2,
+            templateId: 2
+        }
+    });
+    platteBasinLayer.setMap(map);
+
+    //initizalize bounds
+    bounds = new google.maps.LatLngBounds();
+    north_bounds = new google.maps.LatLngBounds();
+    south_bounds = new google.maps.LatLngBounds();
+    loups_bounds = new google.maps.LatLngBounds();
+    central_bounds = new google.maps.LatLngBounds();
+    lower_bounds = new google.maps.LatLngBounds();
+
+    getContent();
+
+    var infowindow = new google.maps.InfoWindow({
+        content: "Loading..."
+    });
+
+} //end initialize
 
 google.maps.event.addDomListener(window, "resize", function() {
     var center = map.getCenter();
@@ -446,10 +529,5 @@ $(window).load(function () {
     if ($( window ).width() > 767) {
         initialize();
         introPrompt();
-        watchLegendChange();
     }
-});
-s
-$(document).ready(function () {
-//    $('.unveil').unveil();
 });

@@ -30,7 +30,7 @@
         <![endif]-->
 
     <div id="map-canvas"></div>
-        
+
     <div class="map-box box-shadow" id="intro">
         <div id="intro-close"></div>
         <h1>Explore the Platte Basin</h1>
@@ -39,36 +39,62 @@
         <p>Click each marker to view a (<span class="fa fa-video-camera"></span>) <span id="tl-span" class="intro-span">timelapse video</span> or examine a (<span class="fa fa-camera"></span>) <span id="still-span" class="intro-span">still image.</span></p>
         <h5>Close to continue.</h5>
     </div>
-        
+
     <div class="map-box box-shadow" id="legend">
         <div class="map-box-wrapper">
             <h2>Toggle Markers</h2>
-            
-<!--            <p class="select-heading">Select:</p>-->
+
             <div class="btn-group" data-toggle="buttons">
-<!--
                 <label class="btn btn-default btn-sm">
-                    <input type="checkbox" name="options" id="btn-stories"> Stories
+                    <input type="checkbox" name="options" id="btn-stories">
+                    <span class="fa fa-book fa-lg"></span>
                 </label>
--->
-                <label class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="bottom" title="Timelapse">
+
+                <label class="btn btn-default btn-sm">
                     <input type="checkbox" name="options" id="btn-timelapse">
-                    <span class="fa fa-video-camera"></span>
+                    <span class="fa fa-video-camera fa-lg"></span>
                 </label>
-                <label class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="bottom" title="Stills">
+                <label class="btn btn-default btn-sm">
                     <input type="checkbox" name="options" id="btn-stills">
-                    <span class="fa fa-camera"></span>
+                    <span class="fa fa-camera fa-lg"></span>
                 </label>
             </div>
-            
-<!--            <p>Toggle timelapse videos or stills makers on t</p>-->
+
+            <div class="select-markers">
+                <span class="fa fa-book"> Stories</span>
+                <span class="fa fa-video-camera"> Timelapses</span>
+                <span class="fa fa-camera"> Images</span>
+            </div>
+
+            <h2>Select Themes</h2>
+
+            <div class="theme-select">
+                <div class="row">
+                    <form action="">
+                        <div class="col-xs-6">
+                            <p><input type="radio" name="themes" value="all" checked='checked'>ALL</p>
+                            <p><input type="radio" name="themes" value="agriculture">Agriculture</p>
+                            <p><input type="radio" name="themes" value="wildlife">Wildlife</p>
+                            <p><input type="radio" name="themes" value="urban">Urban</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p><input type="radio" name="themes" value="recreation">Recreation</p>
+                            <p><input type="radio" name="themes" value="policy">Policy</p>
+                            <p><input type="radio" name="themes" value="climate">Climate</p>
+                            <p><input type="radio" name="themes" value="energy">Energy</p>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
-        
+
     <div class="map-box box-shadow" id="location-select">
         <div class="map-box-wrapper">
             <p class="location-title">The Sub-Basins of the Platte Watershed</p>
-            
+
             <p class="select-heading">Zoom to:</p>
             <div id="basin-btn-group" class="btn-group">
                 <button type="button" class="btn btn-default btn-sm" id="btn-all">All</button>
@@ -78,10 +104,9 @@
                 <button type="button" class="btn btn-default btn-sm" id="btn-centralplatte"> Central Platte</button>
                 <button type="button" class="btn btn-default btn-sm" id="btn-lowerplatte"> Lower Platte</button>
             </div>
- 
         </div>
     </div>
-        
+
     <div class="map-box box-shadow" id="mobile-warning">
         <div class="map-box-wrapper">
             <i class="fa fa-frown-o fa-4x"></i>
@@ -117,8 +142,9 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/fontawesome-markers.js"></script>
         <!-- endbuild -->
-        
+
         <script>
             $('label').tooltip();
         </script>

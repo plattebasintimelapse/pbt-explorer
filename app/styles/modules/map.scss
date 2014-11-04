@@ -42,7 +42,7 @@
         margin: 5px auto;
         text-align:center;
     }
-    
+
     @media (max-width: $first-breakpoint) {
         width: 500px;
     }
@@ -87,28 +87,30 @@
     position:fixed;
     top: 30%;
     right:-200px;
-    width: 120px;
+    width: 220px;
     z-index: 1;
-    
+
     font-size:.6em;
     text-align:center;
-    
-//    padding: 10px;
 
-    border: none; 
-    
+
+    border: none;
+
     h2 {
         font-size: 1.8em;
         font-weight: normal;
         margin-top: 0px;
         margin-bottom: 5px;
     }
-    
+
     .btn-group {
         padding: 10px;
         padding-top: 0px;
+        label {
+            padding: 5px 18px;
+        }
     }
-    
+
     p {
         font-size: 1em;
         text-align: left;
@@ -118,8 +120,41 @@
         text-align:center;
     }
 
+    .select-markers {
+        margin-bottom: 15px;
+        span {
+            padding: 0 2px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
     @media (max-width: $third-breakpoint) {
         display: none;
+    }
+
+    .theme-select {
+        text-align: left;
+
+        p {
+            margin: 0;
+        }
+
+        input {
+            margin-right: 4px;
+        }
+        .col-xs-6:first-child {
+            padding-left:20px;
+            padding-right: 5px;
+        }
+        .col-xs-6:last-child {
+            padding-right:20px;
+            padding-left: 5px;
+        }
     }
 
 }
@@ -168,8 +203,8 @@
     z-index: 100;
     padding: 10px;
     background-color: rgba(245, 245, 245, 0.8);
-    -webkit-border-radius: $rounded-corner-radius; 
-    -moz-border-radius: $rounded-corner-radius; 
+    -webkit-border-radius: $rounded-corner-radius;
+    -moz-border-radius: $rounded-corner-radius;
     border-radius: $rounded-corner-radius;
     text-align: left;
     h2 {
@@ -192,12 +227,12 @@
         margin: 10px auto;
         border: 1px solid gray;
         background-color: lightgray;
-        -webkit-border-radius: $rounded-corner-radius; 
-        -moz-border-radius: $rounded-corner-radius; 
+        -webkit-border-radius: $rounded-corner-radius;
+        -moz-border-radius: $rounded-corner-radius;
         border-radius: $rounded-corner-radius;
         &:hover {
             background-color: #e6e6e6;
-            a { 
+            a {
                 color: #ac0505;
             }
         }
@@ -216,12 +251,26 @@
         }
     }
     img {
-        width: 100%;   
+        width: 100%;
     }
 }
 
 .story-location {
     text-align: center;
+    width: 400px;
+
+    a {
+        color: white;
+        background-color: #6aaac3;
+        -webkit-border-radius: $rounded-corner-radius;
+        -moz-border-radius: $rounded-corner-radius;
+        border-radius: $rounded-corner-radius;
+        font-size: 20px;
+        &:hover {
+            background-color: white;
+            color: #6aaac3;
+        }
+    }
 }
 
 .timelapse-video-container {
