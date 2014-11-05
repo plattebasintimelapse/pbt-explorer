@@ -10,25 +10,33 @@ var loups_bounds;
 var central_bounds;
 var lower_bounds;
 
-// array of Javascript objects to build Google Markers, created from JSON HTTP requests to Google doc sreadsheet
-var longtermTLLocations = [];
-var storyLocations = [];
-var stillLocations = [];
-
 // array of Google Markers
 var tlMarkers = [];
 var storyMarkers = [];
 var stillMarkers = [];
 
+// App States
+var INTRO = true;
+var LOADED = false;
 
 
+// Global jQuery objects
+var $intro = $('#intro');
+var $side_legend = $('#legend');
+var $bottom_legend = $('#location-select');
+var $loadingPrompt = $('#loading .map-box-wrapper');
 
+// Keep running counts
+var totalTLs;
+var totalStills;
+var totalStories;
 
 /**
  * Uses getJSON method to call google docs spreadsheet for each content type, pushes to Javascript Object array,
  * and calls set___Markers() method
  */
 function getContent() {
+    var count = 0;
 
     // TL Content
     $.getJSON("https://spreadsheets.google.com/feeds/list/1XZx5wnIEaFy7sJ85KI4cJOPrgx4o87ZilsDxp9VNfhs/od6/public/values?alt=json", function(data) {
@@ -44,10 +52,16 @@ function getContent() {
                 themes: data.feed.entry[i]['gsx$themes']['$t']
             };
 
-            longtermTLLocations.push(tempLocation);
+            createTLMarker(tempLocation,map);
 
         }
-        setTLMarkers(map, longtermTLLocations);
+
+    }).done(function() {
+        count = count+1;
+        loadedCheck(count, $loadingPrompt, 'Timelapses');
+    }).fail(function() {
+        count = count+1;
+        loadingError(count, $loadingPrompt, 'Timelapses');
     });
 
     // Still Content
@@ -63,15 +77,21 @@ function getContent() {
                 themes: data.feed.entry[i]['gsx$themes']['$t']
             };
 
-            stillLocations.push(tempLocation);
-
+            createStillMarker(tempLocation,map);
         }
-        setStillMarkers(map, stillLocations);
+
+    }).done(function() {
+        count = count+1;
+        loadedCheck(count, $loadingPrompt, 'Stills');
+    }).fail(function() {
+        count = count+1;
+        loadingError(count, $loadingPrompt, 'Stills');
     });
 
-   $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json", function(data) {
-       for (var i = 0; i < data.feed.entry.length; i++) {
-           var tempLocation = {
+    // Story Content
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json", function(data) {
+        for (var i = 0; i < data.feed.entry.length; i++) {
+            var tempLocation = {
                 title: data.feed.entry[i]['gsx$title']['$t'],
                 description: data.feed.entry[i]['gsx$description']['$t'],
                 lat: Number(data.feed.entry[i]['gsx$lat']['$t']),
@@ -81,35 +101,40 @@ function getContent() {
                 themes: data.feed.entry[i]['gsx$themes']['$t']
             };
 
-           storyLocations.push(tempLocation);
+            createStoryMarker(tempLocation,map);
 
-       }
-       setStoryMarkers(map, storyLocations);
+        }
 
-   });
+    }).done(function() {
+        count = count+1;
+        loadedCheck(count, $loadingPrompt, 'Stories');
+    }).fail(function() {
+        count = count+1;
+        loadingError(count, $loadingPrompt, 'Stories');
+    });
 
 } //end getContent
 
-/**
- * Three Functions
- * Loops through Javascript Object array to create___Markers() method
- */
-
-function setTLMarkers(map,markers) {
-    for (var i = 0; i < markers.length; i++) {
-        createTLMarker(markers[i],map);
+function loadedCheck(c, $p, content) {
+    console.log(content + ' loaded');
+    if (c == 3) {
+        fadeOutAndRemove($('#loading'));
+        LOADED = true;
+    } else if (c < 3 ) {
+        setTimeout(function() {
+            $('#loading').animate({'top':'10%'},500, 'swing');
+            $p.html("<p>Still loading... <i class='fa fa-spinner fa-spin'></i></p>");
+        }, 5000);
     }
 }
 
-function setStoryMarkers(map,markers) {
-    for (var i = 0; i < markers.length; i++) {
-        createStoryMarker(markers[i],map);
-    }
-}
-
-function setStillMarkers(map,markers) {
-    for (var i = 0; i < markers.length; i++) {
-        createStillMarker(markers[i],map);
+function loadingError(c, $p, content) {
+    if ( c == 3 ) {
+        $p.html("<p>I'm sorry. We can't load the " + content + " right now.</p><p>Continue on or try again later.</p>");
+        setTimeout(function() {
+            fadeOutAndRemove($('#loading'));
+        }, 5000);
+        LOADED = true;
     }
 }
 
@@ -171,7 +196,7 @@ function createTLMarker(longtermTLLocation, map) {
     tlMarkers.push(marker);
 
     var boxText = document.createElement('div');
-    boxText.className = 'info-window-inner tl-location map-box box-shadow';
+    boxText.className = 'info-window-inner tl-info-window-inner map-box box-shadow';
     boxText.innerHTML = marker.html;
 
     var myOptions = {
@@ -216,7 +241,7 @@ function createStoryMarker(storyLocation, map) {
     storyMarkers.push(marker);
 
     var boxText = document.createElement('div');
-    boxText.className = 'info-window-inner story-location map-box box-shadow';
+    boxText.className = 'info-window-inner story-info-window-inner map-box box-shadow';
     boxText.innerHTML = marker.html;
 
     var myOptions = {
@@ -262,7 +287,7 @@ function createStillMarker(stillLocation, map) {
     stillMarkers.push(marker);
 
     var boxText = document.createElement('div');
-    boxText.className = 'info-window-inner still-info-window-inner story-location map-box box-shadow';
+    boxText.className = 'info-window-inner still-info-window-inner map-box box-shadow';
     boxText.innerHTML = marker.html;
 
     var myOptions = {
@@ -296,14 +321,10 @@ function createStillMarker(stillLocation, map) {
 
 }//end createStillMarker
 
-var $intro = $('#intro');
-var $side_legend = $('#legend');
-var $bottom_legend = $('#location-select');
-
-function removeOverlay(){
-    $('#overlay').fadeOut(1000);
+function fadeOutAndRemove($thing){
+    $thing.fadeOut(1000);
     setTimeout(function() {
-        $('#overlay').remove();
+        $thing.remove();
     }, 500);
 }
 
@@ -313,13 +334,17 @@ function introPrompt() {
 
     //on close
     $('#intro-close').click(function(){
-        removeOverlay();
+        fadeOutAndRemove($('#overlay'));
         $intro.animate({'top':'140%'},500, 'swing').fadeOut(500);
 
         setTimeout(function() {$intro.remove();}, 1000);
         setTimeout(function() {$side_legend.animate({'right':'15px'},500, 'swing');}, 500);
         setTimeout(function() {$bottom_legend.animate({'bottom':'0'},1000, 'swing');}, 500);
         setTimeout(function() {$('header').animate({'top':'0'},500, 'swing');}, 500);
+
+        $('#loading').toggleClass('hide');
+
+        INTRO = false;
     });
 }
 
@@ -523,7 +548,6 @@ google.maps.event.addDomListener(window, "resize", function() {
         s = false;
     }
 });
-var s = true;
 
 $(window).load(function () {
     if ($( window ).width() > 767) {

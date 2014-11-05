@@ -7,6 +7,15 @@
     height: 100%;
 }
 
+.map-box {
+    background-color: $map-box-color;
+    border: solid 1px #2f2f2f;
+}
+
+.map-box-wrapper {
+    padding: 10px;
+}
+
 #overlay {
     display: none;
     position:fixed;
@@ -17,7 +26,7 @@
     background-color: black;
     opacity:0.6;
     z-index: $overlay-z-index;
-    
+
     @media (max-width: $third-breakpoint) {
         display: block;
     }
@@ -35,9 +44,9 @@
     font-size: .9em;
     $rounded-corner-radius:6px;
     background-color: rgba(245, 245, 245, 0.9);
-    -webkit-border-radius: $rounded-corner-radius; 
-    -moz-border-radius: $rounded-corner-radius; 
-    border-radius: $rounded-corner-radius;
+
+    @include border-radius($rounded-corner-radius);
+
     h1 {
         margin: 5px auto;
         text-align:center;
@@ -74,25 +83,31 @@
     background: rgba(244, 85, 85, 0.7);
 }
 
-.map-box {
-    background-color: $map-box-color;
-    border: solid 1px #2f2f2f;
-}
-
-.map-box-wrapper {
-    padding: 10px;
+#loading {
+    width: 200px;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    margin-left: -125px;
+    text-align: center;
+    @include border-radius($rounded-corner-radius);
+    p {
+        margin-bottom: 0;
+    }
 }
 
 #legend {
     position:fixed;
     top: 30%;
-    right:-200px;
+    right:-240px;
     width: 220px;
     z-index: 1;
 
     font-size:.6em;
     text-align:center;
 
+    @include border-radius($rounded-corner-radius);
+    .map-box-wrapper { padding: 20px 10px; }
 
     border: none;
 
@@ -187,6 +202,7 @@
 .info-window-inner {
     font-family: $global-font;
     font-size: 1.4em;
+    text-align: left;
     @media (max-width: $third-breakpoint) {
             font-size: 1.1em;
         }
@@ -197,16 +213,11 @@
     @media (max-width: $third-breakpoint) {
         width: 300px;
     }
-    &.still-info-window-inner {
-        width: 560px;
-    }
     z-index: 100;
     padding: 10px;
     background-color: rgba(245, 245, 245, 0.8);
-    -webkit-border-radius: $rounded-corner-radius;
-    -moz-border-radius: $rounded-corner-radius;
-    border-radius: $rounded-corner-radius;
-    text-align: left;
+    @include border-radius($rounded-corner-radius);
+
     h2 {
         text-transform: uppercase;
         text-align: center;
@@ -218,25 +229,7 @@
         margin-top: 10px;
         margin-bottom: 5px;
     }
-    .phocalstream-link {
-        font-size: 1.2em;
-        width: 40%;
-        @media (max-width: $third-breakpoint) {
-            width: 60%;
-        }
-        margin: 10px auto;
-        border: 1px solid gray;
-        background-color: lightgray;
-        -webkit-border-radius: $rounded-corner-radius;
-        -moz-border-radius: $rounded-corner-radius;
-        border-radius: $rounded-corner-radius;
-        &:hover {
-            background-color: #e6e6e6;
-            a {
-                color: #ac0505;
-            }
-        }
-    }
+
     a {
         display: inline-block;
         width: 100%;
@@ -255,16 +248,48 @@
     }
 }
 
-.story-location {
+.tl-info-window-inner {
+    .timelapse-video {
+        height: 420px;
+        width: 100%;
+        @media (max-width: $first-breakpoint) {
+            height: 300px;
+        }
+        @media (max-width: $third-breakpoint) {
+            height: 180px;
+        }
+    }
+    .phocalstream-link {
+        font-size: 1.2em;
+        width: 40%;
+        @media (max-width: $third-breakpoint) {
+            width: 60%;
+        }
+        margin: 10px auto;
+        border: 1px solid gray;
+        background-color: lightgray;
+        @include border-radius($rounded-corner-radius);
+        &:hover {
+            background-color: #e6e6e6;
+            a {
+                color: #ac0505;
+            }
+        }
+    }
+}
+
+.still-info-window-inner {
+    width: 400px;
+}
+
+.story-info-window-inner {
     text-align: center;
     width: 400px;
 
     a {
         color: white;
         background-color: #6aaac3;
-        -webkit-border-radius: $rounded-corner-radius;
-        -moz-border-radius: $rounded-corner-radius;
-        border-radius: $rounded-corner-radius;
+        @include border-radius($rounded-corner-radius);
         font-size: 20px;
         &:hover {
             background-color: white;
@@ -290,23 +315,5 @@
     }
     @media (max-width: $third-breakpoint) {
         padding: 0;
-    }
-}
-
-.tl-location .timelapse-video {
-    height: 420px;
-    width: 100%;
-    @media (max-width: $first-breakpoint) {
-        height: 300px;
-    }
-    @media (max-width: $third-breakpoint) {
-        height: 180px;
-    }
-}
-.story-location .timelapse-video {
-    height: 360px;
-    width: 100%;
-    @media (max-width: $first-breakpoint) {
-        height: 216px;
     }
 }
