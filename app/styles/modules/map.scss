@@ -86,9 +86,9 @@
 #loading {
     width: 200px;
     position: fixed;
-    top: 45%;
+    top: 10%;
     left: 50%;
-    margin-left: -125px;
+    margin-left: -100px;
     text-align: center;
     @include border-radius($rounded-corner-radius);
     p {

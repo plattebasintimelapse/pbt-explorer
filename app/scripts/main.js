@@ -122,7 +122,6 @@ function loadedCheck(c, $p, content) {
         LOADED = true;
     } else if (c < 3 ) {
         setTimeout(function() {
-            $('#loading').animate({'top':'10%'},500, 'swing');
             $p.html("<p>Still loading... <i class='fa fa-spinner fa-spin'></i></p>");
         }, 5000);
     }
@@ -150,18 +149,8 @@ function createTLMarker(longtermTLLocation, map) {
     var phocalstreamAccessTag = 'EXPLORE ALL IMAGES';                                             //The text a user clicks on to access Phocalstream images
     var phocalstreamBaseURL = 'http://images.plattebasintimelapse.com/photo/cameracollection?siteId=';     //The base url for phocalstreamAccessTag anchor tag
 
-    var camera = {
-        path: fontawesome.markers.CAMERA_RETRO,
-        fillColor: '#6aaac3',
-        fillOpacity: 1,
-        scale: .4,
-        strokeColor: '#6aaac3',
-        strokeWeight: .4,
-        origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point(0, -20)
-    };
     var latlong = new google.maps.LatLng(longtermTLLocation.lat, longtermTLLocation.long);
-    var tl_image = 'images/app/video.png';
+    var tl_image = 'images/app/tl.png';
     var marker = new google.maps.Marker({
         position: latlong,
         map: map,
@@ -228,7 +217,7 @@ function createTLMarker(longtermTLLocation, map) {
 function createStoryMarker(storyLocation, map) {
 
     var latlong = new google.maps.LatLng(storyLocation.lat, storyLocation.long);
-    var book_image = 'images/app/book.png';
+    var book_image = 'images/app/story.png';
     var marker = new google.maps.Marker({
         position: latlong,
         map: map,
@@ -263,8 +252,6 @@ function createStoryMarker(storyLocation, map) {
         ib.close();
         ib.setOptions(myOptions);
         ib.open(map, this);
-
-//        map.setCenter(marker.getPosition());
     });
 
     return marker;
@@ -274,7 +261,7 @@ function createStoryMarker(storyLocation, map) {
 function createStillMarker(stillLocation, map) {
 
     var latlong = new google.maps.LatLng(stillLocation.lat, stillLocation.long);
-    var still_image = 'images/app/camera.png';
+    var still_image = 'images/app/still.png';
     var marker = new google.maps.Marker({
         position: latlong,
         map: map,
@@ -340,22 +327,12 @@ function introPrompt() {
         setTimeout(function() {$intro.remove();}, 1000);
         setTimeout(function() {$side_legend.animate({'right':'15px'},500, 'swing');}, 500);
         setTimeout(function() {$bottom_legend.animate({'bottom':'0'},1000, 'swing');}, 500);
-        setTimeout(function() {$('header').animate({'top':'0'},500, 'swing');}, 500);
+        // setTimeout(function() {$('header').animate({'top':'0'},500, 'swing');}, 500);
 
         $('#loading').toggleClass('hide');
 
         INTRO = false;
     });
-}
-
-function toggleMarkers(m) {
-    for (var i = 0; i < m.length; i++) {
-        if(m[i].getVisible()) {
-            m[i].setVisible(false);
-        }else{
-            m[i].setVisible(true);
-        }
-    }
 }
 
 function displayMarkers(m) {
@@ -502,6 +479,7 @@ function initialize() {
     var spiderfierOptions = {
         keepSpiderfied: true,
         legWeight: 1
+        // nearbyDistance: 50
     };
     oms = new OverlappingMarkerSpiderfier(map, spiderfierOptions);
 
@@ -539,6 +517,7 @@ function initialize() {
 
 google.maps.event.addDomListener(window, "resize", function() {
     var center = map.getCenter();
+    var s = true;
     google.maps.event.trigger(map, "resize");
     map.setCenter(center); 
     map.fitBounds(bounds);
