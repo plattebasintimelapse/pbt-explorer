@@ -1,5 +1,6 @@
 'use strict';
 
+// Mapping variables
 var map;
 var oms;
 var ib = new InfoBox();
@@ -18,7 +19,6 @@ var stillMarkers = [];
 // App States
 var INTRO = true;
 var LOADED = false;
-
 
 // Global jQuery objects
 var $intro = $('#intro');
@@ -39,7 +39,8 @@ function getContent() {
     var count = 0;
 
     // TL Content
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1XZx5wnIEaFy7sJ85KI4cJOPrgx4o87ZilsDxp9VNfhs/od6/public/values?alt=json", function(data) {
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1XZx5wnIEaFy7sJ85KI4cJOPrgx4o87ZilsDxp9VNfhs/od6/public/values?alt=json",
+        function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
             var tempLocation = {
                 location: data.feed.entry[i]['gsx$title']['$t'],
@@ -65,7 +66,8 @@ function getContent() {
     });
 
     // Still Content
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1Ko2Fnm2hLN-B_BpTkza-Mmp5X3c1aDBbwusvTpwo5Hc/od6/public/values?alt=json", function(data) {
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1Ko2Fnm2hLN-B_BpTkza-Mmp5X3c1aDBbwusvTpwo5Hc/od6/public/values?alt=json",
+        function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
             var tempLocation = {
                 location: data.feed.entry[i]['gsx$title']['$t'],
@@ -89,7 +91,8 @@ function getContent() {
     });
 
     // Story Content
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json", function(data) {
+    $.getJSON("https://spreadsheets.google.com/feeds/list/1DzzJ15l2V-t4milyvF3j4KIqTM0GiuqVZ3h4vg9mnaw/od6/public/values?alt=json",
+        function(data) {
         for (var i = 0; i < data.feed.entry.length; i++) {
             var tempLocation = {
                 title: data.feed.entry[i]['gsx$title']['$t'],
@@ -98,6 +101,7 @@ function getContent() {
                 long: Number(data.feed.entry[i]['gsx$long']['$t']),
                 sub_basin: data.feed.entry[i]['gsx$basin']['$t'],
                 link: data.feed.entry[i]['gsx$link']['$t'],
+                picSource: data.feed.entry[i]['gsx$source']['$t'],
                 themes: data.feed.entry[i]['gsx$themes']['$t']
             };
 
@@ -145,9 +149,12 @@ function loadingError(c, $p, content) {
 function createTLMarker(longtermTLLocation, map) {
 
     // Content for InfoBox
-    var iFrameContentForInfoBox = '<iframe class="timelapse-video" src="http://player.vimeo.com/video/' + longtermTLLocation.vimeoURL + '"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-    var phocalstreamAccessTag = 'EXPLORE ALL IMAGES';                                             //The text a user clicks on to access Phocalstream images
-    var phocalstreamBaseURL = 'http://images.plattebasintimelapse.com/photo/cameracollection?siteId=';     //The base url for phocalstreamAccessTag anchor tag
+    var iFrameContentForInfoBox =
+        '<iframe class="timelapse-video" src="http://player.vimeo.com/video/' +
+        longtermTLLocation.vimeoURL +
+        '"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+    var phocalstreamAccessTag = 'EXPLORE ALL IMAGES';
+    var phocalstreamBaseURL = 'http://images.plattebasintimelapse.com/photo/cameracollection?siteId=';
 
     var latlong = new google.maps.LatLng(longtermTLLocation.lat, longtermTLLocation.long);
     var tl_image = 'images/app/tl.png';
@@ -157,8 +164,9 @@ function createTLMarker(longtermTLLocation, map) {
         icon: tl_image,
         title: longtermTLLocation.location,
         category: longtermTLLocation.themes,
-        html: '<h2 class="center">' + longtermTLLocation.location + '</h2>' + '<div class="timelapse-video-container">' + iFrameContentForInfoBox + '</div>' + '<p>' + longtermTLLocation.description + '</p>' 
-//        + '<div class="phocalstream-link"><a class="center" target="_blank" href="' + phocalstreamBaseURL + longtermTLLocation.phocalstreamID + '">' + phocalstreamAccessTag + '</a></div>'
+        html: '<h2 class="center">' + longtermTLLocation.location + '</h2>' +
+            '<div class="timelapse-video-container">' + iFrameContentForInfoBox + '</div>' +
+            '<p>' + longtermTLLocation.description + '</p>'
     });
 
     //add to whole basin bounds
@@ -204,10 +212,8 @@ function createTLMarker(longtermTLLocation, map) {
     };
 
     google.maps.event.addListener(marker, "click", function (e) {
-        ib.close();
         ib.setOptions(myOptions);
         ib.open(map, marker);
-        map.setCenter(marker.getPosition());
     });
 
     return marker;
@@ -224,9 +230,13 @@ function createStoryMarker(storyLocation, map) {
         icon: book_image,
         title: storyLocation.title,
         category: storyLocation.themes,
-        html: '<h2>' + storyLocation.title + '</h2>' + '<p>' + storyLocation.description + '</p>' + '<a target="_blank" href=' + storyLocation.link + '>Read the Story</a>'
+        html: '<h2>' + storyLocation.title + '</h2>' +
+            '<a target="_blank" href=' + storyLocation.link + '><img src=' + storyLocation.picSource + ' /></a>' +
+            '<p>' + storyLocation.description + '</p>' +
+            '<a class="story-link" target="_blank" href=' + storyLocation.link + '>Read the Story</a>'
     });
 
+    oms.addMarker(marker);
     storyMarkers.push(marker);
 
     var boxText = document.createElement('div');
@@ -241,7 +251,7 @@ function createStoryMarker(storyLocation, map) {
         zIndex: null,
         closeBoxMargin: "15px;",
         closeBoxURL: "images/app/close.png",
-        infoBoxClearance: new google.maps.Size(150, 150),
+        infoBoxClearance: new google.maps.Size(100, 100),
         isHidden: false,
         alignBottom: true,
         pane: "floatPane",
@@ -249,7 +259,6 @@ function createStoryMarker(storyLocation, map) {
     };
 
     google.maps.event.addListener(marker, "click", function (e) {
-        ib.close();
         ib.setOptions(myOptions);
         ib.open(map, this);
     });
@@ -268,9 +277,12 @@ function createStillMarker(stillLocation, map) {
         icon: still_image,
         title: stillLocation.location,
         category: stillLocation.themes,
-        html: '<h2>' + stillLocation.location + '</h2>' + '<img class="unveil" src=' + stillLocation.picSource + ' /> <p>' + stillLocation.description + '</p>'
+        html: '<h2>' + stillLocation.location + '</h2>' +
+        '<img src=' + stillLocation.picSource + ' />' +
+        '<p>' + stillLocation.description + '</p>'
     });
 
+    oms.addMarker(marker);
     stillMarkers.push(marker);
 
     var boxText = document.createElement('div');
@@ -293,15 +305,8 @@ function createStillMarker(stillLocation, map) {
     };
 
     google.maps.event.addListener(marker, "click", function (e) {
-        ib.close();
         ib.setOptions(myOptions);
         ib.open(map, this);
-
-        var t = ib.getContent().getElementsByClassName('unveil')[0];
-        // console.log( t );
-        var jt = $(t);
-        // console.log( jt );
-        jt.trigger('unveil');
     });
 
     return marker;
@@ -317,11 +322,12 @@ function fadeOutAndRemove($thing){
 
 function introPrompt() {
     $intro.animate({'top':'45%'},500, 'swing');
-    $('<div/>').attr({'id' : 'overlay'}).appendTo('body').fadeIn(1000);
+    $('#overlay').fadeIn(1000);
 
     //on close
     $('#intro-close').click(function(){
-        fadeOutAndRemove($('#overlay'));
+        // fadeOutAndRemove($('#overlay'));
+        $('#overlay').fadeOut(1000);
         $intro.animate({'top':'140%'},500, 'swing').fadeOut(500);
 
         setTimeout(function() {$intro.remove();}, 1000);
@@ -478,8 +484,8 @@ function initialize() {
 
     var spiderfierOptions = {
         keepSpiderfied: true,
-        legWeight: 1
-        // nearbyDistance: 50
+        legWeight: 1,
+        nearbyDistance: 40
     };
     oms = new OverlappingMarkerSpiderfier(map, spiderfierOptions);
 
