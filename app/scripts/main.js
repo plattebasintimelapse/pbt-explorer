@@ -278,8 +278,11 @@ function createStillMarker(stillLocation, map) {
         title: stillLocation.location,
         category: stillLocation.themes,
         html: '<h2>' + stillLocation.location + '</h2>' +
+        '<div class="row"><div class="col col-xs-7">' +
         '<img src=' + stillLocation.picSource + ' />' +
-        '<p>' + stillLocation.description + '</p>'
+        '</div><div class="col col-xs-5">' +
+        '<p>' + stillLocation.description + '</p>' +
+        '</div>'
     });
 
     oms.addMarker(marker);

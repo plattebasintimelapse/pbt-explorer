@@ -13,10 +13,9 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
 
-        // Project settings
         config: config,
+        aws: grunt.file.readJSON("secrets.json"),
 
-        // Watches files for changes and runs tasks based on the changed files
         watch: {
             bower: {
                 files: ['bower.json'],
@@ -129,7 +128,6 @@ module.exports = function (grunt) {
             ]
         },
 
-        // Mocha testing framework configuration options
         mocha: {
             all: {
                 options: {
@@ -166,7 +164,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Add vendor prefixed styles
         autoprefixer: {
             options: {
                 browsers: ['last 1 version']
@@ -181,7 +178,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Automatically inject Bower components into the HTML file
         bowerInstall: {
             app: {
                 src: ['<%= config.app %>/index.html', '<%= config.app_about %>/index.html'],
@@ -218,7 +214,6 @@ module.exports = function (grunt) {
             html: '<%= config.app %>/index.html'
         },
 
-        // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
             options: {
                 assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
@@ -227,7 +222,6 @@ module.exports = function (grunt) {
             css: ['<%= config.dist %>/styles/{,*/}*.scss']
         },
 
-        // The following *-min tasks produce minified files in the dist folder
         imagemin: {
             dist: {
                 files: [{
@@ -270,32 +264,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
-        // By default, your `index.html`'s <!-- Usemin block --> will take care of
-        // minification. These next options are pre-configured if you do not wish
-        // to use the Usemin blocks.
-        // cssmin: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/styles/main.css': [
-        //                 '.tmp/styles/{,*/}*.css',
-        //                 '<%= config.app %>/styles/{,*/}*.css'
-        //             ]
-        //         }
-        //     }
-        // },
-        // uglify: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/scripts/scripts.js': [
-        //                 '<%= config.dist %>/scripts/scripts.js'
-        //             ]
-        //         }
-        //     }
-        // },
-        // concat: {
-        //     dist: {}
-        // },
 
         // Copies remaining files to places other tasks can use
         copy: {
@@ -361,6 +329,22 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+        s3: {
+            options: {
+                accessKeyId: "<%= aws.accessKeyId %>",
+                secretAccessKey: "<%= aws.secretAccessKey %>",
+                bucket: "projects.plattebasintimelapse.com"
+            },
+            build: {
+                cwd: "dist/",
+                src: "**"
+            },
+            move: {
+                cwd: "dist/",
+                src: "**",
+                dest: "test/"
+            }
         }
     });
 
@@ -412,6 +396,10 @@ module.exports = function (grunt) {
         'rev',
         'usemin',
         'htmlmin'
+    ]);
+
+    grunt.registerTask('deploy', [
+        's3'
     ]);
 
     grunt.registerTask('default', [

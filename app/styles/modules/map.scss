@@ -283,6 +283,12 @@
 
 .still-info-window-inner {
     width: 400px;
+    .col:first-child {
+        padding-right: 4px;
+    }
+    .col:last-child {
+        padding-left: 4px;
+    }
 }
 
 .story-info-window-inner {
