@@ -1,0 +1,2316 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'grunt-s3',
+1 verbose cli   '--save-dev' ]
+2 info using npm@2.0.0-beta.3
+3 info using node@v0.10.28
+4 warn package.json pbt-explorer@0.0.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'grunt-s3', null ]
+7 verbose cache add spec="grunt-s3" args=["grunt-s3",null]
+8 verbose parsed spec { raw: 'grunt-s3',
+8 verbose parsed spec   scope: null,
+8 verbose parsed spec   name: 'grunt-s3',
+8 verbose parsed spec   rawSpec: '',
+8 verbose parsed spec   spec: '*',
+8 verbose parsed spec   type: 'range' }
+9 verbose parsed spec { raw: 'grunt-s3',
+9 verbose parsed spec   scope: null,
+9 verbose parsed spec   name: 'grunt-s3',
+9 verbose parsed spec   rawSpec: '',
+9 verbose parsed spec   spec: '*',
+9 verbose parsed spec   type: 'range' }
+10 verbose addNamed [ 'grunt-s3', '*' ]
+11 verbose addNamed [ null, '*' ]
+12 silly lockFile 6bafcd97-grunt-s3 grunt-s3@*
+13 verbose lock grunt-s3@* /Users/sspeicher/.npm/6bafcd97-grunt-s3.lock
+14 silly addNameRange { name: 'grunt-s3', range: '*', hasData: false }
+15 verbose mapToRegistry name grunt-s3
+16 verbose mapToRegistry uri https://registry.npmjs.org/grunt-s3
+17 verbose request on initialization, where is /grunt-s3
+18 verbose request after pass 1, where is /grunt-s3
+19 verbose request url raw /grunt-s3
+20 verbose request resolving registry [ 'https://registry.npmjs.org/', './grunt-s3' ]
+21 verbose request after pass 2, where is https://registry.npmjs.org/grunt-s3
+22 verbose request no auth needed
+23 info retrier registry request attempt 1 at 09:51:33
+24 verbose request id e7c6475c2b90f20d
+25 verbose etag "EPPFD6U3DII90MAQ11FVZ6Z3F"
+26 http request GET https://registry.npmjs.org/grunt-s3
+27 http 304 https://registry.npmjs.org/grunt-s3
+28 silly registry.get cb [ 304,
+28 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+28 silly registry.get     server: 'Apache',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:23:13 GMT',
+28 silly registry.get     'cache-control': 'max-age=60',
+28 silly registry.get     etag: '"EPPFD6U3DII90MAQ11FVZ6Z3F"',
+28 silly registry.get     age: '33',
+28 silly registry.get     'x-served-by': 'cache-ord1727-ORD',
+28 silly registry.get     'x-cache': 'HIT',
+28 silly registry.get     'x-cache-hits': '2',
+28 silly registry.get     'x-timer': 'S1415721093.168161,VS0,VE0',
+28 silly registry.get     vary: 'Accept',
+28 silly registry.get     'content-length': '0',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 verbose etag https://registry.npmjs.org/grunt-s3 from cache
+30 silly addNameRange number 2 { name: 'grunt-s3', range: '*', hasData: true }
+31 silly addNameRange versions [ 'grunt-s3',
+31 silly addNameRange   [ '0.0.1',
+31 silly addNameRange     '0.0.2',
+31 silly addNameRange     '0.0.3',
+31 silly addNameRange     '0.0.4',
+31 silly addNameRange     '0.0.5',
+31 silly addNameRange     '0.0.6',
+31 silly addNameRange     '0.0.7',
+31 silly addNameRange     '0.0.8',
+31 silly addNameRange     '0.0.9',
+31 silly addNameRange     '0.1.0',
+31 silly addNameRange     '0.2.0-alpha',
+31 silly addNameRange     '0.2.0-alpha.1',
+31 silly addNameRange     '0.2.0-alpha.2',
+31 silly addNameRange     '0.2.0-alpha.3' ] ]
+32 verbose addNamed [ 'grunt-s3', '0.2.0-alpha.3' ]
+33 verbose addNamed [ '0.2.0-alpha.3', '0.2.0-alpha.3' ]
+34 silly lockFile 822fc1ce-grunt-s3-0-2-0-alpha-3 grunt-s3@0.2.0-alpha.3
+35 verbose lock grunt-s3@0.2.0-alpha.3 /Users/sspeicher/.npm/822fc1ce-grunt-s3-0-2-0-alpha-3.lock
+36 silly lockFile 822fc1ce-grunt-s3-0-2-0-alpha-3 grunt-s3@0.2.0-alpha.3
+37 silly lockFile 822fc1ce-grunt-s3-0-2-0-alpha-3 grunt-s3@0.2.0-alpha.3
+38 silly lockFile 6bafcd97-grunt-s3 grunt-s3@*
+39 silly lockFile 6bafcd97-grunt-s3 grunt-s3@*
+40 silly resolved [ { name: 'grunt-s3',
+40 silly resolved     description: 'A grunt task to automate moving files to/from Amazon S3.',
+40 silly resolved     version: '0.2.0-alpha.3',
+40 silly resolved     author:
+40 silly resolved      { name: 'Aaron Forsander',
+40 silly resolved        url: 'https://github.com/pifantastic' },
+40 silly resolved     homepage: 'https://github.com/pifantastic/grunt-s3',
+40 silly resolved     repository:
+40 silly resolved      { type: 'git',
+40 silly resolved        url: 'git://github.com/pifantastic/grunt-s3.git' },
+40 silly resolved     bugs: { url: 'https://github.com/pifantastic/grunt-s3/issues' },
+40 silly resolved     licenses: [ [Object] ],
+40 silly resolved     main: 'tasks/s3',
+40 silly resolved     bin: { 'grunt-s3': 'bin/grunt-s3' },
+40 silly resolved     scripts: { test: 'grunt test', fakes3: 'fakes3 -r s3 -p 1337' },
+40 silly resolved     engines: { node: '>= 0.8.0' },
+40 silly resolved     keywords: [ 'gruntplugin', 'amazon', 's3' ],
+40 silly resolved     dependencies:
+40 silly resolved      { grunt: '0.4.x',
+40 silly resolved        'underscore.deferred': '~0.1.4',
+40 silly resolved        knox: '0.8.x',
+40 silly resolved        mime: '~1.2.5',
+40 silly resolved        temporary: '0.0.5' },
+40 silly resolved     devDependencies:
+40 silly resolved      { nodeunit: '~0.7.4',
+40 silly resolved        'grunt-contrib-jshint': '~0.1.0',
+40 silly resolved        'grunt-contrib-nodeunit': '~0.1.1',
+40 silly resolved        libyaml: '~0.2.1',
+40 silly resolved        'grunt-contrib-clean': '~0.5.0',
+40 silly resolved        rimraf: '~2.2.2' },
+40 silly resolved     readme: '[![Build Status](https://secure.travis-ci.org/pifantastic/grunt-s3.png?branch=master)](https://travis-ci.org/pifantastic/grunt-s3)\n\n*NOTE*: This is the README for `grunt-s3` `v0.2.0-alpha`. For `v0.1.0`, [go here](https://github.com/pifantastic/grunt-s3/blob/0.1.X/README.md).\n\n# Grunt 0.4.x + Amazon S3\n\n## About\n\nAmazon S3 is a great tool for storing/serving data. Thus, there is a chance it is part of your build\nprocess. This task can help you automate uploading/downloading files to/from Amazon S3. All file\ntransfers are verified and will produce errors if incomplete.\n\n## Dependencies\n\n* knox\n* mime\n* async\n* underscore\n* underscore.deferred\n\n## Installation\n\n```sh\nnpm install grunt-s3 --save-dev\n```\n\nThen add this line to your project\'s `Gruntfile.js`:\n\n```javascript\ngrunt.loadNpmTasks(\'grunt-s3\');\n```\n\n## Options\n\nThe grunt-s3 task is now a [multi-task](https://github.com/gruntjs/grunt/wiki/Creating-tasks); meaning you can specify different targets for this task to run as.\n\nA quick reference of options\n\n* **key** - (*string*) An Amazon S3 credentials key\n* **secret** - (*string*) An Amazon S3 credentials secret\n* **bucket** - (*string*) An Amazon S3 bucket\n* **region** - (*string*) An Amazon AWS region (see http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region)\n* **maxOperations** - (*number*) max number of concurrent transfers - if not specified or set to 0, will be unlimited.\n* **encodePaths** - (*boolean*) if set to true, will encode the uris of destinations to prevent 505 errors. Default: false\n* **headers** - (*object*) An object containing any headers you would like to send along with the\ntransfers i.e. `{ \'X-Awesomeness\': \'Out-Of-This-World\', \'X-Stuff\': \'And Things!\' }`\n* **access** - (*string*) A specific Amazon S3 ACL. Available values: `private`, `public-read`, `\npublic-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`\n* **gzip** - (*boolean*) If true, uploads will be gzip-encoded.\n* **gzipExclude** - (*array*) Define extensions of files you don\'t want to run gzip on, an array of strings ie: `[\'.jpg\', \'.jpeg\', \'.png\']`.\n* **upload** - (*array*) An array of objects, each object representing a file upload and containing a `src`\nand a `dest`. Any of the above values may also be overriden. Passing `rel:DIR` will cause the filesnames to be\nexpanded so that wild cards are not passed to the source name.\n* **download** - (*array*) An array of objects, each object representing a file download and containing a\n`src` and a `dest`. Any of the above values may also be overriden.\n* **del** - (*array*) An array of objects, each object containing a `src` to delete from s3. Any of\nthe above values may also be overriden.\n* **sync** - (*array*) An array of ojects, each oject containing a `src` and `dest`. Default behavior is to\nonly upload new files (that don\'t exist). Adding `verify:true` forces an MD5 hash and Modified time check prior\nto overwriting the server files.\n* **debug** - (*boolean*) If true, no transfers with S3 will occur, will print all actions for review by user\n\n### Example\n\nTemplate strings in grunt will allow you to easily include values from other files. The below example\ndemonstrates loading aws settings from another file, Where grunt-aws.json is just a json key:value file like package.json. (Special thanks to @nanek)\n\nThis is **important because you should never check in your S3 credentials to github! Load them from an external file that is outside of the repo.**\n\n```javascript\ngrunt.initConfig({\n  aws: grunt.file.readJSON(\'~/grunt-aws.json\'),\n  s3: {\n    options: {\n      key: \'<%= aws.key %>\',\n      secret: \'<%= aws.secret %>\',\n      bucket: \'<%= aws.bucket %>\',\n      access: \'public-read\',\n      headers: {\n        // Two Year cache policy (1000 * 60 * 60 * 24 * 730)\n        "Cache-Control": "max-age=630720000, public",\n        "Expires": new Date(Date.now() + 63072000000).toUTCString()\n      }\n    },\n    dev: {\n      // These options override the defaults\n      options: {\n        encodePaths: true,\n        maxOperations: 20\n      },\n      // Files to be uploaded.\n      upload: [\n        {\n          src: \'important_document.txt\',\n          dest: \'documents/important.txt\',\n          options: { gzip: true }\n        },\n        {\n          src: \'passwords.txt\',\n          dest: \'documents/ignore.txt\',\n\n          // These values will override the above settings.\n          bucket: \'some-specific-bucket\',\n          access: \'authenticated-read\'\n        },\n        {\n          // Wildcards are valid *for uploads only* until I figure out a good implementation\n          // for downloads.\n          src: \'documents/*.txt\',\n\n          // But if you use wildcards, make sure your destination is a directory.\n          dest: \'documents/\'\n        }\n      ],\n\n      // Files to be downloaded.\n      download: [\n        {\n          src: \'documents/important.txt\',\n          dest: \'important_document_download.txt\'\n        },\n        {\n          src: \'garbage/IGNORE.txt\',\n          dest: \'passwords_download.txt\'\n        }\n      ],\n\n      del: [\n        {\n          src: \'documents/launch_codes.txt\'\n        },\n        {\n          src: \'documents/backup_plan.txt\'\n        }\n      ],\n\n      sync: [\n        {\n          // only upload this document if it does not exist already\n          src: \'important_document.txt\',\n          dest: \'documents/important.txt\',\n          options: { gzip: true }\n        },\n        {\n          // make sure this document is newer than the one on S3 and replace it\n          verify: true,\n          src: \'passwords.txt\',\n          dest: \'documents/ignore.txt\'\n        },\n        {\n          src: path.join(variable.to.release, "build/cdn/js/**/*.js"),\n          dest: "jsgz",\n          // make sure the wildcard paths are fully expanded in the dest\n          rel: path.join(variable.to.release, "build/cdn/js"),\n          options: { gzip: true }\n        }\n      ]\n    }\n\n  }\n\n});\n```\n\nRunning `grunt s3` using the above config produces the following output:\n\n    $ grunt s3\n    Running "s3" task\n    >> ↙ Downloaded: documents/important.txt (e704f1f4bec2d17f09a0e08fecc6cada)\n    >> ↙ Downloaded: garbage/IGNORE.txt (04f7cb4c893b2700e4fa8787769508e8)\n    >> ↗ Uploaded: documents/document1.txt (04f7cb4c893b2700e4fa8787769508e8)\n    >> ↗ Uploaded: passwords.txt (04f7cb4c893b2700e4fa8787769508e8)\n    >> ↗ Uploaded: important_document.txt (e704f1f4bec2d17f09a0e08fecc6cada)\n    >> ↗ Uploaded: documents/document2.txt (04f7cb4c893b2700e4fa8787769508e8)\n    >> ✗ Deleted: documents/launch_codes.txt\n    >> ✗ Deleted: documents/backup_plan.txt\n    Done, without errors.\n\n### Alternative ways of including your s3 configuration\n\n#### Environment variables\n\nIf you do not pass in a **key** and **secret** with your config, `grunt-s3` will fallback to the following\nenvironment variables:\n\n* `AWS_ACCESS_KEY_ID`\n* `AWS_SECRET_ACCESS_KEY`\n\n## Helpers\n\nHelpers have been removed from Grunt 0.4 to access these methods directly. You can now require the s3 library files directly like so:\n\n`var s3 = require(\'grunt-s3\').helpers;`\n\nMake sure you explicitly pass the options into the method. If you\'ve used `grunt.initConfig()` you can use `grunt.config.get(\'s3\')` to access them.\n\n### s3.upload(src, dest, options)\n\nUpload a file to s3. Returns a Promises/J-style Deferred object.\n\n**src** (required) - The path to the file to be uploaded. Accepts wildcards, i.e. `files/*.txt`\n\n**dest** (required) - The path on s3 where the file will be uploaded, relative to the bucket. If you use a\nwildcard for **src**, this should be a directory.\n\n**options** (optional) - An object containing any of the following values. These values override\nany values specified in the main config.\n\n* **key** - An Amazon S3 credentials key\n* **secret** - An Amazon S3 credentials secret\n* **bucket** - An Amazon S3 bucket\n* **headers** - An object containing any headers you would like to send along with the upload.\n* **access** - A specific Amazon S3 ACL. Available values: `private`, `public-read`, `public-read-write`,\n`authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`\n* **gzip** - (*boolean*) If true, uploads will be gzip-encoded.\n\n### s3.download(src, dest, options)\nDownload a file from s3. Returns a Promises/J-style Deferred object.\n\n**src** (required) - The path on S3 from which the file will be downloaded, relative to the bucket. **Does not accept wildcards**\n\n**dest** (required) - The local path where the file will be saved.\n\n**options** (optional) - An object containing any of the following values. These values override\nany values specified in the main config.\n\n* **key** - An Amazon S3 credentials key\n* **secret** - An Amazon S3 credentials secret\n* **bucket** - An Amazon S3 bucket\n* **headers** - An object containing any headers you would like to send along with the upload.\n\n### s3.delete(src, options)\n\nDelete a file from s3. Returns a Promises/J-style Deferred object.\n\n**src** (required) - The path on S3 of the file to delete, relative to the bucket. **Does not accept wildcards**\n\n**options** (optional) - An object containing any of the following values. These values override\nany values specified in the main config.\n\n* **key** - An Amazon S3 credentials key\n* **secret** - An Amazon S3 credentials secret\n* **bucket** - An Amazon S3 bucket\n* **headers** - An object containing any headers you would like to send along with the upload.\n\n### Examples\n\n```javascript\nvar upload = s3.upload(\'dist/my-app-1.0.0.tar.gz\', \'archive/my-app-1.0.0.tar.gz\');\n\nupload\n  .done(function(msg) {\n    console.log(msg);\n  })\n  .fail(function(err) {\n    console.log(err);\n  })\n  .always(function() {\n    console.log(\'dance!\');\n  });\n\nvar download = s3.download(\'dist/my-app-0.9.9.tar.gz\', \'local/my-app-0.9.9.tar.gz\');\n\ndownload.done(function() {\n  s3.delete(\'dist/my-app-0.9.9.tar.gz\');\n});\n\n```\n\n## Changelog\n\n#### v0.1.0\n\n* Update to be compatible with `grunt` version `0.4.x`.\n\n#### v0.0.9\n\n* Bump version of `knox` to `0.4.1`.\n\n#### v0.0.6\n\n* Bump version of `underscore.deferred` to `0.1.4`. Version `0.1.3` would fail to install sometimes\ndue to there being two versions of the module with different capitalizations in npm.\n',
+40 silly resolved     readmeFilename: 'README.md',
+40 silly resolved     _id: 'grunt-s3@0.2.0-alpha.3',
+40 silly resolved     dist:
+40 silly resolved      { shasum: 'e3329d2caa6ed93c4dbc0397e257caa68ae9ee7c',
+40 silly resolved        tarball: 'http://registry.npmjs.org/grunt-s3/-/grunt-s3-0.2.0-alpha.3.tgz' },
+40 silly resolved     _from: 'grunt-s3@*',
+40 silly resolved     _npmVersion: '1.2.30',
+40 silly resolved     _npmUser: { name: 'pifantastic', email: 'aaron.forsander@gmail.com' },
+40 silly resolved     maintainers: [ [Object] ],
+40 silly resolved     directories: {},
+40 silly resolved     _shasum: 'e3329d2caa6ed93c4dbc0397e257caa68ae9ee7c',
+40 silly resolved     _resolved: 'https://registry.npmjs.org/grunt-s3/-/grunt-s3-0.2.0-alpha.3.tgz' } ]
+41 info install grunt-s3@0.2.0-alpha.3 into /Users/sspeicher/Github/pbt-explorer
+42 info installOne grunt-s3@0.2.0-alpha.3
+43 verbose node_modules/grunt-s3 unbuild
+44 info preuninstall grunt-s3@0.2.0-alpha.3
+45 info uninstall grunt-s3@0.2.0-alpha.3
+46 verbose true,/Users/sspeicher/Github/pbt-explorer/node_modules,/Users/sspeicher/Github/pbt-explorer/node_modules unbuild grunt-s3@0.2.0-alpha.3
+47 verbose /Users/sspeicher/Github/pbt-explorer/node_modules/.bin,[object Object] binRoot
+48 verbose gentlyRm verifying that /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3 is managed by npm
+49 silly cacheAndTest /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3 is inside /Users/sspeicher/Github/pbt-explorer/node_modules
+50 silly gentlyRm /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3 is managed by npm
+51 silly gentlyRm /Users/sspeicher/Github/pbt-explorer/node_modules/.bin/grunt-s3 is not under /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+52 silly gentlyRm checking to see if /Users/sspeicher/Github/pbt-explorer/node_modules/.bin/grunt-s3 is a link
+53 silly gentlyRm /Users/sspeicher/Github/pbt-explorer/node_modules/.bin/grunt-s3 is a link
+54 silly gentlyRm /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/bin/grunt-s3 inside /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+55 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/.bin/grunt-s3
+56 silly gentlyRm removing /Users/sspeicher/Github/pbt-explorer/node_modules/.bin/grunt-s3
+57 silly gentlyRm quitting because other entries in /Users/sspeicher/Github/pbt-explorer/node_modules/.bin
+58 info postuninstall grunt-s3@0.2.0-alpha.3
+59 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+60 silly gentlyRm purging /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+61 silly gentlyRm quitting because other entries in /Users/sspeicher/Github/pbt-explorer/node_modules
+62 verbose tar unpack /Users/sspeicher/.npm/grunt-s3/0.2.0-alpha.3/package.tgz
+63 silly lockFile 2982c5a9-t-explorer-node-modules-grunt-s3 tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+64 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3 /Users/sspeicher/.npm/2982c5a9-t-explorer-node-modules-grunt-s3.lock
+65 silly lockFile b65d2605-unt-s3-0-2-0-alpha-3-package-tgz tar:///Users/sspeicher/.npm/grunt-s3/0.2.0-alpha.3/package.tgz
+66 verbose lock tar:///Users/sspeicher/.npm/grunt-s3/0.2.0-alpha.3/package.tgz /Users/sspeicher/.npm/b65d2605-unt-s3-0-2-0-alpha-3-package-tgz.lock
+67 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+68 silly gunzTarPerm modes [ '755', '644' ]
+69 silly gunzTarPerm extractEntry package.json
+70 silly gunzTarPerm extractEntry .npmignore
+71 silly gunzTarPerm extractEntry README.md
+72 silly gunzTarPerm extractEntry LICENSE
+73 silly gunzTarPerm extractEntry Gruntfile.js
+74 silly gunzTarPerm extractEntry .travis.yml
+75 silly gunzTarPerm extractEntry bin/grunt-s3
+76 silly gunzTarPerm extractEntry tasks/s3.js
+77 silly gunzTarPerm extractEntry tasks/lib/S3Task.js
+78 silly gunzTarPerm extractEntry tasks/lib/common.js
+79 silly gunzTarPerm extractEntry tasks/lib/s3.js
+80 silly gunzTarPerm extractEntry test/common.js
+81 silly gunzTarPerm extractEntry test/delete.js
+82 silly gunzTarPerm extractEntry test/download.js
+83 silly gunzTarPerm extractEntry test/s3Task.js
+84 silly gunzTarPerm extractEntry test/sync.js
+85 silly gunzTarPerm extractEntry test/upload.js
+86 silly gunzTarPerm extractEntry test/files/a.txt
+87 silly gunzTarPerm extractEntry test/files/b.txt
+88 silly gunzTarPerm extractEntry test/files/c.txt
+89 silly gunzTarPerm extractEntry test/files/subdir/c.txt
+90 silly gunzTarPerm extractEntry test/files/subdir/d.txt
+91 silly lockFile 2982c5a9-t-explorer-node-modules-grunt-s3 tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+92 silly lockFile 2982c5a9-t-explorer-node-modules-grunt-s3 tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+93 silly lockFile b65d2605-unt-s3-0-2-0-alpha-3-package-tgz tar:///Users/sspeicher/.npm/grunt-s3/0.2.0-alpha.3/package.tgz
+94 silly lockFile b65d2605-unt-s3-0-2-0-alpha-3-package-tgz tar:///Users/sspeicher/.npm/grunt-s3/0.2.0-alpha.3/package.tgz
+95 info preinstall grunt-s3@0.2.0-alpha.3
+96 verbose readDependencies using package.json deps
+97 verbose readDependencies using package.json deps
+98 verbose cache add [ 'underscore.deferred@~0.1.4', null ]
+99 verbose cache add spec="underscore.deferred@~0.1.4" args=["underscore.deferred@~0.1.4",null]
+100 verbose parsed spec { raw: 'underscore.deferred@~0.1.4',
+100 verbose parsed spec   scope: null,
+100 verbose parsed spec   name: 'underscore.deferred',
+100 verbose parsed spec   rawSpec: '~0.1.4',
+100 verbose parsed spec   spec: '>=0.1.4-0 <0.2.0-0',
+100 verbose parsed spec   type: 'range' }
+101 verbose cache add [ 'knox@0.8.x', null ]
+102 verbose cache add spec="knox@0.8.x" args=["knox@0.8.x",null]
+103 verbose parsed spec { raw: 'knox@0.8.x',
+103 verbose parsed spec   scope: null,
+103 verbose parsed spec   name: 'knox',
+103 verbose parsed spec   rawSpec: '0.8.x',
+103 verbose parsed spec   spec: '>=0.8.0-0 <0.9.0-0',
+103 verbose parsed spec   type: 'range' }
+104 verbose parsed spec { raw: 'underscore.deferred@~0.1.4',
+104 verbose parsed spec   scope: null,
+104 verbose parsed spec   name: 'underscore.deferred',
+104 verbose parsed spec   rawSpec: '~0.1.4',
+104 verbose parsed spec   spec: '>=0.1.4-0 <0.2.0-0',
+104 verbose parsed spec   type: 'range' }
+105 verbose addNamed [ 'underscore.deferred', '>=0.1.4-0 <0.2.0-0' ]
+106 verbose addNamed [ null, '>=0.1.4-0 <0.2.0-0' ]
+107 silly lockFile 5c868358-erscore-deferred-0-1-4-0-0-2-0-0 underscore.deferred@>=0.1.4-0 <0.2.0-0
+108 verbose lock underscore.deferred@>=0.1.4-0 <0.2.0-0 /Users/sspeicher/.npm/5c868358-erscore-deferred-0-1-4-0-0-2-0-0.lock
+109 verbose cache add [ 'mime@~1.2.5', null ]
+110 verbose cache add spec="mime@~1.2.5" args=["mime@~1.2.5",null]
+111 verbose parsed spec { raw: 'mime@~1.2.5',
+111 verbose parsed spec   scope: null,
+111 verbose parsed spec   name: 'mime',
+111 verbose parsed spec   rawSpec: '~1.2.5',
+111 verbose parsed spec   spec: '>=1.2.5-0 <1.3.0-0',
+111 verbose parsed spec   type: 'range' }
+112 verbose parsed spec { raw: 'knox@0.8.x',
+112 verbose parsed spec   scope: null,
+112 verbose parsed spec   name: 'knox',
+112 verbose parsed spec   rawSpec: '0.8.x',
+112 verbose parsed spec   spec: '>=0.8.0-0 <0.9.0-0',
+112 verbose parsed spec   type: 'range' }
+113 verbose addNamed [ 'knox', '>=0.8.0-0 <0.9.0-0' ]
+114 verbose addNamed [ null, '>=0.8.0-0 <0.9.0-0' ]
+115 silly lockFile d22e5a06-knox-0-8-0-0-0-9-0-0 knox@>=0.8.0-0 <0.9.0-0
+116 verbose lock knox@>=0.8.0-0 <0.9.0-0 /Users/sspeicher/.npm/d22e5a06-knox-0-8-0-0-0-9-0-0.lock
+117 verbose parsed spec { raw: 'mime@~1.2.5',
+117 verbose parsed spec   scope: null,
+117 verbose parsed spec   name: 'mime',
+117 verbose parsed spec   rawSpec: '~1.2.5',
+117 verbose parsed spec   spec: '>=1.2.5-0 <1.3.0-0',
+117 verbose parsed spec   type: 'range' }
+118 verbose addNamed [ 'mime', '>=1.2.5-0 <1.3.0-0' ]
+119 verbose addNamed [ null, '>=1.2.5-0 <1.3.0-0' ]
+120 silly lockFile 9aff7c64-mime-1-2-5-0-1-3-0-0 mime@>=1.2.5-0 <1.3.0-0
+121 verbose lock mime@>=1.2.5-0 <1.3.0-0 /Users/sspeicher/.npm/9aff7c64-mime-1-2-5-0-1-3-0-0.lock
+122 silly addNameRange { name: 'underscore.deferred',
+122 silly addNameRange   range: '>=0.1.4-0 <0.2.0-0',
+122 silly addNameRange   hasData: false }
+123 verbose mapToRegistry name underscore.deferred
+124 verbose mapToRegistry uri https://registry.npmjs.org/underscore.deferred
+125 verbose cache add [ 'temporary@0.0.5', null ]
+126 verbose cache add spec="temporary@0.0.5" args=["temporary@0.0.5",null]
+127 verbose parsed spec { raw: 'temporary@0.0.5',
+127 verbose parsed spec   scope: null,
+127 verbose parsed spec   name: 'temporary',
+127 verbose parsed spec   rawSpec: '0.0.5',
+127 verbose parsed spec   spec: '0.0.5',
+127 verbose parsed spec   type: 'version' }
+128 silly addNameRange { name: 'knox', range: '>=0.8.0-0 <0.9.0-0', hasData: false }
+129 verbose mapToRegistry name knox
+130 verbose mapToRegistry uri https://registry.npmjs.org/knox
+131 verbose parsed spec { raw: 'temporary@0.0.5',
+131 verbose parsed spec   scope: null,
+131 verbose parsed spec   name: 'temporary',
+131 verbose parsed spec   rawSpec: '0.0.5',
+131 verbose parsed spec   spec: '0.0.5',
+131 verbose parsed spec   type: 'version' }
+132 verbose addNamed [ 'temporary', '0.0.5' ]
+133 verbose addNamed [ '0.0.5', '0.0.5' ]
+134 silly lockFile 18d3196c-temporary-0-0-5 temporary@0.0.5
+135 verbose lock temporary@0.0.5 /Users/sspeicher/.npm/18d3196c-temporary-0-0-5.lock
+136 silly addNameRange { name: 'mime', range: '>=1.2.5-0 <1.3.0-0', hasData: false }
+137 verbose mapToRegistry name mime
+138 verbose mapToRegistry uri https://registry.npmjs.org/mime
+139 verbose mapToRegistry name temporary
+140 verbose mapToRegistry uri https://registry.npmjs.org/temporary
+141 verbose request on initialization, where is /underscore.deferred
+142 verbose request after pass 1, where is /underscore.deferred
+143 verbose request url raw /underscore.deferred
+144 verbose request resolving registry [ 'https://registry.npmjs.org/', './underscore.deferred' ]
+145 verbose request after pass 2, where is https://registry.npmjs.org/underscore.deferred
+146 verbose request no auth needed
+147 info retrier registry request attempt 1 at 09:51:33
+148 verbose etag "1JRDCM315XXLTBTHQW2UVV54Q"
+149 http request GET https://registry.npmjs.org/underscore.deferred
+150 verbose request on initialization, where is /knox
+151 verbose request after pass 1, where is /knox
+152 verbose request url raw /knox
+153 verbose request resolving registry [ 'https://registry.npmjs.org/', './knox' ]
+154 verbose request after pass 2, where is https://registry.npmjs.org/knox
+155 verbose request no auth needed
+156 info retrier registry request attempt 1 at 09:51:33
+157 verbose etag "4Z03N9EGRQLTT8WO6M61PWMML"
+158 http request GET https://registry.npmjs.org/knox
+159 verbose request on initialization, where is /mime
+160 verbose request after pass 1, where is /mime
+161 verbose request url raw /mime
+162 verbose request resolving registry [ 'https://registry.npmjs.org/', './mime' ]
+163 verbose request after pass 2, where is https://registry.npmjs.org/mime
+164 verbose request no auth needed
+165 info retrier registry request attempt 1 at 09:51:33
+166 verbose etag "9SQMRID0SFDWKUINX2BZ7BN44"
+167 http request GET https://registry.npmjs.org/mime
+168 verbose request on initialization, where is /temporary
+169 verbose request after pass 1, where is /temporary
+170 verbose request url raw /temporary
+171 verbose request resolving registry [ 'https://registry.npmjs.org/', './temporary' ]
+172 verbose request after pass 2, where is https://registry.npmjs.org/temporary
+173 verbose request no auth needed
+174 info retrier registry request attempt 1 at 09:51:33
+175 verbose etag "CLT2LAFV9N2SHLHW0MZZYILZY"
+176 http request GET https://registry.npmjs.org/temporary
+177 http 304 https://registry.npmjs.org/knox
+178 silly registry.get cb [ 304,
+178 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+178 silly registry.get     server: 'Apache',
+178 silly registry.get     via: '1.1 varnish',
+178 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:00 GMT',
+178 silly registry.get     'cache-control': 'max-age=60',
+178 silly registry.get     etag: '"4Z03N9EGRQLTT8WO6M61PWMML"',
+178 silly registry.get     age: '33',
+178 silly registry.get     'x-served-by': 'cache-ord1720-ORD',
+178 silly registry.get     'x-cache': 'HIT',
+178 silly registry.get     'x-cache-hits': '2',
+178 silly registry.get     'x-timer': 'S1415721093.428058,VS0,VE0',
+178 silly registry.get     vary: 'Accept',
+178 silly registry.get     'content-length': '0',
+178 silly registry.get     'keep-alive': 'timeout=10, max=50',
+178 silly registry.get     connection: 'Keep-Alive' } ]
+179 verbose etag https://registry.npmjs.org/knox from cache
+180 http 304 https://registry.npmjs.org/mime
+181 silly registry.get cb [ 304,
+181 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+181 silly registry.get     server: 'Apache',
+181 silly registry.get     via: '1.1 varnish',
+181 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:16 GMT',
+181 silly registry.get     'cache-control': 'max-age=60',
+181 silly registry.get     etag: '"9SQMRID0SFDWKUINX2BZ7BN44"',
+181 silly registry.get     age: '17',
+181 silly registry.get     'x-served-by': 'cache-ord1729-ORD',
+181 silly registry.get     'x-cache': 'HIT',
+181 silly registry.get     'x-cache-hits': '3',
+181 silly registry.get     'x-timer': 'S1415721093.431269,VS0,VE0',
+181 silly registry.get     vary: 'Accept',
+181 silly registry.get     'content-length': '0',
+181 silly registry.get     'keep-alive': 'timeout=10, max=50',
+181 silly registry.get     connection: 'Keep-Alive' } ]
+182 verbose etag https://registry.npmjs.org/mime from cache
+183 http 304 https://registry.npmjs.org/underscore.deferred
+184 silly registry.get cb [ 304,
+184 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+184 silly registry.get     server: 'Apache',
+184 silly registry.get     via: '1.1 varnish',
+184 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:33 GMT',
+184 silly registry.get     'cache-control': 'max-age=60',
+184 silly registry.get     etag: '"1JRDCM315XXLTBTHQW2UVV54Q"',
+184 silly registry.get     age: '33',
+184 silly registry.get     'x-served-by': 'cache-ord1723-ORD',
+184 silly registry.get     'x-cache': 'HIT',
+184 silly registry.get     'x-cache-hits': '1',
+184 silly registry.get     'x-timer': 'S1415721093.433212,VS0,VE0',
+184 silly registry.get     vary: 'Accept',
+184 silly registry.get     'content-length': '0',
+184 silly registry.get     'keep-alive': 'timeout=10, max=50',
+184 silly registry.get     connection: 'Keep-Alive' } ]
+185 verbose etag https://registry.npmjs.org/underscore.deferred from cache
+186 http 304 https://registry.npmjs.org/temporary
+187 silly registry.get cb [ 304,
+187 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+187 silly registry.get     server: 'Apache',
+187 silly registry.get     via: '1.1 varnish',
+187 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:33 GMT',
+187 silly registry.get     'cache-control': 'max-age=60',
+187 silly registry.get     etag: '"CLT2LAFV9N2SHLHW0MZZYILZY"',
+187 silly registry.get     age: '33',
+187 silly registry.get     'x-served-by': 'cache-ord1730-ORD',
+187 silly registry.get     'x-cache': 'HIT',
+187 silly registry.get     'x-cache-hits': '1',
+187 silly registry.get     'x-timer': 'S1415721093.435780,VS0,VE0',
+187 silly registry.get     vary: 'Accept',
+187 silly registry.get     'content-length': '0',
+187 silly registry.get     'keep-alive': 'timeout=10, max=50',
+187 silly registry.get     connection: 'Keep-Alive' } ]
+188 verbose etag https://registry.npmjs.org/temporary from cache
+189 silly addNameRange number 2 { name: 'mime', range: '>=1.2.5-0 <1.3.0-0', hasData: true }
+190 silly addNameRange versions [ 'mime',
+190 silly addNameRange   [ '1.0.0',
+190 silly addNameRange     '1.1.0',
+190 silly addNameRange     '1.2.1',
+190 silly addNameRange     '1.2.2',
+190 silly addNameRange     '1.2.3',
+190 silly addNameRange     '1.2.4',
+190 silly addNameRange     '1.2.5',
+190 silly addNameRange     '1.2.6',
+190 silly addNameRange     '1.2.7',
+190 silly addNameRange     '1.2.8',
+190 silly addNameRange     '1.2.9',
+190 silly addNameRange     '1.2.10',
+190 silly addNameRange     '1.2.11' ] ]
+191 verbose addNamed [ 'mime', '1.2.11' ]
+192 verbose addNamed [ '1.2.11', '1.2.11' ]
+193 silly lockFile c4b0741f-mime-1-2-11 mime@1.2.11
+194 verbose lock mime@1.2.11 /Users/sspeicher/.npm/c4b0741f-mime-1-2-11.lock
+195 silly addNameRange number 2 { name: 'underscore.deferred',
+195 silly addNameRange   range: '>=0.1.4-0 <0.2.0-0',
+195 silly addNameRange   hasData: true }
+196 silly addNameRange versions [ 'underscore.deferred',
+196 silly addNameRange   [ '0.0.1',
+196 silly addNameRange     '0.0.2',
+196 silly addNameRange     '0.0.3',
+196 silly addNameRange     '0.1.0',
+196 silly addNameRange     '0.1.1',
+196 silly addNameRange     '0.1.2',
+196 silly addNameRange     '0.1.4',
+196 silly addNameRange     '0.1.5',
+196 silly addNameRange     '0.2.0',
+196 silly addNameRange     '0.3.0',
+196 silly addNameRange     '0.3.1',
+196 silly addNameRange     '0.4.0' ] ]
+197 verbose addNamed [ 'underscore.deferred', '0.1.5' ]
+198 verbose addNamed [ '0.1.5', '0.1.5' ]
+199 silly lockFile 3760557c-underscore-deferred-0-1-5 underscore.deferred@0.1.5
+200 verbose lock underscore.deferred@0.1.5 /Users/sspeicher/.npm/3760557c-underscore-deferred-0-1-5.lock
+201 silly lockFile 18d3196c-temporary-0-0-5 temporary@0.0.5
+202 silly lockFile 18d3196c-temporary-0-0-5 temporary@0.0.5
+203 silly lockFile 3760557c-underscore-deferred-0-1-5 underscore.deferred@0.1.5
+204 silly lockFile 3760557c-underscore-deferred-0-1-5 underscore.deferred@0.1.5
+205 silly lockFile c4b0741f-mime-1-2-11 mime@1.2.11
+206 silly lockFile c4b0741f-mime-1-2-11 mime@1.2.11
+207 silly lockFile 5c868358-erscore-deferred-0-1-4-0-0-2-0-0 underscore.deferred@>=0.1.4-0 <0.2.0-0
+208 silly lockFile 5c868358-erscore-deferred-0-1-4-0-0-2-0-0 underscore.deferred@>=0.1.4-0 <0.2.0-0
+209 silly lockFile 9aff7c64-mime-1-2-5-0-1-3-0-0 mime@>=1.2.5-0 <1.3.0-0
+210 silly lockFile 9aff7c64-mime-1-2-5-0-1-3-0-0 mime@>=1.2.5-0 <1.3.0-0
+211 silly addNameRange number 2 { name: 'knox', range: '>=0.8.0-0 <0.9.0-0', hasData: true }
+212 silly addNameRange versions [ 'knox',
+212 silly addNameRange   [ '0.0.1',
+212 silly addNameRange     '0.0.2',
+212 silly addNameRange     '0.0.3',
+212 silly addNameRange     '0.0.4',
+212 silly addNameRange     '0.0.5',
+212 silly addNameRange     '0.0.6',
+212 silly addNameRange     '0.0.7',
+212 silly addNameRange     '0.0.8',
+212 silly addNameRange     '0.0.9',
+212 silly addNameRange     '0.0.10',
+212 silly addNameRange     '0.0.11',
+212 silly addNameRange     '0.1.0',
+212 silly addNameRange     '0.2.0',
+212 silly addNameRange     '0.3.0',
+212 silly addNameRange     '0.3.1',
+212 silly addNameRange     '0.4.0',
+212 silly addNameRange     '0.4.1',
+212 silly addNameRange     '0.4.2',
+212 silly addNameRange     '0.4.3',
+212 silly addNameRange     '0.4.4',
+212 silly addNameRange     '0.4.5',
+212 silly addNameRange     '0.4.6',
+212 silly addNameRange     '0.4.7',
+212 silly addNameRange     '0.5.0',
+212 silly addNameRange     '0.5.2',
+212 silly addNameRange     '0.5.3',
+212 silly addNameRange     '0.5.4',
+212 silly addNameRange     '0.5.5',
+212 silly addNameRange     '0.6.0',
+212 silly addNameRange     '0.7.0',
+212 silly addNameRange     '0.7.1',
+212 silly addNameRange     '0.8.0',
+212 silly addNameRange     '0.8.1',
+212 silly addNameRange     '0.8.2',
+212 silly addNameRange     '0.8.3',
+212 silly addNameRange     '0.8.4',
+212 silly addNameRange     '0.8.5',
+212 silly addNameRange     '0.8.6',
+212 silly addNameRange     '0.8.7',
+212 silly addNameRange     '0.8.8',
+212 silly addNameRange     '0.8.9',
+212 silly addNameRange     '0.8.10',
+212 silly addNameRange     '0.9.0',
+212 silly addNameRange     '0.9.1' ] ]
+213 verbose addNamed [ 'knox', '0.8.10' ]
+214 verbose addNamed [ '0.8.10', '0.8.10' ]
+215 silly lockFile e3e5197d-knox-0-8-10 knox@0.8.10
+216 verbose lock knox@0.8.10 /Users/sspeicher/.npm/e3e5197d-knox-0-8-10.lock
+217 silly lockFile e3e5197d-knox-0-8-10 knox@0.8.10
+218 silly lockFile e3e5197d-knox-0-8-10 knox@0.8.10
+219 silly lockFile d22e5a06-knox-0-8-0-0-0-9-0-0 knox@>=0.8.0-0 <0.9.0-0
+220 silly lockFile d22e5a06-knox-0-8-0-0-0-9-0-0 knox@>=0.8.0-0 <0.9.0-0
+221 silly resolved [ { name: 'temporary',
+221 silly resolved     version: '0.0.5',
+221 silly resolved     description: 'The lord of tmp.',
+221 silly resolved     keywords: [ 'tmp', 'temp', 'tempfile', 'tempdirectory' ],
+221 silly resolved     author: { name: 'Veselin Todorov', email: 'hi@vesln.com' },
+221 silly resolved     dependencies: { package: '>= 1.0.0 < 1.2.0' },
+221 silly resolved     devDependencies: { mocha: '1.2.x', chai: '*', sinon: '1.2.0' },
+221 silly resolved     repository: { type: 'git', url: 'http://github.com/vesln/temporary.git' },
+221 silly resolved     homepage: 'http://github.com/vesln/temporary',
+221 silly resolved     scripts: { test: 'make test' },
+221 silly resolved     main: 'index',
+221 silly resolved     engines: { node: '>= 0.6.0' },
+221 silly resolved     readme: '[![Build Status](https://secure.travis-ci.org/vesln/temporary.png)](http://travis-ci.org/vesln/temporary)\n\n# temporary - The lord of tmp.\n\n## Intro\n\nTemporary provides an easy way to create temporary files and directories.\nIt will create a temporary file/directory with a unique name.\n\n## Features\n\n- Generates unique name.\n- Auto-discovers tmp dir.\n\n## Installation\n\n\t$ npm install temporary\n\n## Usage\n\n\tvar Tempfile = require(\'temporary/file\');\n\tvar Tempdir = require(\'temporary/dir\');\n\tvar file = new Tempfile;\n\tvar dir = new Tempdir;\n\t\n\tconsole.log(file.path); // path.\n\tconsole.log(dir.path); // path.\n\t\n\tfile.unlink();\n\tdir.rmdir();\n\n## Methods\n\n### File\n\n- File.readFile\n- File.readFileSync\n- File.writeFile\n- File.writeFileSync\n- File.open\n- File.openSync\n- File.close\n- File.closeSync\n- File.unlink\n- File.unlinkSync\n\n### Dir\n\n- Dir.rmdir\n- Dir.rmdirSync\n\n## Tests\n\n\t$ make test\n\n## Contribution\n\nBug fixes and features are welcomed.\n\n## License\n\nMIT License\n\nCopyright (C) 2012 Veselin Todorov\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the "Software"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\nof the Software, and to permit persons to whom the Software is furnished to do\nso, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.',
+221 silly resolved     _id: 'temporary@0.0.5',
+221 silly resolved     dist:
+221 silly resolved      { shasum: 'e2916b72176517a6c8fb67d3fa78a568e9b27865',
+221 silly resolved        tarball: 'http://registry.npmjs.org/temporary/-/temporary-0.0.5.tgz' },
+221 silly resolved     _npmVersion: '1.1.61',
+221 silly resolved     _npmUser: { name: 'vesln', email: 'hi@vesln.com' },
+221 silly resolved     maintainers: [ [Object] ],
+221 silly resolved     directories: {},
+221 silly resolved     _shasum: 'e2916b72176517a6c8fb67d3fa78a568e9b27865',
+221 silly resolved     _from: 'temporary@0.0.5',
+221 silly resolved     _resolved: 'https://registry.npmjs.org/temporary/-/temporary-0.0.5.tgz',
+221 silly resolved     bugs: { url: 'https://github.com/vesln/temporary/issues' } },
+221 silly resolved   { author:
+221 silly resolved      { name: 'Robert Kieffer',
+221 silly resolved        email: 'robert@broofa.com',
+221 silly resolved        url: 'http://github.com/broofa' },
+221 silly resolved     contributors: [ [Object] ],
+221 silly resolved     dependencies: {},
+221 silly resolved     description: 'A comprehensive library for mime-type mapping',
+221 silly resolved     devDependencies: {},
+221 silly resolved     keywords: [ 'util', 'mime' ],
+221 silly resolved     main: 'mime.js',
+221 silly resolved     name: 'mime',
+221 silly resolved     repository: { url: 'https://github.com/broofa/node-mime', type: 'git' },
+221 silly resolved     version: '1.2.11',
+221 silly resolved     readme: '# mime\n\nComprehensive MIME type mapping API. Includes all 600+ types and 800+ extensions defined by the Apache project, plus additional types submitted by the node.js community.\n\n## Install\n\nInstall with [npm](http://github.com/isaacs/npm):\n\n    npm install mime\n\n## API - Queries\n\n### mime.lookup(path)\nGet the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive lookup using the extension in `path` (the substring after the last \'/\' or \'.\').  E.g.\n\n    var mime = require(\'mime\');\n\n    mime.lookup(\'/path/to/file.txt\');         // => \'text/plain\'\n    mime.lookup(\'file.txt\');                  // => \'text/plain\'\n    mime.lookup(\'.TXT\');                      // => \'text/plain\'\n    mime.lookup(\'htm\');                       // => \'text/html\'\n\n### mime.default_type\nSets the mime type returned when `mime.lookup` fails to find the extension searched for. (Default is `application/octet-stream`.)\n\n### mime.extension(type)\nGet the default extension for `type`\n\n    mime.extension(\'text/html\');                 // => \'html\'\n    mime.extension(\'application/octet-stream\');  // => \'bin\'\n\n### mime.charsets.lookup()\n\nMap mime-type to charset\n\n    mime.charsets.lookup(\'text/plain\');        // => \'UTF-8\'\n\n(The logic for charset lookups is pretty rudimentary.  Feel free to suggest improvements.)\n\n## API - Defining Custom Types\n\nThe following APIs allow you to add your own type mappings within your project.  If you feel a type should be included as part of node-mime, see [requesting new types](https://github.com/broofa/node-mime/wiki/Requesting-New-Types).\n\n### mime.define()\n\nAdd custom mime/extension mappings\n\n    mime.define({\n        \'text/x-some-format\': [\'x-sf\', \'x-sft\', \'x-sfml\'],\n        \'application/x-my-type\': [\'x-mt\', \'x-mtt\'],\n        // etc ...\n    });\n\n    mime.lookup(\'x-sft\');                 // => \'text/x-some-format\'\n\nThe first entry in the extensions array is returned by `mime.extension()`. E.g.\n\n    mime.extension(\'text/x-some-format\'); // => \'x-sf\'\n\n### mime.load(filepath)\n\nLoad mappings from an Apache ".types" format file\n\n    mime.load(\'./my_project.types\');\n\nThe .types file format is simple -  See the `types` dir for examples.\n',
+221 silly resolved     readmeFilename: 'README.md',
+221 silly resolved     bugs: { url: 'https://github.com/broofa/node-mime/issues' },
+221 silly resolved     _id: 'mime@1.2.11',
+221 silly resolved     dist:
+221 silly resolved      { shasum: '58203eed86e3a5ef17aed2b7d9ebd47f0a60dd10',
+221 silly resolved        tarball: 'http://registry.npmjs.org/mime/-/mime-1.2.11.tgz' },
+221 silly resolved     _from: 'mime@>=1.2.5-0 <1.3.0-0',
+221 silly resolved     _npmVersion: '1.3.6',
+221 silly resolved     _npmUser: { name: 'broofa', email: 'robert@broofa.com' },
+221 silly resolved     maintainers: [ [Object], [Object] ],
+221 silly resolved     directories: {},
+221 silly resolved     _shasum: '58203eed86e3a5ef17aed2b7d9ebd47f0a60dd10',
+221 silly resolved     _resolved: 'https://registry.npmjs.org/mime/-/mime-1.2.11.tgz',
+221 silly resolved     homepage: 'https://github.com/broofa/node-mime',
+221 silly resolved     scripts: {} },
+221 silly resolved   { name: 'underscore.deferred',
+221 silly resolved     description: 'jQuery style Deferreds',
+221 silly resolved     version: '0.1.5',
+221 silly resolved     homepage: 'https://github.com/wookiehangover/underscore.deferred',
+221 silly resolved     author: { name: 'Sam Breed', email: 'sam@quickleft.com' },
+221 silly resolved     repository:
+221 silly resolved      { type: 'git',
+221 silly resolved        url: 'git://github.com/wookiehangover/underscore.deferred.git' },
+221 silly resolved     bugs: { url: 'https://github.com/wookiehangover/underscore.deferred/issues' },
+221 silly resolved     licenses: [ [Object] ],
+221 silly resolved     engines: { node: '*' },
+221 silly resolved     scripts: { test: 'grunt qunit' },
+221 silly resolved     dependencies: {},
+221 silly resolved     devDependencies: { grunt: '~0.3.9', rimraf: '~2.0.1', underscore: '*', mocha: '*' },
+221 silly resolved     keywords:
+221 silly resolved      [ 'underscore deferreds',
+221 silly resolved        'deferreds',
+221 silly resolved        'underscore',
+221 silly resolved        'flow-control',
+221 silly resolved        'deferred',
+221 silly resolved        'ender' ],
+221 silly resolved     main: './underscore.deferred.js',
+221 silly resolved     ender: './lib/ender.js',
+221 silly resolved     _id: 'underscore.deferred@0.1.5',
+221 silly resolved     dist:
+221 silly resolved      { shasum: '47ead60c988bf0cf3220bf8843f362e0e824e689',
+221 silly resolved        tarball: 'http://registry.npmjs.org/underscore.deferred/-/underscore.deferred-0.1.5.tgz' },
+221 silly resolved     readme: '# Underscore.Deferred\n\n[![Build Status](https://secure.travis-ci.org/wookiehangover/underscore.deferred.png?branch=master)](http://travis-ci.org/wookiehangover/underscore.deferred)\n\nv0.1.5\n\n**Please note that as of 0.1.4 underscore.deferred will be ALL LOWERCASE on\nnpm.** The camelcasing was a mistake from the outset, please update your\n`package.json` appropriately.\n\nThis is a port of jQuery.Deferred as an Underscore mixin, but it can be\nused without any depencencies. It currently matches the Deferred specifications\nand implementation from jQuery 1.7.2, with all the associated helpers.\n\n## Deferred\'s are great, let\'s take them everywhere\n\njQuery offers a robust, consistent and well documented API; this project aims\nto make it portable. jQuery added a handful of helper methods to their\nimplementation of the [Common.js Promises Spec][promise], and they\'re faithfully\nreproduced without any dependencies.\n\nunderscore.deferred provides complete pairity with the jQuery Deferred\nAPI. Here are some of the method implemented:\n\n* [always](http://api.jquery.com/deferred.always/)\n* [done](http://api.jquery.com/deferred.done/)\n* [fail](http://api.jquery.com/deferred.fail/)\n* [notify](http://api.jquery.com/deferred.notify/)\n* [notifyWith](http://api.jquery.com/deferred.notifywith/)\n* [pipe](http://api.jquery.com/deferred.pipe/)\n* [promise](http://api.jquery.com/deferred.promise/)\n* [resolve](http://api.jquery.com/deferred.resolve/)\n* [reject](http://api.jquery.com/deferred.reject/)\n* [state](http://api.jquery.com/deferred.notifywith/)\n* [then](http://api.jquery.com/deferred.then/)\n\nFor the complete API documentation, look to the [jQuery Docs][jquery-docs].\n\n## Usage\n\nunderscore.deferred works on the server and in the browser.\n\nIn the browser, just require it like you would any other file. If you\'re\nincluding Underscore on the page, make sure you include it before\nunderscore.deferred. If you don\'t have Underscore, the plugin attaches to\n`window._`.\n\nAddionally, underscore.Deferred can be used with the [Ender.js build\ntool][ender], if you\'re into that sort of thing.\n\nOn the server, simply install via npm and require normally. If you\'d like to\nuse it as an Underscore module, just do this:\n\n    var _ = require(\'underscore\')._\n    _.mixin( require(\'underscore.deferred\') );\n\nBut keep in mind that Underscore is not a strict requirement, and assigning it\nto another namespace will always work.\n\n## Build\n\nOne time setup command:\n\n```\n$ npm install\n```\n\nTo build with [grunt](https://github.com/cowboy/grunt)\n\n```\n$ node build\n```\n\nTo run headless Qunit tests (must have phantomjs in your path)\n\n```\n$ node build qunit\n```\n\n## Contributors\n\n* [rwldrn](https://github.com/rwldrn)\n* [tbranyen](https://github.com/tbranyen)\n* [taxillian](https://github.com/taxilian)\n* [danheberden](https://github.com/danheberden)\n\n## Roadmap\n\nThe goal is to slim the code footprint for robust deferreds as much as\npossible while maintaining mixin integration with Underscore and faithfullness\nto the jQuery API.\n\nThis is a work in progress, feel free to contribute.\n\nMIT License.\n\n[promise]: http://wiki.commonjs.org/wiki/Promises\n[jquery-docs]: http://api.jquery.com/category/deferred-object/\n[ender]: http://ender.no.de/\n',
+221 silly resolved     maintainers: [ [Object] ],
+221 silly resolved     directories: {},
+221 silly resolved     _shasum: '47ead60c988bf0cf3220bf8843f362e0e824e689',
+221 silly resolved     _from: 'underscore.deferred@>=0.1.4-0 <0.2.0-0',
+221 silly resolved     _resolved: 'https://registry.npmjs.org/underscore.deferred/-/underscore.deferred-0.1.5.tgz' },
+221 silly resolved   { name: 'knox',
+221 silly resolved     description: 'Amazon S3 client',
+221 silly resolved     keywords: [ 'aws', 'amazon', 's3' ],
+221 silly resolved     version: '0.8.10',
+221 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@learnboost.com' },
+221 silly resolved     contributors: [ [Object], [Object], [Object] ],
+221 silly resolved     license: 'MIT',
+221 silly resolved     main: './lib/index.js',
+221 silly resolved     repository: { type: 'git', url: 'git://github.com/LearnBoost/knox.git' },
+221 silly resolved     bugs: { url: 'https://github.com/LearnBoost/knox/issues' },
+221 silly resolved     dependencies:
+221 silly resolved      { mime: '*',
+221 silly resolved        xml2js: '0.2.x',
+221 silly resolved        debug: '~0.7.0',
+221 silly resolved        'stream-counter': '~0.1.0' },
+221 silly resolved     devDependencies: { mocha: '*' },
+221 silly resolved     scripts: { test: 'mocha' },
+221 silly resolved     directories: { lib: './lib' },
+221 silly resolved     engines: { node: '>= 0.8' },
+221 silly resolved     homepage: 'https://github.com/LearnBoost/knox',
+221 silly resolved     _id: 'knox@0.8.10',
+221 silly resolved     dist:
+221 silly resolved      { shasum: '6a2edcdac1d2ae379d1e1994d559b95c283b2588',
+221 silly resolved        tarball: 'http://registry.npmjs.org/knox/-/knox-0.8.10.tgz' },
+221 silly resolved     _from: 'knox@>=0.8.0-0 <0.9.0-0',
+221 silly resolved     _npmVersion: '1.4.3',
+221 silly resolved     _npmUser: { name: 'domenic', email: 'domenic@domenicdenicola.com' },
+221 silly resolved     maintainers: [ [Object], [Object] ],
+221 silly resolved     _shasum: '6a2edcdac1d2ae379d1e1994d559b95c283b2588',
+221 silly resolved     _resolved: 'https://registry.npmjs.org/knox/-/knox-0.8.10.tgz',
+221 silly resolved     readme: 'ERROR: No README data found!' } ]
+222 info install temporary@0.0.5 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+223 info install mime@1.2.11 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+224 info install underscore.deferred@0.1.5 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+225 info install knox@0.8.10 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+226 info installOne temporary@0.0.5
+227 info installOne mime@1.2.11
+228 info installOne underscore.deferred@0.1.5
+229 info installOne knox@0.8.10
+230 verbose node_modules/grunt-s3/node_modules/temporary unbuild
+231 verbose node_modules/grunt-s3/node_modules/mime unbuild
+232 verbose node_modules/grunt-s3/node_modules/underscore.deferred unbuild
+233 verbose node_modules/grunt-s3/node_modules/knox unbuild
+234 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary
+235 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/mime
+236 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/underscore.deferred
+237 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+238 verbose tar unpack /Users/sspeicher/.npm/temporary/0.0.5/package.tgz
+239 silly lockFile c11a68b2--grunt-s3-node-modules-temporary tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary
+240 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary /Users/sspeicher/.npm/c11a68b2--grunt-s3-node-modules-temporary.lock
+241 silly lockFile 3357ef74--npm-temporary-0-0-5-package-tgz tar:///Users/sspeicher/.npm/temporary/0.0.5/package.tgz
+242 verbose lock tar:///Users/sspeicher/.npm/temporary/0.0.5/package.tgz /Users/sspeicher/.npm/3357ef74--npm-temporary-0-0-5-package-tgz.lock
+243 verbose tar unpack /Users/sspeicher/.npm/mime/1.2.11/package.tgz
+244 silly lockFile 2c77231b-dules-grunt-s3-node-modules-mime tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/mime
+245 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/mime /Users/sspeicher/.npm/2c77231b-dules-grunt-s3-node-modules-mime.lock
+246 silly lockFile eec920e3-cher-npm-mime-1-2-11-package-tgz tar:///Users/sspeicher/.npm/mime/1.2.11/package.tgz
+247 verbose lock tar:///Users/sspeicher/.npm/mime/1.2.11/package.tgz /Users/sspeicher/.npm/eec920e3-cher-npm-mime-1-2-11-package-tgz.lock
+248 verbose tar unpack /Users/sspeicher/.npm/underscore.deferred/0.1.5/package.tgz
+249 silly lockFile 2b06b556-node-modules-underscore-deferred tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/underscore.deferred
+250 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/underscore.deferred /Users/sspeicher/.npm/2b06b556-node-modules-underscore-deferred.lock
+251 silly lockFile 7f0f314f-score-deferred-0-1-5-package-tgz tar:///Users/sspeicher/.npm/underscore.deferred/0.1.5/package.tgz
+252 verbose lock tar:///Users/sspeicher/.npm/underscore.deferred/0.1.5/package.tgz /Users/sspeicher/.npm/7f0f314f-score-deferred-0-1-5-package-tgz.lock
+253 verbose tar unpack /Users/sspeicher/.npm/knox/0.8.10/package.tgz
+254 silly lockFile b6a20aac-dules-grunt-s3-node-modules-knox tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+255 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox /Users/sspeicher/.npm/b6a20aac-dules-grunt-s3-node-modules-knox.lock
+256 silly lockFile 534f2d6e-cher-npm-knox-0-8-10-package-tgz tar:///Users/sspeicher/.npm/knox/0.8.10/package.tgz
+257 verbose lock tar:///Users/sspeicher/.npm/knox/0.8.10/package.tgz /Users/sspeicher/.npm/534f2d6e-cher-npm-knox-0-8-10-package-tgz.lock
+258 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary
+259 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/mime
+260 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/underscore.deferred
+261 silly gunzTarPerm modes [ '755', '644' ]
+262 silly gunzTarPerm modes [ '755', '644' ]
+263 silly gunzTarPerm modes [ '755', '644' ]
+264 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+265 silly gunzTarPerm modes [ '755', '644' ]
+266 silly gunzTarPerm extractEntry package.json
+267 silly gunzTarPerm extractEntry package.json
+268 silly gunzTarPerm extractEntry package.json
+269 silly gunzTarPerm extractEntry package.json
+270 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+271 silly gunzTarPerm extractEntry .npmignore
+272 silly gunzTarPerm extractEntry dir.js
+273 silly gunzTarPerm extractEntry README.md
+274 silly gunzTarPerm extractEntry LICENSE
+275 silly gunzTarPerm extractEntry .npmignore
+276 silly gunzTarPerm extractEntry build.js
+277 silly gunzTarPerm extractEntry LICENSE.txt
+278 silly gunzTarPerm modified mode [ 'LICENSE.txt', 438, 420 ]
+279 silly gunzTarPerm extractEntry Readme.md
+280 silly gunzTarPerm modified mode [ 'Readme.md', 438, 420 ]
+281 silly gunzTarPerm extractEntry file.js
+282 silly gunzTarPerm extractEntry index.js
+283 silly gunzTarPerm extractEntry mime.js
+284 silly gunzTarPerm extractEntry test.js
+285 silly gunzTarPerm extractEntry types/mime.types
+286 silly gunzTarPerm extractEntry types/node.types
+287 silly gunzTarPerm extractEntry grunt.js
+288 silly gunzTarPerm extractEntry underscore.deferred.js
+289 silly gunzTarPerm extractEntry lib/auth.js
+290 silly gunzTarPerm modified mode [ 'lib/auth.js', 438, 420 ]
+291 silly gunzTarPerm extractEntry History.md
+292 silly gunzTarPerm extractEntry .travis.yml
+293 silly gunzTarPerm extractEntry examples/commonjs-dfd.js
+294 silly gunzTarPerm extractEntry lib/client.js
+295 silly gunzTarPerm modified mode [ 'lib/client.js', 438, 420 ]
+296 silly gunzTarPerm extractEntry lib/index.js
+297 silly gunzTarPerm modified mode [ 'lib/index.js', 438, 420 ]
+298 silly gunzTarPerm extractEntry lib/base.js
+299 silly gunzTarPerm extractEntry lib/detector.js
+300 silly gunzTarPerm extractEntry .travis.yml
+301 silly gunzTarPerm extractEntry LICENSE-MIT
+302 silly gunzTarPerm extractEntry lib/dir.js
+303 silly gunzTarPerm extractEntry lib/file.js
+304 silly gunzTarPerm extractEntry dist/.gitkeep
+305 silly gunzTarPerm extractEntry readme.md
+306 silly gunzTarPerm extractEntry lib/generator.js
+307 silly gunzTarPerm extractEntry Makefile
+308 silly gunzTarPerm extractEntry examples/dir.js
+309 silly gunzTarPerm extractEntry examples/file.js
+310 silly gunzTarPerm extractEntry Readme.md
+311 silly gunzTarPerm extractEntry test/base.test.js
+312 silly gunzTarPerm extractEntry test/detector.test.js
+313 silly gunzTarPerm extractEntry test/dir.test.js
+314 silly gunzTarPerm extractEntry test/file.test.js
+315 silly gunzTarPerm extractEntry test/generator.test.js
+316 silly gunzTarPerm extractEntry lib/utils.js
+317 silly gunzTarPerm modified mode [ 'lib/utils.js', 438, 420 ]
+318 silly gunzTarPerm extractEntry test/deferred.js
+319 silly gunzTarPerm extractEntry test/index.html
+320 silly gunzTarPerm extractEntry test/qunit/qunit.js
+321 silly gunzTarPerm extractEntry test/qunit/qunit.css
+322 silly gunzTarPerm extractEntry lib/ender.js
+323 silly lockFile b6a20aac-dules-grunt-s3-node-modules-knox tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+324 silly lockFile b6a20aac-dules-grunt-s3-node-modules-knox tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+325 silly lockFile 534f2d6e-cher-npm-knox-0-8-10-package-tgz tar:///Users/sspeicher/.npm/knox/0.8.10/package.tgz
+326 silly lockFile 534f2d6e-cher-npm-knox-0-8-10-package-tgz tar:///Users/sspeicher/.npm/knox/0.8.10/package.tgz
+327 info preinstall knox@0.8.10
+328 verbose readDependencies using package.json deps
+329 verbose readDependencies using package.json deps
+330 verbose cache add [ 'xml2js@0.2.x', null ]
+331 verbose cache add spec="xml2js@0.2.x" args=["xml2js@0.2.x",null]
+332 verbose parsed spec { raw: 'xml2js@0.2.x',
+332 verbose parsed spec   scope: null,
+332 verbose parsed spec   name: 'xml2js',
+332 verbose parsed spec   rawSpec: '0.2.x',
+332 verbose parsed spec   spec: '>=0.2.0-0 <0.3.0-0',
+332 verbose parsed spec   type: 'range' }
+333 verbose cache add [ 'debug@~0.7.0', null ]
+334 verbose cache add spec="debug@~0.7.0" args=["debug@~0.7.0",null]
+335 verbose parsed spec { raw: 'debug@~0.7.0',
+335 verbose parsed spec   scope: null,
+335 verbose parsed spec   name: 'debug',
+335 verbose parsed spec   rawSpec: '~0.7.0',
+335 verbose parsed spec   spec: '>=0.7.0-0 <0.8.0-0',
+335 verbose parsed spec   type: 'range' }
+336 verbose parsed spec { raw: 'xml2js@0.2.x',
+336 verbose parsed spec   scope: null,
+336 verbose parsed spec   name: 'xml2js',
+336 verbose parsed spec   rawSpec: '0.2.x',
+336 verbose parsed spec   spec: '>=0.2.0-0 <0.3.0-0',
+336 verbose parsed spec   type: 'range' }
+337 verbose addNamed [ 'xml2js', '>=0.2.0-0 <0.3.0-0' ]
+338 verbose addNamed [ null, '>=0.2.0-0 <0.3.0-0' ]
+339 silly lockFile 320f1ac0-xml2js-0-2-0-0-0-3-0-0 xml2js@>=0.2.0-0 <0.3.0-0
+340 verbose lock xml2js@>=0.2.0-0 <0.3.0-0 /Users/sspeicher/.npm/320f1ac0-xml2js-0-2-0-0-0-3-0-0.lock
+341 verbose parsed spec { raw: 'debug@~0.7.0',
+341 verbose parsed spec   scope: null,
+341 verbose parsed spec   name: 'debug',
+341 verbose parsed spec   rawSpec: '~0.7.0',
+341 verbose parsed spec   spec: '>=0.7.0-0 <0.8.0-0',
+341 verbose parsed spec   type: 'range' }
+342 verbose addNamed [ 'debug', '>=0.7.0-0 <0.8.0-0' ]
+343 verbose addNamed [ null, '>=0.7.0-0 <0.8.0-0' ]
+344 silly lockFile 277eb39b-debug-0-7-0-0-0-8-0-0 debug@>=0.7.0-0 <0.8.0-0
+345 verbose lock debug@>=0.7.0-0 <0.8.0-0 /Users/sspeicher/.npm/277eb39b-debug-0-7-0-0-0-8-0-0.lock
+346 verbose cache add [ 'stream-counter@~0.1.0', null ]
+347 verbose cache add spec="stream-counter@~0.1.0" args=["stream-counter@~0.1.0",null]
+348 verbose parsed spec { raw: 'stream-counter@~0.1.0',
+348 verbose parsed spec   scope: null,
+348 verbose parsed spec   name: 'stream-counter',
+348 verbose parsed spec   rawSpec: '~0.1.0',
+348 verbose parsed spec   spec: '>=0.1.0-0 <0.2.0-0',
+348 verbose parsed spec   type: 'range' }
+349 verbose parsed spec { raw: 'stream-counter@~0.1.0',
+349 verbose parsed spec   scope: null,
+349 verbose parsed spec   name: 'stream-counter',
+349 verbose parsed spec   rawSpec: '~0.1.0',
+349 verbose parsed spec   spec: '>=0.1.0-0 <0.2.0-0',
+349 verbose parsed spec   type: 'range' }
+350 verbose addNamed [ 'stream-counter', '>=0.1.0-0 <0.2.0-0' ]
+351 verbose addNamed [ null, '>=0.1.0-0 <0.2.0-0' ]
+352 silly lockFile 80d03f25-stream-counter-0-1-0-0-0-2-0-0 stream-counter@>=0.1.0-0 <0.2.0-0
+353 verbose lock stream-counter@>=0.1.0-0 <0.2.0-0 /Users/sspeicher/.npm/80d03f25-stream-counter-0-1-0-0-0-2-0-0.lock
+354 silly addNameRange { name: 'xml2js', range: '>=0.2.0-0 <0.3.0-0', hasData: false }
+355 verbose mapToRegistry name xml2js
+356 verbose mapToRegistry uri https://registry.npmjs.org/xml2js
+357 silly addNameRange { name: 'debug', range: '>=0.7.0-0 <0.8.0-0', hasData: false }
+358 verbose mapToRegistry name debug
+359 verbose mapToRegistry uri https://registry.npmjs.org/debug
+360 silly addNameRange { name: 'stream-counter',
+360 silly addNameRange   range: '>=0.1.0-0 <0.2.0-0',
+360 silly addNameRange   hasData: false }
+361 verbose mapToRegistry name stream-counter
+362 verbose mapToRegistry uri https://registry.npmjs.org/stream-counter
+363 verbose request on initialization, where is /debug
+364 verbose request after pass 1, where is /debug
+365 verbose request url raw /debug
+366 verbose request resolving registry [ 'https://registry.npmjs.org/', './debug' ]
+367 verbose request after pass 2, where is https://registry.npmjs.org/debug
+368 verbose request no auth needed
+369 info retrier registry request attempt 1 at 09:51:33
+370 verbose etag "6XAF04JEIUAY679NV7GJMKWPQ"
+371 http request GET https://registry.npmjs.org/debug
+372 verbose request on initialization, where is /xml2js
+373 verbose request after pass 1, where is /xml2js
+374 verbose request url raw /xml2js
+375 verbose request resolving registry [ 'https://registry.npmjs.org/', './xml2js' ]
+376 verbose request after pass 2, where is https://registry.npmjs.org/xml2js
+377 verbose request no auth needed
+378 info retrier registry request attempt 1 at 09:51:33
+379 verbose etag "6QXQB8AZVX709G7JF5C5L15AQ"
+380 http request GET https://registry.npmjs.org/xml2js
+381 verbose request on initialization, where is /stream-counter
+382 verbose request after pass 1, where is /stream-counter
+383 verbose request url raw /stream-counter
+384 verbose request resolving registry [ 'https://registry.npmjs.org/', './stream-counter' ]
+385 verbose request after pass 2, where is https://registry.npmjs.org/stream-counter
+386 verbose request no auth needed
+387 info retrier registry request attempt 1 at 09:51:33
+388 verbose etag "7BYOMTIF475R7ICA4MRILEWBQ"
+389 http request GET https://registry.npmjs.org/stream-counter
+390 silly lockFile 2c77231b-dules-grunt-s3-node-modules-mime tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/mime
+391 silly lockFile 2c77231b-dules-grunt-s3-node-modules-mime tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/mime
+392 silly lockFile eec920e3-cher-npm-mime-1-2-11-package-tgz tar:///Users/sspeicher/.npm/mime/1.2.11/package.tgz
+393 silly lockFile eec920e3-cher-npm-mime-1-2-11-package-tgz tar:///Users/sspeicher/.npm/mime/1.2.11/package.tgz
+394 info preinstall mime@1.2.11
+395 verbose readDependencies using package.json deps
+396 verbose readDependencies using package.json deps
+397 silly resolved []
+398 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/mime
+399 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/mime
+400 verbose linkStuff [ false,
+400 verbose linkStuff   false,
+400 verbose linkStuff   false,
+400 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules' ]
+401 info linkStuff mime@1.2.11
+402 verbose linkBins mime@1.2.11
+403 verbose linkMans mime@1.2.11
+404 verbose rebuildBundles mime@1.2.11
+405 info install mime@1.2.11
+406 info postinstall mime@1.2.11
+407 silly lockFile c11a68b2--grunt-s3-node-modules-temporary tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary
+408 silly lockFile c11a68b2--grunt-s3-node-modules-temporary tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary
+409 silly lockFile 3357ef74--npm-temporary-0-0-5-package-tgz tar:///Users/sspeicher/.npm/temporary/0.0.5/package.tgz
+410 silly lockFile 3357ef74--npm-temporary-0-0-5-package-tgz tar:///Users/sspeicher/.npm/temporary/0.0.5/package.tgz
+411 info preinstall temporary@0.0.5
+412 verbose readDependencies using package.json deps
+413 verbose readDependencies using package.json deps
+414 verbose cache add [ 'package@>= 1.0.0 < 1.2.0', null ]
+415 verbose cache add spec="package@>= 1.0.0 < 1.2.0" args=["package@>= 1.0.0 < 1.2.0",null]
+416 verbose parsed spec { raw: 'package@>= 1.0.0 < 1.2.0',
+416 verbose parsed spec   scope: null,
+416 verbose parsed spec   name: 'package',
+416 verbose parsed spec   rawSpec: '>= 1.0.0 < 1.2.0',
+416 verbose parsed spec   spec: '>=1.0.0 <1.2.0-0',
+416 verbose parsed spec   type: 'range' }
+417 verbose parsed spec { raw: 'package@>= 1.0.0 < 1.2.0',
+417 verbose parsed spec   scope: null,
+417 verbose parsed spec   name: 'package',
+417 verbose parsed spec   rawSpec: '>= 1.0.0 < 1.2.0',
+417 verbose parsed spec   spec: '>=1.0.0 <1.2.0-0',
+417 verbose parsed spec   type: 'range' }
+418 verbose addNamed [ 'package', '>=1.0.0 <1.2.0-0' ]
+419 verbose addNamed [ null, '>=1.0.0 <1.2.0-0' ]
+420 silly lockFile 93707385-package-1-0-0-1-2-0-0 package@>=1.0.0 <1.2.0-0
+421 verbose lock package@>=1.0.0 <1.2.0-0 /Users/sspeicher/.npm/93707385-package-1-0-0-1-2-0-0.lock
+422 silly addNameRange { name: 'package', range: '>=1.0.0 <1.2.0-0', hasData: false }
+423 verbose mapToRegistry name package
+424 verbose mapToRegistry uri https://registry.npmjs.org/package
+425 verbose request on initialization, where is /package
+426 verbose request after pass 1, where is /package
+427 verbose request url raw /package
+428 verbose request resolving registry [ 'https://registry.npmjs.org/', './package' ]
+429 verbose request after pass 2, where is https://registry.npmjs.org/package
+430 verbose request no auth needed
+431 info retrier registry request attempt 1 at 09:51:33
+432 verbose etag "6B21VCNVVQECYCC8K6XQ2DXPN"
+433 http request GET https://registry.npmjs.org/package
+434 silly lockFile 2b06b556-node-modules-underscore-deferred tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/underscore.deferred
+435 silly lockFile 2b06b556-node-modules-underscore-deferred tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/underscore.deferred
+436 silly lockFile 7f0f314f-score-deferred-0-1-5-package-tgz tar:///Users/sspeicher/.npm/underscore.deferred/0.1.5/package.tgz
+437 silly lockFile 7f0f314f-score-deferred-0-1-5-package-tgz tar:///Users/sspeicher/.npm/underscore.deferred/0.1.5/package.tgz
+438 info preinstall underscore.deferred@0.1.5
+439 verbose readDependencies using package.json deps
+440 verbose readDependencies using package.json deps
+441 silly resolved []
+442 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/underscore.deferred
+443 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/underscore.deferred
+444 verbose linkStuff [ false,
+444 verbose linkStuff   false,
+444 verbose linkStuff   false,
+444 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules' ]
+445 info linkStuff underscore.deferred@0.1.5
+446 verbose linkBins underscore.deferred@0.1.5
+447 verbose linkMans underscore.deferred@0.1.5
+448 verbose rebuildBundles underscore.deferred@0.1.5
+449 info install underscore.deferred@0.1.5
+450 info postinstall underscore.deferred@0.1.5
+451 http 304 https://registry.npmjs.org/debug
+452 silly registry.get cb [ 304,
+452 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+452 silly registry.get     server: 'Apache',
+452 silly registry.get     via: '1.1 varnish',
+452 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:33 GMT',
+452 silly registry.get     'cache-control': 'max-age=60',
+452 silly registry.get     etag: '"6XAF04JEIUAY679NV7GJMKWPQ"',
+452 silly registry.get     age: '10',
+452 silly registry.get     'x-served-by': 'cache-ord1726-ORD',
+452 silly registry.get     'x-cache': 'HIT',
+452 silly registry.get     'x-cache-hits': '1',
+452 silly registry.get     'x-timer': 'S1415721093.664343,VS0,VE0',
+452 silly registry.get     vary: 'Accept',
+452 silly registry.get     'content-length': '0',
+452 silly registry.get     'keep-alive': 'timeout=10, max=50',
+452 silly registry.get     connection: 'Keep-Alive' } ]
+453 verbose etag https://registry.npmjs.org/debug from cache
+454 http 304 https://registry.npmjs.org/xml2js
+455 silly registry.get cb [ 304,
+455 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+455 silly registry.get     server: 'Apache',
+455 silly registry.get     via: '1.1 varnish',
+455 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:33 GMT',
+455 silly registry.get     'cache-control': 'max-age=60',
+455 silly registry.get     etag: '"6QXQB8AZVX709G7JF5C5L15AQ"',
+455 silly registry.get     age: '51',
+455 silly registry.get     'x-served-by': 'cache-ord1722-ORD',
+455 silly registry.get     'x-cache': 'HIT',
+455 silly registry.get     'x-cache-hits': '1',
+455 silly registry.get     'x-timer': 'S1415721093.667334,VS0,VE0',
+455 silly registry.get     vary: 'Accept',
+455 silly registry.get     'content-length': '0',
+455 silly registry.get     'keep-alive': 'timeout=10, max=50',
+455 silly registry.get     connection: 'Keep-Alive' } ]
+456 verbose etag https://registry.npmjs.org/xml2js from cache
+457 silly addNameRange number 2 { name: 'xml2js', range: '>=0.2.0-0 <0.3.0-0', hasData: true }
+458 silly addNameRange versions [ 'xml2js',
+458 silly addNameRange   [ '0.1.0',
+458 silly addNameRange     '0.1.1',
+458 silly addNameRange     '0.1.2',
+458 silly addNameRange     '0.1.3',
+458 silly addNameRange     '0.1.4',
+458 silly addNameRange     '0.1.5',
+458 silly addNameRange     '0.1.6',
+458 silly addNameRange     '0.1.7',
+458 silly addNameRange     '0.1.8',
+458 silly addNameRange     '0.1.9',
+458 silly addNameRange     '0.1.10',
+458 silly addNameRange     '0.1.11',
+458 silly addNameRange     '0.1.12',
+458 silly addNameRange     '0.1.13',
+458 silly addNameRange     '0.1.14',
+458 silly addNameRange     '0.2.0',
+458 silly addNameRange     '0.2.1',
+458 silly addNameRange     '0.2.2',
+458 silly addNameRange     '0.2.3',
+458 silly addNameRange     '0.2.4',
+458 silly addNameRange     '0.2.5',
+458 silly addNameRange     '0.2.6',
+458 silly addNameRange     '0.2.7',
+458 silly addNameRange     '0.2.8',
+458 silly addNameRange     '0.4.0',
+458 silly addNameRange     '0.4.1',
+458 silly addNameRange     '0.4.2',
+458 silly addNameRange     '0.4.3',
+458 silly addNameRange     '0.4.4' ] ]
+459 verbose addNamed [ 'xml2js', '0.2.8' ]
+460 verbose addNamed [ '0.2.8', '0.2.8' ]
+461 silly lockFile 21bf8c0b-xml2js-0-2-8 xml2js@0.2.8
+462 verbose lock xml2js@0.2.8 /Users/sspeicher/.npm/21bf8c0b-xml2js-0-2-8.lock
+463 http 304 https://registry.npmjs.org/stream-counter
+464 silly registry.get cb [ 304,
+464 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+464 silly registry.get     server: 'Apache',
+464 silly registry.get     via: '1.1 varnish',
+464 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:32 GMT',
+464 silly registry.get     'cache-control': 'max-age=60',
+464 silly registry.get     etag: '"7BYOMTIF475R7ICA4MRILEWBQ"',
+464 silly registry.get     age: '31',
+464 silly registry.get     'x-served-by': 'cache-ord1730-ORD',
+464 silly registry.get     'x-cache': 'HIT',
+464 silly registry.get     'x-cache-hits': '2',
+464 silly registry.get     'x-timer': 'S1415721093.671331,VS0,VE0',
+464 silly registry.get     vary: 'Accept',
+464 silly registry.get     'content-length': '0',
+464 silly registry.get     'keep-alive': 'timeout=10, max=50',
+464 silly registry.get     connection: 'Keep-Alive' } ]
+465 verbose etag https://registry.npmjs.org/stream-counter from cache
+466 silly addNameRange number 2 { name: 'debug', range: '>=0.7.0-0 <0.8.0-0', hasData: true }
+467 silly addNameRange versions [ 'debug',
+467 silly addNameRange   [ '0.0.1',
+467 silly addNameRange     '0.1.0',
+467 silly addNameRange     '0.2.0',
+467 silly addNameRange     '0.3.0',
+467 silly addNameRange     '0.4.0',
+467 silly addNameRange     '0.4.1',
+467 silly addNameRange     '0.5.0',
+467 silly addNameRange     '0.6.0',
+467 silly addNameRange     '0.7.0',
+467 silly addNameRange     '0.7.1',
+467 silly addNameRange     '0.7.2',
+467 silly addNameRange     '0.7.3',
+467 silly addNameRange     '0.7.4',
+467 silly addNameRange     '0.8.0',
+467 silly addNameRange     '0.8.1',
+467 silly addNameRange     '1.0.0',
+467 silly addNameRange     '1.0.1',
+467 silly addNameRange     '1.0.2',
+467 silly addNameRange     '1.0.3',
+467 silly addNameRange     '1.0.4',
+467 silly addNameRange     '2.0.0',
+467 silly addNameRange     '2.1.0' ] ]
+468 verbose addNamed [ 'debug', '0.7.4' ]
+469 verbose addNamed [ '0.7.4', '0.7.4' ]
+470 silly lockFile 16160008-debug-0-7-4 debug@0.7.4
+471 verbose lock debug@0.7.4 /Users/sspeicher/.npm/16160008-debug-0-7-4.lock
+472 silly lockFile 21bf8c0b-xml2js-0-2-8 xml2js@0.2.8
+473 silly lockFile 21bf8c0b-xml2js-0-2-8 xml2js@0.2.8
+474 silly addNameRange number 2 { name: 'stream-counter',
+474 silly addNameRange   range: '>=0.1.0-0 <0.2.0-0',
+474 silly addNameRange   hasData: true }
+475 silly addNameRange versions [ 'stream-counter', [ '0.1.0', '0.2.0', '1.0.0' ] ]
+476 verbose addNamed [ 'stream-counter', '0.1.0' ]
+477 verbose addNamed [ '0.1.0', '0.1.0' ]
+478 silly lockFile 1d229e86-stream-counter-0-1-0 stream-counter@0.1.0
+479 verbose lock stream-counter@0.1.0 /Users/sspeicher/.npm/1d229e86-stream-counter-0-1-0.lock
+480 silly lockFile 320f1ac0-xml2js-0-2-0-0-0-3-0-0 xml2js@>=0.2.0-0 <0.3.0-0
+481 silly lockFile 320f1ac0-xml2js-0-2-0-0-0-3-0-0 xml2js@>=0.2.0-0 <0.3.0-0
+482 silly lockFile 16160008-debug-0-7-4 debug@0.7.4
+483 silly lockFile 16160008-debug-0-7-4 debug@0.7.4
+484 silly lockFile 277eb39b-debug-0-7-0-0-0-8-0-0 debug@>=0.7.0-0 <0.8.0-0
+485 silly lockFile 277eb39b-debug-0-7-0-0-0-8-0-0 debug@>=0.7.0-0 <0.8.0-0
+486 http 304 https://registry.npmjs.org/package
+487 silly registry.get cb [ 304,
+487 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+487 silly registry.get     server: 'Apache',
+487 silly registry.get     via: '1.1 varnish',
+487 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:33 GMT',
+487 silly registry.get     'cache-control': 'max-age=60',
+487 silly registry.get     etag: '"6B21VCNVVQECYCC8K6XQ2DXPN"',
+487 silly registry.get     age: '19',
+487 silly registry.get     'x-served-by': 'cache-ord1729-ORD',
+487 silly registry.get     'x-cache': 'HIT',
+487 silly registry.get     'x-cache-hits': '1',
+487 silly registry.get     'x-timer': 'S1415721093.680930,VS0,VE0',
+487 silly registry.get     vary: 'Accept',
+487 silly registry.get     'content-length': '0',
+487 silly registry.get     'keep-alive': 'timeout=10, max=50',
+487 silly registry.get     connection: 'Keep-Alive' } ]
+488 verbose etag https://registry.npmjs.org/package from cache
+489 silly lockFile 1d229e86-stream-counter-0-1-0 stream-counter@0.1.0
+490 silly lockFile 1d229e86-stream-counter-0-1-0 stream-counter@0.1.0
+491 silly lockFile 80d03f25-stream-counter-0-1-0-0-0-2-0-0 stream-counter@>=0.1.0-0 <0.2.0-0
+492 silly lockFile 80d03f25-stream-counter-0-1-0-0-0-2-0-0 stream-counter@>=0.1.0-0 <0.2.0-0
+493 silly addNameRange number 2 { name: 'package', range: '>=1.0.0 <1.2.0-0', hasData: true }
+494 silly addNameRange versions [ 'package', [ '0.0.1', '0.0.3', '1.0.0', '1.0.1' ] ]
+495 verbose addNamed [ 'package', '1.0.1' ]
+496 verbose addNamed [ '1.0.1', '1.0.1' ]
+497 silly lockFile f209d97f-package-1-0-1 package@1.0.1
+498 verbose lock package@1.0.1 /Users/sspeicher/.npm/f209d97f-package-1-0-1.lock
+499 silly resolved [ { name: 'xml2js',
+499 silly resolved     description: 'Simple XML to JavaScript object converter.',
+499 silly resolved     keywords: [ 'xml', 'json' ],
+499 silly resolved     homepage: 'https://github.com/Leonidas-from-XIV/node-xml2js',
+499 silly resolved     version: '0.2.8',
+499 silly resolved     author:
+499 silly resolved      { name: 'Marek Kubica',
+499 silly resolved        email: 'marek@xivilization.net',
+499 silly resolved        url: 'http://xivilization.net' },
+499 silly resolved     contributors:
+499 silly resolved      [ [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object],
+499 silly resolved        [Object] ],
+499 silly resolved     main: './lib/xml2js',
+499 silly resolved     directories: { lib: './lib' },
+499 silly resolved     scripts: { test: 'zap' },
+499 silly resolved     repository:
+499 silly resolved      { type: 'git',
+499 silly resolved        url: 'https://github.com/Leonidas-from-XIV/node-xml2js.git' },
+499 silly resolved     dependencies: { sax: '0.5.x' },
+499 silly resolved     devDependencies: { 'coffee-script': '>=1.6.3', zap: '>=0.2.5', docco: '>=0.6.2' },
+499 silly resolved     bugs: { url: 'https://github.com/Leonidas-from-XIV/node-xml2js/issues' },
+499 silly resolved     _id: 'xml2js@0.2.8',
+499 silly resolved     dist:
+499 silly resolved      { shasum: '9b81690931631ff09d1957549faf54f4f980b3c2',
+499 silly resolved        tarball: 'http://registry.npmjs.org/xml2js/-/xml2js-0.2.8.tgz' },
+499 silly resolved     _from: 'xml2js@>=0.2.0-0 <0.3.0-0',
+499 silly resolved     _npmVersion: '1.2.25',
+499 silly resolved     _npmUser: { name: 'leonidas', email: 'marek@xivilization.net' },
+499 silly resolved     maintainers: [ [Object] ],
+499 silly resolved     _shasum: '9b81690931631ff09d1957549faf54f4f980b3c2',
+499 silly resolved     _resolved: 'https://registry.npmjs.org/xml2js/-/xml2js-0.2.8.tgz',
+499 silly resolved     readme: 'ERROR: No README data found!' },
+499 silly resolved   { name: 'debug',
+499 silly resolved     version: '0.7.4',
+499 silly resolved     repository: { type: 'git', url: 'git://github.com/visionmedia/debug.git' },
+499 silly resolved     description: 'small debugging utility',
+499 silly resolved     keywords: [ 'debug', 'log', 'debugger' ],
+499 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+499 silly resolved     dependencies: {},
+499 silly resolved     devDependencies: { mocha: '*' },
+499 silly resolved     main: 'lib/debug.js',
+499 silly resolved     browser: './debug.js',
+499 silly resolved     engines: { node: '*' },
+499 silly resolved     files: [ 'lib/debug.js', 'debug.js', 'index.js' ],
+499 silly resolved     component: { scripts: [Object] },
+499 silly resolved     bugs: { url: 'https://github.com/visionmedia/debug/issues' },
+499 silly resolved     homepage: 'https://github.com/visionmedia/debug',
+499 silly resolved     _id: 'debug@0.7.4',
+499 silly resolved     dist:
+499 silly resolved      { shasum: '06e1ea8082c2cb14e39806e22e2f6f757f92af39',
+499 silly resolved        tarball: 'http://registry.npmjs.org/debug/-/debug-0.7.4.tgz' },
+499 silly resolved     _from: 'debug@>=0.7.0-0 <0.8.0-0',
+499 silly resolved     _npmVersion: '1.3.13',
+499 silly resolved     _npmUser: { name: 'tjholowaychuk', email: 'tj@vision-media.ca' },
+499 silly resolved     maintainers: [ [Object] ],
+499 silly resolved     directories: {},
+499 silly resolved     _shasum: '06e1ea8082c2cb14e39806e22e2f6f757f92af39',
+499 silly resolved     _resolved: 'https://registry.npmjs.org/debug/-/debug-0.7.4.tgz',
+499 silly resolved     readme: 'ERROR: No README data found!',
+499 silly resolved     scripts: {} },
+499 silly resolved   { name: 'stream-counter',
+499 silly resolved     version: '0.1.0',
+499 silly resolved     description: 'keeps track of how many bytes have been written to a stream',
+499 silly resolved     main: 'index.js',
+499 silly resolved     scripts: { test: 'node test/test.js' },
+499 silly resolved     repository:
+499 silly resolved      { type: 'git',
+499 silly resolved        url: 'git://github.com/superjoe30/node-stream-counter.git' },
+499 silly resolved     author: { name: 'Andrew Kelley', email: 'superjoe30@gmail.com' },
+499 silly resolved     license: 'BSD',
+499 silly resolved     engines: { node: '>=0.8.0' },
+499 silly resolved     dependencies: { 'readable-stream': '~1.0.2' },
+499 silly resolved     _id: 'stream-counter@0.1.0',
+499 silly resolved     dist:
+499 silly resolved      { shasum: 'a035e429361fb57f361606e17fcd8a8b9677327b',
+499 silly resolved        tarball: 'http://registry.npmjs.org/stream-counter/-/stream-counter-0.1.0.tgz' },
+499 silly resolved     _from: 'stream-counter@>=0.1.0-0 <0.2.0-0',
+499 silly resolved     _npmVersion: '1.2.17',
+499 silly resolved     _npmUser: { name: 'superjoe', email: 'superjoe30@gmail.com' },
+499 silly resolved     maintainers: [ [Object] ],
+499 silly resolved     directories: {},
+499 silly resolved     _shasum: 'a035e429361fb57f361606e17fcd8a8b9677327b',
+499 silly resolved     _resolved: 'https://registry.npmjs.org/stream-counter/-/stream-counter-0.1.0.tgz',
+499 silly resolved     bugs: { url: 'https://github.com/superjoe30/node-stream-counter/issues' },
+499 silly resolved     readme: 'ERROR: No README data found!',
+499 silly resolved     homepage: 'https://github.com/superjoe30/node-stream-counter' } ]
+500 info install xml2js@0.2.8 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+501 info install debug@0.7.4 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+502 info install stream-counter@0.1.0 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+503 info installOne xml2js@0.2.8
+504 info installOne debug@0.7.4
+505 info installOne stream-counter@0.1.0
+506 verbose node_modules/grunt-s3/node_modules/knox/node_modules/xml2js unbuild
+507 verbose node_modules/grunt-s3/node_modules/knox/node_modules/debug unbuild
+508 verbose node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter unbuild
+509 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js
+510 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/debug
+511 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter
+512 verbose tar unpack /Users/sspeicher/.npm/xml2js/0.2.8/package.tgz
+513 silly lockFile 7014aa1f-modules-knox-node-modules-xml2js tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js
+514 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js /Users/sspeicher/.npm/7014aa1f-modules-knox-node-modules-xml2js.lock
+515 silly lockFile 81503bba-her-npm-xml2js-0-2-8-package-tgz tar:///Users/sspeicher/.npm/xml2js/0.2.8/package.tgz
+516 verbose lock tar:///Users/sspeicher/.npm/xml2js/0.2.8/package.tgz /Users/sspeicher/.npm/81503bba-her-npm-xml2js-0-2-8-package-tgz.lock
+517 verbose tar unpack /Users/sspeicher/.npm/debug/0.7.4/package.tgz
+518 silly lockFile 6c00c891--modules-knox-node-modules-debug tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/debug
+519 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/debug /Users/sspeicher/.npm/6c00c891--modules-knox-node-modules-debug.lock
+520 silly lockFile 2275462c-cher-npm-debug-0-7-4-package-tgz tar:///Users/sspeicher/.npm/debug/0.7.4/package.tgz
+521 verbose lock tar:///Users/sspeicher/.npm/debug/0.7.4/package.tgz /Users/sspeicher/.npm/2275462c-cher-npm-debug-0-7-4-package-tgz.lock
+522 verbose tar unpack /Users/sspeicher/.npm/stream-counter/0.1.0/package.tgz
+523 silly lockFile e8bb1c30-knox-node-modules-stream-counter tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter
+524 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter /Users/sspeicher/.npm/e8bb1c30-knox-node-modules-stream-counter.lock
+525 silly lockFile 7c3ba869-stream-counter-0-1-0-package-tgz tar:///Users/sspeicher/.npm/stream-counter/0.1.0/package.tgz
+526 verbose lock tar:///Users/sspeicher/.npm/stream-counter/0.1.0/package.tgz /Users/sspeicher/.npm/7c3ba869-stream-counter-0-1-0-package-tgz.lock
+527 silly lockFile f209d97f-package-1-0-1 package@1.0.1
+528 silly lockFile f209d97f-package-1-0-1 package@1.0.1
+529 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js
+530 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/debug
+531 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter
+532 silly lockFile 93707385-package-1-0-0-1-2-0-0 package@>=1.0.0 <1.2.0-0
+533 silly lockFile 93707385-package-1-0-0-1-2-0-0 package@>=1.0.0 <1.2.0-0
+534 silly gunzTarPerm modes [ '755', '644' ]
+535 silly gunzTarPerm modes [ '755', '644' ]
+536 silly gunzTarPerm modes [ '755', '644' ]
+537 silly gunzTarPerm extractEntry package.json
+538 silly resolved [ { name: 'package',
+538 silly resolved     version: '1.0.1',
+538 silly resolved     description: 'Easy package.json exports.',
+538 silly resolved     keywords: [ 'package.json' ],
+538 silly resolved     author: { name: 'Veselin Todorov', email: 'hi@vesln.com' },
+538 silly resolved     devDependencies: { mocha: '0.3.3', should: '0.3.2' },
+538 silly resolved     repository: { type: 'git', url: 'git://github.com/vesln/package.git' },
+538 silly resolved     homepage: 'http://github.com/vesln/package',
+538 silly resolved     scripts: { test: 'make test' },
+538 silly resolved     main: './lib/package',
+538 silly resolved     engines: { node: '>= 0.6.0' },
+538 silly resolved     _npmUser: { name: 'vesln', email: 'hi@vesln.com' },
+538 silly resolved     _id: 'package@1.0.1',
+538 silly resolved     dependencies: {},
+538 silly resolved     optionalDependencies: {},
+538 silly resolved     _engineSupported: true,
+538 silly resolved     _npmVersion: '1.1.4',
+538 silly resolved     _nodeVersion: 'v0.6.12',
+538 silly resolved     _defaultsLoaded: true,
+538 silly resolved     dist:
+538 silly resolved      { shasum: 'd25a1f99e2506dcb27d6704b83dca8a312e4edcc',
+538 silly resolved        tarball: 'http://registry.npmjs.org/package/-/package-1.0.1.tgz' },
+538 silly resolved     maintainers: [ [Object] ],
+538 silly resolved     directories: {},
+538 silly resolved     _shasum: 'd25a1f99e2506dcb27d6704b83dca8a312e4edcc',
+538 silly resolved     _from: 'package@>=1.0.0 <1.2.0-0',
+538 silly resolved     _resolved: 'https://registry.npmjs.org/package/-/package-1.0.1.tgz',
+538 silly resolved     bugs: { url: 'https://github.com/vesln/package/issues' },
+538 silly resolved     readme: 'ERROR: No README data found!' } ]
+539 info install package@1.0.1 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary
+540 info installOne package@1.0.1
+541 silly gunzTarPerm extractEntry package.json
+542 silly gunzTarPerm extractEntry package.json
+543 verbose node_modules/grunt-s3/node_modules/temporary/node_modules/package unbuild
+544 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules/package
+545 silly gunzTarPerm extractEntry .npmignore
+546 silly gunzTarPerm extractEntry README.md
+547 verbose tar unpack /Users/sspeicher/.npm/package/1.0.1/package.tgz
+548 silly lockFile e1ff0a04-s-temporary-node-modules-package tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules/package
+549 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules/package /Users/sspeicher/.npm/e1ff0a04-s-temporary-node-modules-package.lock
+550 silly lockFile 1a760ab0-er-npm-package-1-0-1-package-tgz tar:///Users/sspeicher/.npm/package/1.0.1/package.tgz
+551 verbose lock tar:///Users/sspeicher/.npm/package/1.0.1/package.tgz /Users/sspeicher/.npm/1a760ab0-er-npm-package-1-0-1-package-tgz.lock
+552 silly gunzTarPerm extractEntry debug.js
+553 silly gunzTarPerm extractEntry index.js
+554 silly gunzTarPerm extractEntry .npmignore
+555 silly gunzTarPerm extractEntry README.md
+556 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules/package
+557 silly gunzTarPerm modes [ '755', '644' ]
+558 silly gunzTarPerm extractEntry .npmignore
+559 silly gunzTarPerm extractEntry index.js
+560 silly gunzTarPerm extractEntry test/test.js
+561 silly gunzTarPerm extractEntry Readme.md
+562 silly gunzTarPerm extractEntry lib/debug.js
+563 silly gunzTarPerm extractEntry LICENSE
+564 silly gunzTarPerm extractEntry .travis.yml
+565 silly gunzTarPerm extractEntry .travis.yml
+566 silly gunzTarPerm extractEntry examples/
+567 silly gunzTarPerm extractEntry test/test.txt
+568 silly gunzTarPerm extractEntry 83.coffee
+569 silly gunzTarPerm extractEntry examples/custom_path.js
+570 silly gunzTarPerm extractEntry examples/module.js
+571 silly gunzTarPerm extractEntry History.md
+572 silly gunzTarPerm extractEntry lib/
+573 silly gunzTarPerm extractEntry lib/package.js
+574 silly gunzTarPerm extractEntry Makefile
+575 silly gunzTarPerm extractEntry package.json
+576 silly gunzTarPerm extractEntry canon.xml
+577 silly gunzTarPerm extractEntry lib/xml2js.js
+578 silly gunzTarPerm extractEntry Readme.md
+579 silly gunzTarPerm extractEntry test/
+580 silly gunzTarPerm extractEntry text.coffee
+581 silly gunzTarPerm extractEntry text.xml
+582 silly gunzTarPerm extractEntry test/index.test.js
+583 silly gunzTarPerm extractEntry test/nested/
+584 silly lockFile e8bb1c30-knox-node-modules-stream-counter tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter
+585 silly lockFile e8bb1c30-knox-node-modules-stream-counter tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter
+586 silly gunzTarPerm extractEntry test/nested/two/
+587 silly gunzTarPerm extractEntry test/nested/two/nested.test.js
+588 silly gunzTarPerm extractEntry test/package.json
+589 silly gunzTarPerm extractEntry test/support/
+590 silly gunzTarPerm extractEntry test/support/package.json
+591 silly lockFile 7c3ba869-stream-counter-0-1-0-package-tgz tar:///Users/sspeicher/.npm/stream-counter/0.1.0/package.tgz
+592 silly lockFile 7c3ba869-stream-counter-0-1-0-package-tgz tar:///Users/sspeicher/.npm/stream-counter/0.1.0/package.tgz
+593 silly lockFile 6c00c891--modules-knox-node-modules-debug tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/debug
+594 silly lockFile 6c00c891--modules-knox-node-modules-debug tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/debug
+595 silly lockFile 2275462c-cher-npm-debug-0-7-4-package-tgz tar:///Users/sspeicher/.npm/debug/0.7.4/package.tgz
+596 silly lockFile 2275462c-cher-npm-debug-0-7-4-package-tgz tar:///Users/sspeicher/.npm/debug/0.7.4/package.tgz
+597 info preinstall stream-counter@0.1.0
+598 verbose readDependencies using package.json deps
+599 verbose readDependencies using package.json deps
+600 info preinstall debug@0.7.4
+601 verbose readDependencies using package.json deps
+602 verbose cache add [ 'readable-stream@~1.0.2', null ]
+603 verbose cache add spec="readable-stream@~1.0.2" args=["readable-stream@~1.0.2",null]
+604 verbose parsed spec { raw: 'readable-stream@~1.0.2',
+604 verbose parsed spec   scope: null,
+604 verbose parsed spec   name: 'readable-stream',
+604 verbose parsed spec   rawSpec: '~1.0.2',
+604 verbose parsed spec   spec: '>=1.0.2-0 <1.1.0-0',
+604 verbose parsed spec   type: 'range' }
+605 verbose readDependencies using package.json deps
+606 silly resolved []
+607 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/debug
+608 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/debug
+609 verbose linkStuff [ false,
+609 verbose linkStuff   false,
+609 verbose linkStuff   false,
+609 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules' ]
+610 info linkStuff debug@0.7.4
+611 verbose linkBins debug@0.7.4
+612 verbose linkMans debug@0.7.4
+613 verbose rebuildBundles debug@0.7.4
+614 verbose parsed spec { raw: 'readable-stream@~1.0.2',
+614 verbose parsed spec   scope: null,
+614 verbose parsed spec   name: 'readable-stream',
+614 verbose parsed spec   rawSpec: '~1.0.2',
+614 verbose parsed spec   spec: '>=1.0.2-0 <1.1.0-0',
+614 verbose parsed spec   type: 'range' }
+615 verbose addNamed [ 'readable-stream', '>=1.0.2-0 <1.1.0-0' ]
+616 verbose addNamed [ null, '>=1.0.2-0 <1.1.0-0' ]
+617 silly lockFile 2dd04893-readable-stream-1-0-2-0-1-1-0-0 readable-stream@>=1.0.2-0 <1.1.0-0
+618 verbose lock readable-stream@>=1.0.2-0 <1.1.0-0 /Users/sspeicher/.npm/2dd04893-readable-stream-1-0-2-0-1-1-0-0.lock
+619 info install debug@0.7.4
+620 silly addNameRange { name: 'readable-stream',
+620 silly addNameRange   range: '>=1.0.2-0 <1.1.0-0',
+620 silly addNameRange   hasData: false }
+621 verbose mapToRegistry name readable-stream
+622 verbose mapToRegistry uri https://registry.npmjs.org/readable-stream
+623 info postinstall debug@0.7.4
+624 verbose request on initialization, where is /readable-stream
+625 verbose request after pass 1, where is /readable-stream
+626 verbose request url raw /readable-stream
+627 verbose request resolving registry [ 'https://registry.npmjs.org/', './readable-stream' ]
+628 verbose request after pass 2, where is https://registry.npmjs.org/readable-stream
+629 verbose request no auth needed
+630 info retrier registry request attempt 1 at 09:51:33
+631 verbose etag "872Q1JZK3K6LDTH85QVCJH2KR"
+632 http request GET https://registry.npmjs.org/readable-stream
+633 silly lockFile e1ff0a04-s-temporary-node-modules-package tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules/package
+634 silly lockFile e1ff0a04-s-temporary-node-modules-package tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules/package
+635 silly lockFile 1a760ab0-er-npm-package-1-0-1-package-tgz tar:///Users/sspeicher/.npm/package/1.0.1/package.tgz
+636 silly lockFile 1a760ab0-er-npm-package-1-0-1-package-tgz tar:///Users/sspeicher/.npm/package/1.0.1/package.tgz
+637 info preinstall package@1.0.1
+638 verbose readDependencies using package.json deps
+639 verbose readDependencies using package.json deps
+640 silly resolved []
+641 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules/package
+642 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules/package
+643 verbose linkStuff [ false,
+643 verbose linkStuff   false,
+643 verbose linkStuff   false,
+643 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary/node_modules' ]
+644 info linkStuff package@1.0.1
+645 verbose linkBins package@1.0.1
+646 verbose linkMans package@1.0.1
+647 verbose rebuildBundles package@1.0.1
+648 info install package@1.0.1
+649 info postinstall package@1.0.1
+650 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary
+651 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/temporary
+652 verbose linkStuff [ false,
+652 verbose linkStuff   false,
+652 verbose linkStuff   false,
+652 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules' ]
+653 info linkStuff temporary@0.0.5
+654 verbose linkBins temporary@0.0.5
+655 verbose linkMans temporary@0.0.5
+656 verbose rebuildBundles temporary@0.0.5
+657 verbose rebuildBundles [ 'package' ]
+658 info install temporary@0.0.5
+659 info postinstall temporary@0.0.5
+660 silly lockFile 7014aa1f-modules-knox-node-modules-xml2js tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js
+661 silly lockFile 7014aa1f-modules-knox-node-modules-xml2js tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js
+662 silly lockFile 81503bba-her-npm-xml2js-0-2-8-package-tgz tar:///Users/sspeicher/.npm/xml2js/0.2.8/package.tgz
+663 silly lockFile 81503bba-her-npm-xml2js-0-2-8-package-tgz tar:///Users/sspeicher/.npm/xml2js/0.2.8/package.tgz
+664 info preinstall xml2js@0.2.8
+665 verbose readDependencies using package.json deps
+666 verbose readDependencies using package.json deps
+667 verbose cache add [ 'sax@0.5.x', null ]
+668 verbose cache add spec="sax@0.5.x" args=["sax@0.5.x",null]
+669 verbose parsed spec { raw: 'sax@0.5.x',
+669 verbose parsed spec   scope: null,
+669 verbose parsed spec   name: 'sax',
+669 verbose parsed spec   rawSpec: '0.5.x',
+669 verbose parsed spec   spec: '>=0.5.0-0 <0.6.0-0',
+669 verbose parsed spec   type: 'range' }
+670 verbose parsed spec { raw: 'sax@0.5.x',
+670 verbose parsed spec   scope: null,
+670 verbose parsed spec   name: 'sax',
+670 verbose parsed spec   rawSpec: '0.5.x',
+670 verbose parsed spec   spec: '>=0.5.0-0 <0.6.0-0',
+670 verbose parsed spec   type: 'range' }
+671 verbose addNamed [ 'sax', '>=0.5.0-0 <0.6.0-0' ]
+672 verbose addNamed [ null, '>=0.5.0-0 <0.6.0-0' ]
+673 silly lockFile e94a2189-sax-0-5-0-0-0-6-0-0 sax@>=0.5.0-0 <0.6.0-0
+674 verbose lock sax@>=0.5.0-0 <0.6.0-0 /Users/sspeicher/.npm/e94a2189-sax-0-5-0-0-0-6-0-0.lock
+675 silly addNameRange { name: 'sax', range: '>=0.5.0-0 <0.6.0-0', hasData: false }
+676 verbose mapToRegistry name sax
+677 verbose mapToRegistry uri https://registry.npmjs.org/sax
+678 verbose request on initialization, where is /sax
+679 verbose request after pass 1, where is /sax
+680 verbose request url raw /sax
+681 verbose request resolving registry [ 'https://registry.npmjs.org/', './sax' ]
+682 verbose request after pass 2, where is https://registry.npmjs.org/sax
+683 verbose request no auth needed
+684 info retrier registry request attempt 1 at 09:51:33
+685 verbose etag "E9BS32XRXJBP7EXEMTTA517VN"
+686 http request GET https://registry.npmjs.org/sax
+687 http 304 https://registry.npmjs.org/readable-stream
+688 silly registry.get cb [ 304,
+688 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+688 silly registry.get     server: 'Apache',
+688 silly registry.get     via: '1.1 varnish',
+688 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:14 GMT',
+688 silly registry.get     'cache-control': 'max-age=60',
+688 silly registry.get     etag: '"872Q1JZK3K6LDTH85QVCJH2KR"',
+688 silly registry.get     age: '19',
+688 silly registry.get     'x-served-by': 'cache-ord1732-ORD',
+688 silly registry.get     'x-cache': 'HIT',
+688 silly registry.get     'x-cache-hits': '3',
+688 silly registry.get     'x-timer': 'S1415721093.875692,VS0,VE0',
+688 silly registry.get     vary: 'Accept',
+688 silly registry.get     'content-length': '0',
+688 silly registry.get     'keep-alive': 'timeout=10, max=50',
+688 silly registry.get     connection: 'Keep-Alive' } ]
+689 verbose etag https://registry.npmjs.org/readable-stream from cache
+690 silly addNameRange number 2 { name: 'readable-stream',
+690 silly addNameRange   range: '>=1.0.2-0 <1.1.0-0',
+690 silly addNameRange   hasData: true }
+691 silly addNameRange versions [ 'readable-stream',
+691 silly addNameRange   [ '0.0.1',
+691 silly addNameRange     '0.0.2',
+691 silly addNameRange     '0.0.3',
+691 silly addNameRange     '0.0.4',
+691 silly addNameRange     '0.1.0',
+691 silly addNameRange     '0.2.0',
+691 silly addNameRange     '0.3.0',
+691 silly addNameRange     '0.3.1',
+691 silly addNameRange     '1.0.0',
+691 silly addNameRange     '1.0.1',
+691 silly addNameRange     '1.0.2',
+691 silly addNameRange     '1.0.15',
+691 silly addNameRange     '1.0.17',
+691 silly addNameRange     '1.1.7',
+691 silly addNameRange     '1.1.8',
+691 silly addNameRange     '1.1.9',
+691 silly addNameRange     '1.0.24',
+691 silly addNameRange     '1.0.25',
+691 silly addNameRange     '1.1.10',
+691 silly addNameRange     '1.0.25-1',
+691 silly addNameRange     '1.1.11',
+691 silly addNameRange     '1.0.26',
+691 silly addNameRange     '1.0.26-1',
+691 silly addNameRange     '1.1.11-1',
+691 silly addNameRange     '1.0.26-2',
+691 silly addNameRange     '1.1.12',
+691 silly addNameRange     '1.0.26-3',
+691 silly addNameRange     '1.0.26-4',
+691 silly addNameRange     '1.1.12-1',
+691 silly addNameRange     '1.0.27-1',
+691 silly addNameRange     '1.1.13-1',
+691 silly addNameRange     '1.0.31',
+691 silly addNameRange     '1.1.13',
+691 silly addNameRange     '1.0.32',
+691 silly addNameRange     '1.0.32-1',
+691 silly addNameRange     '1.0.33-1',
+691 silly addNameRange     '1.0.33-2',
+691 silly addNameRange     '1.0.33' ] ]
+692 verbose addNamed [ 'readable-stream', '1.0.33' ]
+693 verbose addNamed [ '1.0.33', '1.0.33' ]
+694 silly lockFile f026aa23-readable-stream-1-0-33 readable-stream@1.0.33
+695 verbose lock readable-stream@1.0.33 /Users/sspeicher/.npm/f026aa23-readable-stream-1-0-33.lock
+696 silly lockFile f026aa23-readable-stream-1-0-33 readable-stream@1.0.33
+697 silly lockFile f026aa23-readable-stream-1-0-33 readable-stream@1.0.33
+698 silly lockFile 2dd04893-readable-stream-1-0-2-0-1-1-0-0 readable-stream@>=1.0.2-0 <1.1.0-0
+699 silly lockFile 2dd04893-readable-stream-1-0-2-0-1-1-0-0 readable-stream@>=1.0.2-0 <1.1.0-0
+700 silly resolved [ { name: 'readable-stream',
+700 silly resolved     version: '1.0.33',
+700 silly resolved     description: 'Streams2, a user-land copy of the stream library from Node.js v0.10.x',
+700 silly resolved     main: 'readable.js',
+700 silly resolved     dependencies:
+700 silly resolved      { 'core-util-is': '~1.0.0',
+700 silly resolved        isarray: '0.0.1',
+700 silly resolved        string_decoder: '~0.10.x',
+700 silly resolved        inherits: '~2.0.1' },
+700 silly resolved     devDependencies: { tap: '~0.2.6' },
+700 silly resolved     scripts: { test: 'tap test/simple/*.js' },
+700 silly resolved     repository: { type: 'git', url: 'git://github.com/isaacs/readable-stream' },
+700 silly resolved     keywords: [ 'readable', 'stream', 'pipe' ],
+700 silly resolved     browser: { util: false },
+700 silly resolved     author:
+700 silly resolved      { name: 'Isaac Z. Schlueter',
+700 silly resolved        email: 'i@izs.me',
+700 silly resolved        url: 'http://blog.izs.me/' },
+700 silly resolved     license: 'MIT',
+700 silly resolved     gitHead: '0bf97a117c5646556548966409ebc57a6dda2638',
+700 silly resolved     bugs: { url: 'https://github.com/isaacs/readable-stream/issues' },
+700 silly resolved     homepage: 'https://github.com/isaacs/readable-stream',
+700 silly resolved     _id: 'readable-stream@1.0.33',
+700 silly resolved     _shasum: '3a360dd66c1b1d7fd4705389860eda1d0f61126c',
+700 silly resolved     _from: 'readable-stream@>=1.0.2-0 <1.1.0-0',
+700 silly resolved     _npmVersion: '1.4.28',
+700 silly resolved     _npmUser: { name: 'rvagg', email: 'rod@vagg.org' },
+700 silly resolved     maintainers: [ [Object], [Object], [Object] ],
+700 silly resolved     dist:
+700 silly resolved      { shasum: '3a360dd66c1b1d7fd4705389860eda1d0f61126c',
+700 silly resolved        tarball: 'http://registry.npmjs.org/readable-stream/-/readable-stream-1.0.33.tgz' },
+700 silly resolved     directories: {},
+700 silly resolved     _resolved: 'https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.33.tgz',
+700 silly resolved     readme: 'ERROR: No README data found!' } ]
+701 info install readable-stream@1.0.33 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter
+702 info installOne readable-stream@1.0.33
+703 verbose node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream unbuild
+704 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+705 verbose tar unpack /Users/sspeicher/.npm/readable-stream/1.0.33/package.tgz
+706 silly lockFile 741b97c7-ter-node-modules-readable-stream tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+707 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream /Users/sspeicher/.npm/741b97c7-ter-node-modules-readable-stream.lock
+708 silly lockFile c933f50c-adable-stream-1-0-33-package-tgz tar:///Users/sspeicher/.npm/readable-stream/1.0.33/package.tgz
+709 verbose lock tar:///Users/sspeicher/.npm/readable-stream/1.0.33/package.tgz /Users/sspeicher/.npm/c933f50c-adable-stream-1-0-33-package-tgz.lock
+710 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+711 silly gunzTarPerm modes [ '755', '644' ]
+712 silly gunzTarPerm extractEntry package.json
+713 silly gunzTarPerm extractEntry .npmignore
+714 silly gunzTarPerm extractEntry README.md
+715 silly gunzTarPerm extractEntry LICENSE
+716 silly gunzTarPerm extractEntry duplex.js
+717 silly gunzTarPerm extractEntry writable.js
+718 silly gunzTarPerm extractEntry passthrough.js
+719 silly gunzTarPerm extractEntry readable.js
+720 silly gunzTarPerm extractEntry transform.js
+721 silly gunzTarPerm extractEntry lib/_stream_duplex.js
+722 silly gunzTarPerm extractEntry lib/_stream_passthrough.js
+723 silly gunzTarPerm extractEntry lib/_stream_readable.js
+724 silly gunzTarPerm extractEntry lib/_stream_transform.js
+725 silly gunzTarPerm extractEntry lib/_stream_writable.js
+726 silly lockFile 741b97c7-ter-node-modules-readable-stream tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+727 silly lockFile 741b97c7-ter-node-modules-readable-stream tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+728 silly lockFile c933f50c-adable-stream-1-0-33-package-tgz tar:///Users/sspeicher/.npm/readable-stream/1.0.33/package.tgz
+729 silly lockFile c933f50c-adable-stream-1-0-33-package-tgz tar:///Users/sspeicher/.npm/readable-stream/1.0.33/package.tgz
+730 info preinstall readable-stream@1.0.33
+731 verbose readDependencies using package.json deps
+732 verbose readDependencies using package.json deps
+733 verbose cache add [ 'core-util-is@~1.0.0', null ]
+734 verbose cache add spec="core-util-is@~1.0.0" args=["core-util-is@~1.0.0",null]
+735 verbose parsed spec { raw: 'core-util-is@~1.0.0',
+735 verbose parsed spec   scope: null,
+735 verbose parsed spec   name: 'core-util-is',
+735 verbose parsed spec   rawSpec: '~1.0.0',
+735 verbose parsed spec   spec: '>=1.0.0-0 <1.1.0-0',
+735 verbose parsed spec   type: 'range' }
+736 verbose cache add [ 'isarray@0.0.1', null ]
+737 verbose cache add spec="isarray@0.0.1" args=["isarray@0.0.1",null]
+738 verbose parsed spec { raw: 'isarray@0.0.1',
+738 verbose parsed spec   scope: null,
+738 verbose parsed spec   name: 'isarray',
+738 verbose parsed spec   rawSpec: '0.0.1',
+738 verbose parsed spec   spec: '0.0.1',
+738 verbose parsed spec   type: 'version' }
+739 verbose parsed spec { raw: 'core-util-is@~1.0.0',
+739 verbose parsed spec   scope: null,
+739 verbose parsed spec   name: 'core-util-is',
+739 verbose parsed spec   rawSpec: '~1.0.0',
+739 verbose parsed spec   spec: '>=1.0.0-0 <1.1.0-0',
+739 verbose parsed spec   type: 'range' }
+740 verbose addNamed [ 'core-util-is', '>=1.0.0-0 <1.1.0-0' ]
+741 verbose addNamed [ null, '>=1.0.0-0 <1.1.0-0' ]
+742 silly lockFile bd40dc3c-core-util-is-1-0-0-0-1-1-0-0 core-util-is@>=1.0.0-0 <1.1.0-0
+743 verbose lock core-util-is@>=1.0.0-0 <1.1.0-0 /Users/sspeicher/.npm/bd40dc3c-core-util-is-1-0-0-0-1-1-0-0.lock
+744 verbose parsed spec { raw: 'isarray@0.0.1',
+744 verbose parsed spec   scope: null,
+744 verbose parsed spec   name: 'isarray',
+744 verbose parsed spec   rawSpec: '0.0.1',
+744 verbose parsed spec   spec: '0.0.1',
+744 verbose parsed spec   type: 'version' }
+745 verbose addNamed [ 'isarray', '0.0.1' ]
+746 verbose addNamed [ '0.0.1', '0.0.1' ]
+747 silly lockFile 9efe11b1-isarray-0-0-1 isarray@0.0.1
+748 verbose lock isarray@0.0.1 /Users/sspeicher/.npm/9efe11b1-isarray-0-0-1.lock
+749 verbose cache add [ 'string_decoder@~0.10.x', null ]
+750 verbose cache add spec="string_decoder@~0.10.x" args=["string_decoder@~0.10.x",null]
+751 verbose parsed spec { raw: 'string_decoder@~0.10.x',
+751 verbose parsed spec   scope: null,
+751 verbose parsed spec   name: 'string_decoder',
+751 verbose parsed spec   rawSpec: '~0.10.x',
+751 verbose parsed spec   spec: '>=0.10.0-0 <0.11.0-0',
+751 verbose parsed spec   type: 'range' }
+752 verbose parsed spec { raw: 'string_decoder@~0.10.x',
+752 verbose parsed spec   scope: null,
+752 verbose parsed spec   name: 'string_decoder',
+752 verbose parsed spec   rawSpec: '~0.10.x',
+752 verbose parsed spec   spec: '>=0.10.0-0 <0.11.0-0',
+752 verbose parsed spec   type: 'range' }
+753 verbose addNamed [ 'string_decoder', '>=0.10.0-0 <0.11.0-0' ]
+754 verbose addNamed [ null, '>=0.10.0-0 <0.11.0-0' ]
+755 silly lockFile 6acbfd10-string-decoder-0-10-0-0-0-11-0-0 string_decoder@>=0.10.0-0 <0.11.0-0
+756 verbose lock string_decoder@>=0.10.0-0 <0.11.0-0 /Users/sspeicher/.npm/6acbfd10-string-decoder-0-10-0-0-0-11-0-0.lock
+757 verbose cache add [ 'inherits@~2.0.1', null ]
+758 verbose cache add spec="inherits@~2.0.1" args=["inherits@~2.0.1",null]
+759 verbose parsed spec { raw: 'inherits@~2.0.1',
+759 verbose parsed spec   scope: null,
+759 verbose parsed spec   name: 'inherits',
+759 verbose parsed spec   rawSpec: '~2.0.1',
+759 verbose parsed spec   spec: '>=2.0.1-0 <2.1.0-0',
+759 verbose parsed spec   type: 'range' }
+760 silly addNameRange { name: 'core-util-is',
+760 silly addNameRange   range: '>=1.0.0-0 <1.1.0-0',
+760 silly addNameRange   hasData: false }
+761 verbose mapToRegistry name core-util-is
+762 verbose mapToRegistry uri https://registry.npmjs.org/core-util-is
+763 verbose mapToRegistry name isarray
+764 verbose mapToRegistry uri https://registry.npmjs.org/isarray
+765 verbose parsed spec { raw: 'inherits@~2.0.1',
+765 verbose parsed spec   scope: null,
+765 verbose parsed spec   name: 'inherits',
+765 verbose parsed spec   rawSpec: '~2.0.1',
+765 verbose parsed spec   spec: '>=2.0.1-0 <2.1.0-0',
+765 verbose parsed spec   type: 'range' }
+766 verbose addNamed [ 'inherits', '>=2.0.1-0 <2.1.0-0' ]
+767 verbose addNamed [ null, '>=2.0.1-0 <2.1.0-0' ]
+768 silly lockFile 8ac47d23-inherits-2-0-1-0-2-1-0-0 inherits@>=2.0.1-0 <2.1.0-0
+769 verbose lock inherits@>=2.0.1-0 <2.1.0-0 /Users/sspeicher/.npm/8ac47d23-inherits-2-0-1-0-2-1-0-0.lock
+770 silly addNameRange { name: 'string_decoder',
+770 silly addNameRange   range: '>=0.10.0-0 <0.11.0-0',
+770 silly addNameRange   hasData: false }
+771 verbose mapToRegistry name string_decoder
+772 verbose mapToRegistry uri https://registry.npmjs.org/string_decoder
+773 silly addNameRange { name: 'inherits', range: '>=2.0.1-0 <2.1.0-0', hasData: false }
+774 verbose mapToRegistry name inherits
+775 verbose mapToRegistry uri https://registry.npmjs.org/inherits
+776 verbose request on initialization, where is /core-util-is
+777 verbose request after pass 1, where is /core-util-is
+778 verbose request url raw /core-util-is
+779 verbose request resolving registry [ 'https://registry.npmjs.org/', './core-util-is' ]
+780 verbose request after pass 2, where is https://registry.npmjs.org/core-util-is
+781 verbose request no auth needed
+782 info retrier registry request attempt 1 at 09:51:33
+783 verbose etag "8GK6OUBFPCHKF5I20FLUACLGY"
+784 http request GET https://registry.npmjs.org/core-util-is
+785 verbose request on initialization, where is /isarray
+786 verbose request after pass 1, where is /isarray
+787 verbose request url raw /isarray
+788 verbose request resolving registry [ 'https://registry.npmjs.org/', './isarray' ]
+789 verbose request after pass 2, where is https://registry.npmjs.org/isarray
+790 verbose request no auth needed
+791 info retrier registry request attempt 1 at 09:51:33
+792 verbose etag "AI6YZ768HN0R3YEJSMBHLP9JL"
+793 http request GET https://registry.npmjs.org/isarray
+794 verbose request on initialization, where is /string_decoder
+795 verbose request after pass 1, where is /string_decoder
+796 verbose request url raw /string_decoder
+797 verbose request resolving registry [ 'https://registry.npmjs.org/', './string_decoder' ]
+798 verbose request after pass 2, where is https://registry.npmjs.org/string_decoder
+799 verbose request no auth needed
+800 info retrier registry request attempt 1 at 09:51:33
+801 verbose etag "2419XDLWSZIMU58NXHF48KRW5"
+802 http request GET https://registry.npmjs.org/string_decoder
+803 verbose request on initialization, where is /inherits
+804 verbose request after pass 1, where is /inherits
+805 verbose request url raw /inherits
+806 verbose request resolving registry [ 'https://registry.npmjs.org/', './inherits' ]
+807 verbose request after pass 2, where is https://registry.npmjs.org/inherits
+808 verbose request no auth needed
+809 info retrier registry request attempt 1 at 09:51:33
+810 verbose etag "4HKEWVWX7W0PKAF3UJZOADCGX"
+811 http request GET https://registry.npmjs.org/inherits
+812 http 304 https://registry.npmjs.org/sax
+813 silly registry.get cb [ 304,
+813 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:33 GMT',
+813 silly registry.get     server: 'Apache',
+813 silly registry.get     via: '1.1 varnish',
+813 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:33 GMT',
+813 silly registry.get     'cache-control': 'max-age=60',
+813 silly registry.get     etag: '"E9BS32XRXJBP7EXEMTTA517VN"',
+813 silly registry.get     age: '0',
+813 silly registry.get     'x-served-by': 'cache-ord1732-ORD',
+813 silly registry.get     'x-cache': 'HIT',
+813 silly registry.get     'x-cache-hits': '1',
+813 silly registry.get     'x-timer': 'S1415721093.898329,VS0,VE63',
+813 silly registry.get     vary: 'Accept',
+813 silly registry.get     'content-length': '0',
+813 silly registry.get     'keep-alive': 'timeout=10, max=50',
+813 silly registry.get     connection: 'Keep-Alive' } ]
+814 verbose etag https://registry.npmjs.org/sax from cache
+815 silly addNameRange number 2 { name: 'sax', range: '>=0.5.0-0 <0.6.0-0', hasData: true }
+816 silly addNameRange versions [ 'sax',
+816 silly addNameRange   [ '0.1.0',
+816 silly addNameRange     '0.1.1',
+816 silly addNameRange     '0.1.2',
+816 silly addNameRange     '0.1.3',
+816 silly addNameRange     '0.1.4',
+816 silly addNameRange     '0.1.5',
+816 silly addNameRange     '0.2.0',
+816 silly addNameRange     '0.2.1',
+816 silly addNameRange     '0.2.2',
+816 silly addNameRange     '0.2.3',
+816 silly addNameRange     '0.2.4',
+816 silly addNameRange     '0.2.5',
+816 silly addNameRange     '0.3.0',
+816 silly addNameRange     '0.3.1',
+816 silly addNameRange     '0.3.2',
+816 silly addNameRange     '0.3.3',
+816 silly addNameRange     '0.3.4',
+816 silly addNameRange     '0.3.5',
+816 silly addNameRange     '0.4.1',
+816 silly addNameRange     '0.4.0',
+816 silly addNameRange     '0.4.2',
+816 silly addNameRange     '0.4.3',
+816 silly addNameRange     '0.5.0',
+816 silly addNameRange     '0.5.1',
+816 silly addNameRange     '0.5.2',
+816 silly addNameRange     '0.5.3',
+816 silly addNameRange     '0.5.4',
+816 silly addNameRange     '0.5.5',
+816 silly addNameRange     '0.5.6',
+816 silly addNameRange     '0.5.7',
+816 silly addNameRange     '0.5.8',
+816 silly addNameRange     '0.6.0',
+816 silly addNameRange     '0.6.1' ] ]
+817 verbose addNamed [ 'sax', '0.5.8' ]
+818 verbose addNamed [ '0.5.8', '0.5.8' ]
+819 silly lockFile c9464f8a-sax-0-5-8 sax@0.5.8
+820 verbose lock sax@0.5.8 /Users/sspeicher/.npm/c9464f8a-sax-0-5-8.lock
+821 silly lockFile c9464f8a-sax-0-5-8 sax@0.5.8
+822 silly lockFile c9464f8a-sax-0-5-8 sax@0.5.8
+823 silly lockFile e94a2189-sax-0-5-0-0-0-6-0-0 sax@>=0.5.0-0 <0.6.0-0
+824 silly lockFile e94a2189-sax-0-5-0-0-0-6-0-0 sax@>=0.5.0-0 <0.6.0-0
+825 silly resolved [ { name: 'sax',
+825 silly resolved     description: 'An evented streaming XML parser in JavaScript',
+825 silly resolved     author:
+825 silly resolved      { name: 'Isaac Z. Schlueter',
+825 silly resolved        email: 'i@izs.me',
+825 silly resolved        url: 'http://blog.izs.me/' },
+825 silly resolved     version: '0.5.8',
+825 silly resolved     main: 'lib/sax.js',
+825 silly resolved     license: 'BSD',
+825 silly resolved     scripts: { test: 'node test/index.js' },
+825 silly resolved     repository: { type: 'git', url: 'git://github.com/isaacs/sax-js.git' },
+825 silly resolved     contributors:
+825 silly resolved      [ [Object],
+825 silly resolved        [Object],
+825 silly resolved        [Object],
+825 silly resolved        [Object],
+825 silly resolved        [Object],
+825 silly resolved        [Object],
+825 silly resolved        [Object],
+825 silly resolved        [Object],
+825 silly resolved        [Object] ],
+825 silly resolved     bugs: { url: 'https://github.com/isaacs/sax-js/issues' },
+825 silly resolved     homepage: 'https://github.com/isaacs/sax-js',
+825 silly resolved     _id: 'sax@0.5.8',
+825 silly resolved     dist:
+825 silly resolved      { shasum: 'd472db228eb331c2506b0e8c15524adb939d12c1',
+825 silly resolved        tarball: 'http://registry.npmjs.org/sax/-/sax-0.5.8.tgz' },
+825 silly resolved     _from: 'sax@>=0.5.0-0 <0.6.0-0',
+825 silly resolved     _npmVersion: '1.3.15',
+825 silly resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+825 silly resolved     maintainers: [ [Object] ],
+825 silly resolved     directories: {},
+825 silly resolved     _shasum: 'd472db228eb331c2506b0e8c15524adb939d12c1',
+825 silly resolved     _resolved: 'https://registry.npmjs.org/sax/-/sax-0.5.8.tgz',
+825 silly resolved     readme: 'ERROR: No README data found!' } ]
+826 info install sax@0.5.8 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js
+827 info installOne sax@0.5.8
+828 verbose node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax unbuild
+829 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax
+830 verbose tar unpack /Users/sspeicher/.npm/sax/0.5.8/package.tgz
+831 silly lockFile 982820c7--modules-xml2js-node-modules-sax tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax
+832 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax /Users/sspeicher/.npm/982820c7--modules-xml2js-node-modules-sax.lock
+833 silly lockFile a706b179-eicher-npm-sax-0-5-8-package-tgz tar:///Users/sspeicher/.npm/sax/0.5.8/package.tgz
+834 verbose lock tar:///Users/sspeicher/.npm/sax/0.5.8/package.tgz /Users/sspeicher/.npm/a706b179-eicher-npm-sax-0-5-8-package-tgz.lock
+835 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax
+836 silly gunzTarPerm modes [ '755', '644' ]
+837 silly gunzTarPerm extractEntry package.json
+838 silly gunzTarPerm extractEntry README.md
+839 silly gunzTarPerm extractEntry LICENSE
+840 silly gunzTarPerm extractEntry AUTHORS
+841 silly gunzTarPerm extractEntry LICENSE-W3C.html
+842 silly gunzTarPerm extractEntry component.json
+843 silly gunzTarPerm extractEntry examples/example.js
+844 silly gunzTarPerm extractEntry examples/get-products.js
+845 silly gunzTarPerm extractEntry examples/hello-world.js
+846 silly gunzTarPerm extractEntry examples/pretty-print.js
+847 silly gunzTarPerm extractEntry examples/big-not-pretty.xml
+848 silly gunzTarPerm extractEntry examples/not-pretty.xml
+849 silly gunzTarPerm extractEntry examples/shopping.xml
+850 silly gunzTarPerm extractEntry examples/strict.dtd
+851 silly gunzTarPerm extractEntry examples/test.html
+852 silly gunzTarPerm extractEntry examples/test.xml
+853 silly gunzTarPerm extractEntry lib/sax.js
+854 silly gunzTarPerm extractEntry test/attribute-name.js
+855 silly gunzTarPerm extractEntry test/issue-35.js
+856 silly gunzTarPerm extractEntry test/issue-47.js
+857 silly gunzTarPerm extractEntry test/issue-49.js
+858 silly gunzTarPerm extractEntry test/issue-84.js
+859 silly gunzTarPerm extractEntry test/issue-30.js
+860 silly gunzTarPerm extractEntry test/script-close-better.js
+861 silly gunzTarPerm extractEntry test/script.js
+862 silly gunzTarPerm extractEntry test/self-closing-child-strict.js
+863 silly gunzTarPerm extractEntry test/self-closing-child.js
+864 silly gunzTarPerm extractEntry test/self-closing-tag.js
+865 silly gunzTarPerm extractEntry test/issue-23.js
+866 silly gunzTarPerm extractEntry test/stray-ending.js
+867 silly gunzTarPerm extractEntry test/index.js
+868 silly gunzTarPerm extractEntry test/trailing-attribute-no-value.js
+869 silly gunzTarPerm extractEntry test/flush.js
+870 silly gunzTarPerm extractEntry test/trailing-non-whitespace.js
+871 silly gunzTarPerm extractEntry test/entity-mega.js
+872 silly gunzTarPerm extractEntry test/unclosed-root.js
+873 silly gunzTarPerm extractEntry test/entities.js
+874 silly gunzTarPerm extractEntry test/unquoted.js
+875 silly gunzTarPerm extractEntry test/end_empty_stream.js
+876 silly gunzTarPerm extractEntry test/utf8-split.js
+877 silly gunzTarPerm extractEntry test/duplicate-attribute.js
+878 silly gunzTarPerm extractEntry test/xmlns-as-tag-name.js
+879 silly gunzTarPerm extractEntry test/cyrillic.js
+880 silly gunzTarPerm extractEntry test/xmlns-issue-41.js
+881 silly gunzTarPerm extractEntry test/cdata.js
+882 silly gunzTarPerm extractEntry test/xmlns-rebinding.js
+883 silly gunzTarPerm extractEntry test/cdata-multiple.js
+884 silly gunzTarPerm extractEntry test/xmlns-strict.js
+885 silly gunzTarPerm extractEntry test/cdata-fake-end.js
+886 silly gunzTarPerm extractEntry test/xmlns-unbound-element.js
+887 silly gunzTarPerm extractEntry test/cdata-end-split.js
+888 silly gunzTarPerm extractEntry test/xmlns-unbound.js
+889 silly gunzTarPerm extractEntry test/cdata-chunked.js
+890 silly gunzTarPerm extractEntry test/xmlns-xml-default-ns.js
+891 silly gunzTarPerm extractEntry test/case.js
+892 silly gunzTarPerm extractEntry test/xmlns-xml-default-prefix-attribute.js
+893 silly gunzTarPerm extractEntry test/buffer-overrun.js
+894 silly gunzTarPerm extractEntry test/xmlns-xml-default-prefix.js
+895 silly gunzTarPerm extractEntry test/attribute-no-space.js
+896 silly gunzTarPerm extractEntry test/xmlns-xml-default-redefine.js
+897 silly gunzTarPerm extractEntry test/parser-position.js
+898 silly lockFile 982820c7--modules-xml2js-node-modules-sax tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax
+899 silly lockFile 982820c7--modules-xml2js-node-modules-sax tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax
+900 silly lockFile a706b179-eicher-npm-sax-0-5-8-package-tgz tar:///Users/sspeicher/.npm/sax/0.5.8/package.tgz
+901 silly lockFile a706b179-eicher-npm-sax-0-5-8-package-tgz tar:///Users/sspeicher/.npm/sax/0.5.8/package.tgz
+902 info preinstall sax@0.5.8
+903 verbose readDependencies using package.json deps
+904 verbose readDependencies using package.json deps
+905 silly resolved []
+906 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax
+907 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules/sax
+908 verbose linkStuff [ false,
+908 verbose linkStuff   false,
+908 verbose linkStuff   false,
+908 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js/node_modules' ]
+909 info linkStuff sax@0.5.8
+910 verbose linkBins sax@0.5.8
+911 verbose linkMans sax@0.5.8
+912 verbose rebuildBundles sax@0.5.8
+913 info install sax@0.5.8
+914 info postinstall sax@0.5.8
+915 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js
+916 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/xml2js
+917 verbose linkStuff [ false,
+917 verbose linkStuff   false,
+917 verbose linkStuff   false,
+917 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules' ]
+918 info linkStuff xml2js@0.2.8
+919 verbose linkBins xml2js@0.2.8
+920 verbose linkMans xml2js@0.2.8
+921 verbose rebuildBundles xml2js@0.2.8
+922 verbose rebuildBundles [ 'sax' ]
+923 info install xml2js@0.2.8
+924 info postinstall xml2js@0.2.8
+925 http 304 https://registry.npmjs.org/core-util-is
+926 silly registry.get cb [ 304,
+926 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:34 GMT',
+926 silly registry.get     server: 'Apache',
+926 silly registry.get     via: '1.1 varnish',
+926 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:38:47 GMT',
+926 silly registry.get     'cache-control': 'max-age=60',
+926 silly registry.get     etag: '"8GK6OUBFPCHKF5I20FLUACLGY"',
+926 silly registry.get     age: '25',
+926 silly registry.get     'x-served-by': 'cache-ord1726-ORD',
+926 silly registry.get     'x-cache': 'HIT',
+926 silly registry.get     'x-cache-hits': '178',
+926 silly registry.get     'x-timer': 'S1415721094.067835,VS0,VE0',
+926 silly registry.get     vary: 'Accept',
+926 silly registry.get     'content-length': '0',
+926 silly registry.get     'keep-alive': 'timeout=10, max=50',
+926 silly registry.get     connection: 'Keep-Alive' } ]
+927 verbose etag https://registry.npmjs.org/core-util-is from cache
+928 silly addNameRange number 2 { name: 'core-util-is',
+928 silly addNameRange   range: '>=1.0.0-0 <1.1.0-0',
+928 silly addNameRange   hasData: true }
+929 silly addNameRange versions [ 'core-util-is', [ '1.0.0', '1.0.1' ] ]
+930 verbose addNamed [ 'core-util-is', '1.0.1' ]
+931 verbose addNamed [ '1.0.1', '1.0.1' ]
+932 silly lockFile 40ef24cf-core-util-is-1-0-1 core-util-is@1.0.1
+933 verbose lock core-util-is@1.0.1 /Users/sspeicher/.npm/40ef24cf-core-util-is-1-0-1.lock
+934 silly lockFile 40ef24cf-core-util-is-1-0-1 core-util-is@1.0.1
+935 silly lockFile 40ef24cf-core-util-is-1-0-1 core-util-is@1.0.1
+936 silly lockFile bd40dc3c-core-util-is-1-0-0-0-1-1-0-0 core-util-is@>=1.0.0-0 <1.1.0-0
+937 silly lockFile bd40dc3c-core-util-is-1-0-0-0-1-1-0-0 core-util-is@>=1.0.0-0 <1.1.0-0
+938 http 304 https://registry.npmjs.org/isarray
+939 silly registry.get cb [ 304,
+939 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:34 GMT',
+939 silly registry.get     server: 'Apache',
+939 silly registry.get     via: '1.1 varnish',
+939 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:34 GMT',
+939 silly registry.get     'cache-control': 'max-age=60',
+939 silly registry.get     etag: '"AI6YZ768HN0R3YEJSMBHLP9JL"',
+939 silly registry.get     age: '58',
+939 silly registry.get     'x-served-by': 'cache-ord1724-ORD',
+939 silly registry.get     'x-cache': 'HIT',
+939 silly registry.get     'x-cache-hits': '1',
+939 silly registry.get     'x-timer': 'S1415721094.070064,VS0,VE0',
+939 silly registry.get     vary: 'Accept',
+939 silly registry.get     'content-length': '0',
+939 silly registry.get     'keep-alive': 'timeout=10, max=50',
+939 silly registry.get     connection: 'Keep-Alive' } ]
+940 verbose etag https://registry.npmjs.org/isarray from cache
+941 http 304 https://registry.npmjs.org/inherits
+942 silly registry.get cb [ 304,
+942 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:34 GMT',
+942 silly registry.get     server: 'Apache',
+942 silly registry.get     via: '1.1 varnish',
+942 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:50:58 GMT',
+942 silly registry.get     'cache-control': 'max-age=60',
+942 silly registry.get     etag: '"4HKEWVWX7W0PKAF3UJZOADCGX"',
+942 silly registry.get     age: '35',
+942 silly registry.get     'x-served-by': 'cache-ord1726-ORD',
+942 silly registry.get     'x-cache': 'HIT',
+942 silly registry.get     'x-cache-hits': '8',
+942 silly registry.get     'x-timer': 'S1415721094.071501,VS0,VE0',
+942 silly registry.get     vary: 'Accept',
+942 silly registry.get     'content-length': '0',
+942 silly registry.get     'keep-alive': 'timeout=10, max=50',
+942 silly registry.get     connection: 'Keep-Alive' } ]
+943 verbose etag https://registry.npmjs.org/inherits from cache
+944 silly addNameRange number 2 { name: 'inherits', range: '>=2.0.1-0 <2.1.0-0', hasData: true }
+945 silly addNameRange versions [ 'inherits', [ '1.0.0', '2.0.0', '2.0.1' ] ]
+946 verbose addNamed [ 'inherits', '2.0.1' ]
+947 verbose addNamed [ '2.0.1', '2.0.1' ]
+948 silly lockFile 2b2e8f1b-inherits-2-0-1 inherits@2.0.1
+949 verbose lock inherits@2.0.1 /Users/sspeicher/.npm/2b2e8f1b-inherits-2-0-1.lock
+950 silly lockFile 9efe11b1-isarray-0-0-1 isarray@0.0.1
+951 silly lockFile 9efe11b1-isarray-0-0-1 isarray@0.0.1
+952 http 304 https://registry.npmjs.org/string_decoder
+953 silly registry.get cb [ 304,
+953 silly registry.get   { date: 'Tue, 11 Nov 2014 15:51:34 GMT',
+953 silly registry.get     server: 'Apache',
+953 silly registry.get     via: '1.1 varnish',
+953 silly registry.get     'last-modified': 'Tue, 11 Nov 2014 15:51:13 GMT',
+953 silly registry.get     'cache-control': 'max-age=60',
+953 silly registry.get     etag: '"2419XDLWSZIMU58NXHF48KRW5"',
+953 silly registry.get     age: '24',
+953 silly registry.get     'x-served-by': 'cache-ord1727-ORD',
+953 silly registry.get     'x-cache': 'HIT',
+953 silly registry.get     'x-cache-hits': '3',
+953 silly registry.get     'x-timer': 'S1415721094.075280,VS0,VE0',
+953 silly registry.get     vary: 'Accept',
+953 silly registry.get     'content-length': '0',
+953 silly registry.get     'keep-alive': 'timeout=10, max=50',
+953 silly registry.get     connection: 'Keep-Alive' } ]
+954 verbose etag https://registry.npmjs.org/string_decoder from cache
+955 silly lockFile 2b2e8f1b-inherits-2-0-1 inherits@2.0.1
+956 silly lockFile 2b2e8f1b-inherits-2-0-1 inherits@2.0.1
+957 silly lockFile 8ac47d23-inherits-2-0-1-0-2-1-0-0 inherits@>=2.0.1-0 <2.1.0-0
+958 silly lockFile 8ac47d23-inherits-2-0-1-0-2-1-0-0 inherits@>=2.0.1-0 <2.1.0-0
+959 silly addNameRange number 2 { name: 'string_decoder',
+959 silly addNameRange   range: '>=0.10.0-0 <0.11.0-0',
+959 silly addNameRange   hasData: true }
+960 silly addNameRange versions [ 'string_decoder',
+960 silly addNameRange   [ '0.0.0',
+960 silly addNameRange     '0.0.1',
+960 silly addNameRange     '0.10.24',
+960 silly addNameRange     '0.11.10',
+960 silly addNameRange     '0.10.25',
+960 silly addNameRange     '0.11.10-1',
+960 silly addNameRange     '0.10.25-1',
+960 silly addNameRange     '0.10.31' ] ]
+961 verbose addNamed [ 'string_decoder', '0.10.31' ]
+962 verbose addNamed [ '0.10.31', '0.10.31' ]
+963 silly lockFile 0a9a4818-string-decoder-0-10-31 string_decoder@0.10.31
+964 verbose lock string_decoder@0.10.31 /Users/sspeicher/.npm/0a9a4818-string-decoder-0-10-31.lock
+965 silly lockFile 0a9a4818-string-decoder-0-10-31 string_decoder@0.10.31
+966 silly lockFile 0a9a4818-string-decoder-0-10-31 string_decoder@0.10.31
+967 silly lockFile 6acbfd10-string-decoder-0-10-0-0-0-11-0-0 string_decoder@>=0.10.0-0 <0.11.0-0
+968 silly lockFile 6acbfd10-string-decoder-0-10-0-0-0-11-0-0 string_decoder@>=0.10.0-0 <0.11.0-0
+969 silly resolved [ { name: 'core-util-is',
+969 silly resolved     version: '1.0.1',
+969 silly resolved     description: 'The `util.is*` functions introduced in Node v0.12.',
+969 silly resolved     main: 'lib/util.js',
+969 silly resolved     repository: { type: 'git', url: 'git://github.com/isaacs/core-util-is' },
+969 silly resolved     keywords:
+969 silly resolved      [ 'util',
+969 silly resolved        'isBuffer',
+969 silly resolved        'isArray',
+969 silly resolved        'isNumber',
+969 silly resolved        'isString',
+969 silly resolved        'isRegExp',
+969 silly resolved        'isThis',
+969 silly resolved        'isThat',
+969 silly resolved        'polyfill' ],
+969 silly resolved     author:
+969 silly resolved      { name: 'Isaac Z. Schlueter',
+969 silly resolved        email: 'i@izs.me',
+969 silly resolved        url: 'http://blog.izs.me/' },
+969 silly resolved     license: 'MIT',
+969 silly resolved     bugs: { url: 'https://github.com/isaacs/core-util-is/issues' },
+969 silly resolved     readme: '# core-util-is\n\nThe `util.is*` functions introduced in Node v0.12.\n',
+969 silly resolved     readmeFilename: 'README.md',
+969 silly resolved     homepage: 'https://github.com/isaacs/core-util-is',
+969 silly resolved     _id: 'core-util-is@1.0.1',
+969 silly resolved     dist:
+969 silly resolved      { shasum: '6b07085aef9a3ccac6ee53bf9d3df0c1521a5538',
+969 silly resolved        tarball: 'http://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz' },
+969 silly resolved     _from: 'core-util-is@>=1.0.0-0 <1.1.0-0',
+969 silly resolved     _npmVersion: '1.3.23',
+969 silly resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+969 silly resolved     maintainers: [ [Object] ],
+969 silly resolved     directories: {},
+969 silly resolved     _shasum: '6b07085aef9a3ccac6ee53bf9d3df0c1521a5538',
+969 silly resolved     _resolved: 'https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz',
+969 silly resolved     scripts: {} },
+969 silly resolved   { name: 'isarray',
+969 silly resolved     description: 'Array#isArray for older browsers',
+969 silly resolved     version: '0.0.1',
+969 silly resolved     repository:
+969 silly resolved      { type: 'git',
+969 silly resolved        url: 'git://github.com/juliangruber/isarray.git' },
+969 silly resolved     homepage: 'https://github.com/juliangruber/isarray',
+969 silly resolved     main: 'index.js',
+969 silly resolved     scripts: { test: 'tap test/*.js' },
+969 silly resolved     dependencies: {},
+969 silly resolved     devDependencies: { tap: '*' },
+969 silly resolved     keywords: [ 'browser', 'isarray', 'array' ],
+969 silly resolved     author:
+969 silly resolved      { name: 'Julian Gruber',
+969 silly resolved        email: 'mail@juliangruber.com',
+969 silly resolved        url: 'http://juliangruber.com' },
+969 silly resolved     license: 'MIT',
+969 silly resolved     readme: '\n# isarray\n\n`Array#isArray` for older browsers.\n\n## Usage\n\n```js\nvar isArray = require(\'isarray\');\n\nconsole.log(isArray([])); // => true\nconsole.log(isArray({})); // => false\n```\n\n## Installation\n\nWith [npm](http://npmjs.org) do\n\n```bash\n$ npm install isarray\n```\n\nThen bundle for the browser with\n[browserify](https://github.com/substack/browserify).\n\nWith [component](http://component.io) do\n\n```bash\n$ component install juliangruber/isarray\n```\n\n## License\n\n(MIT)\n\nCopyright (c) 2013 Julian Gruber &lt;julian@juliangruber.com&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the "Software"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\nof the Software, and to permit persons to whom the Software is furnished to do\nso, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n',
+969 silly resolved     readmeFilename: 'README.md',
+969 silly resolved     _id: 'isarray@0.0.1',
+969 silly resolved     dist:
+969 silly resolved      { shasum: '8a18acfca9a8f4177e09abfc6038939b05d1eedf',
+969 silly resolved        tarball: 'http://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz' },
+969 silly resolved     _from: 'isarray@0.0.1',
+969 silly resolved     _npmVersion: '1.2.18',
+969 silly resolved     _npmUser: { name: 'juliangruber', email: 'julian@juliangruber.com' },
+969 silly resolved     maintainers: [ [Object] ],
+969 silly resolved     directories: {},
+969 silly resolved     _shasum: '8a18acfca9a8f4177e09abfc6038939b05d1eedf',
+969 silly resolved     _resolved: 'https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz',
+969 silly resolved     bugs: { url: 'https://github.com/juliangruber/isarray/issues' } },
+969 silly resolved   { name: 'inherits',
+969 silly resolved     description: 'Browser-friendly inheritance fully compatible with standard node.js inherits()',
+969 silly resolved     version: '2.0.1',
+969 silly resolved     keywords:
+969 silly resolved      [ 'inheritance',
+969 silly resolved        'class',
+969 silly resolved        'klass',
+969 silly resolved        'oop',
+969 silly resolved        'object-oriented',
+969 silly resolved        'inherits',
+969 silly resolved        'browser',
+969 silly resolved        'browserify' ],
+969 silly resolved     main: './inherits.js',
+969 silly resolved     browser: './inherits_browser.js',
+969 silly resolved     repository: { type: 'git', url: 'git://github.com/isaacs/inherits' },
+969 silly resolved     license: 'ISC',
+969 silly resolved     scripts: { test: 'node test' },
+969 silly resolved     readme: 'Browser-friendly inheritance fully compatible with standard node.js\n[inherits](http://nodejs.org/api/util.html#util_util_inherits_constructor_superconstructor).\n\nThis package exports standard `inherits` from node.js `util` module in\nnode environment, but also provides alternative browser-friendly\nimplementation through [browser\nfield](https://gist.github.com/shtylman/4339901). Alternative\nimplementation is a literal copy of standard one located in standalone\nmodule to avoid requiring of `util`. It also has a shim for old\nbrowsers with no `Object.create` support.\n\nWhile keeping you sure you are using standard `inherits`\nimplementation in node.js environment, it allows bundlers such as\n[browserify](https://github.com/substack/node-browserify) to not\ninclude full `util` package to your client code if all you need is\njust `inherits` function. It worth, because browser shim for `util`\npackage is large and `inherits` is often the single function you need\nfrom it.\n\nIt\'s recommended to use this package instead of\n`require(\'util\').inherits` for any code that has chances to be used\nnot only in node.js but in browser too.\n\n## usage\n\n```js\nvar inherits = require(\'inherits\');\n// then use exactly as the standard one\n```\n\n## note on version ~1.0\n\nVersion ~1.0 had completely different motivation and is not compatible\nneither with 2.0 nor with standard node.js `inherits`.\n\nIf you are using version ~1.0 and planning to switch to ~2.0, be\ncareful:\n\n* new version uses `super_` instead of `super` for referencing\n  superclass\n* new version overwrites current prototype while old one preserves any\n  existing fields on it\n',
+969 silly resolved     readmeFilename: 'README.md',
+969 silly resolved     bugs: { url: 'https://github.com/isaacs/inherits/issues' },
+969 silly resolved     _id: 'inherits@2.0.1',
+969 silly resolved     dist:
+969 silly resolved      { shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+969 silly resolved        tarball: 'http://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz' },
+969 silly resolved     _from: 'inherits@>=2.0.1-0 <2.1.0-0',
+969 silly resolved     _npmVersion: '1.3.8',
+969 silly resolved     _npmUser: { name: 'isaacs', email: 'i@izs.me' },
+969 silly resolved     maintainers: [ [Object] ],
+969 silly resolved     directories: {},
+969 silly resolved     _shasum: 'b17d08d326b4423e568eff719f91b0b1cbdf69f1',
+969 silly resolved     _resolved: 'https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz',
+969 silly resolved     homepage: 'https://github.com/isaacs/inherits' },
+969 silly resolved   { name: 'string_decoder',
+969 silly resolved     version: '0.10.31',
+969 silly resolved     description: 'The string_decoder module from Node core',
+969 silly resolved     main: 'index.js',
+969 silly resolved     dependencies: {},
+969 silly resolved     devDependencies: { tap: '~0.4.8' },
+969 silly resolved     scripts: { test: 'tap test/simple/*.js' },
+969 silly resolved     repository:
+969 silly resolved      { type: 'git',
+969 silly resolved        url: 'git://github.com/rvagg/string_decoder.git' },
+969 silly resolved     homepage: 'https://github.com/rvagg/string_decoder',
+969 silly resolved     keywords: [ 'string', 'decoder', 'browser', 'browserify' ],
+969 silly resolved     license: 'MIT',
+969 silly resolved     gitHead: 'd46d4fd87cf1d06e031c23f1ba170ca7d4ade9a0',
+969 silly resolved     bugs: { url: 'https://github.com/rvagg/string_decoder/issues' },
+969 silly resolved     _id: 'string_decoder@0.10.31',
+969 silly resolved     _shasum: '62e203bc41766c6c28c9fc84301dab1c5310fa94',
+969 silly resolved     _from: 'string_decoder@>=0.10.0-0 <0.11.0-0',
+969 silly resolved     _npmVersion: '1.4.23',
+969 silly resolved     _npmUser: { name: 'rvagg', email: 'rod@vagg.org' },
+969 silly resolved     maintainers: [ [Object], [Object] ],
+969 silly resolved     dist:
+969 silly resolved      { shasum: '62e203bc41766c6c28c9fc84301dab1c5310fa94',
+969 silly resolved        tarball: 'http://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz' },
+969 silly resolved     directories: {},
+969 silly resolved     _resolved: 'https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz',
+969 silly resolved     readme: 'ERROR: No README data found!' } ]
+970 info install core-util-is@1.0.1 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+971 info install isarray@0.0.1 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+972 info install inherits@2.0.1 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+973 info install string_decoder@0.10.31 into /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+974 info installOne core-util-is@1.0.1
+975 info installOne isarray@0.0.1
+976 info installOne inherits@2.0.1
+977 info installOne string_decoder@0.10.31
+978 verbose node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is unbuild
+979 verbose node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray unbuild
+980 verbose node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits unbuild
+981 verbose node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder unbuild
+982 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is
+983 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray
+984 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits
+985 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder
+986 verbose tar unpack /Users/sspeicher/.npm/core-util-is/1.0.1/package.tgz
+987 silly lockFile a3ce8936-stream-node-modules-core-util-is tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is
+988 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is /Users/sspeicher/.npm/a3ce8936-stream-node-modules-core-util-is.lock
+989 silly lockFile 2ea4b2c4-m-core-util-is-1-0-1-package-tgz tar:///Users/sspeicher/.npm/core-util-is/1.0.1/package.tgz
+990 verbose lock tar:///Users/sspeicher/.npm/core-util-is/1.0.1/package.tgz /Users/sspeicher/.npm/2ea4b2c4-m-core-util-is-1-0-1-package-tgz.lock
+991 verbose tar unpack /Users/sspeicher/.npm/isarray/0.0.1/package.tgz
+992 silly lockFile cd0164d4-able-stream-node-modules-isarray tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray
+993 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray /Users/sspeicher/.npm/cd0164d4-able-stream-node-modules-isarray.lock
+994 silly lockFile bc1dff8a-er-npm-isarray-0-0-1-package-tgz tar:///Users/sspeicher/.npm/isarray/0.0.1/package.tgz
+995 verbose lock tar:///Users/sspeicher/.npm/isarray/0.0.1/package.tgz /Users/sspeicher/.npm/bc1dff8a-er-npm-isarray-0-0-1-package-tgz.lock
+996 verbose tar unpack /Users/sspeicher/.npm/inherits/2.0.1/package.tgz
+997 silly lockFile 6c84d236-ble-stream-node-modules-inherits tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits
+998 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits /Users/sspeicher/.npm/6c84d236-ble-stream-node-modules-inherits.lock
+999 silly lockFile 8edb837b-r-npm-inherits-2-0-1-package-tgz tar:///Users/sspeicher/.npm/inherits/2.0.1/package.tgz
+1000 verbose lock tar:///Users/sspeicher/.npm/inherits/2.0.1/package.tgz /Users/sspeicher/.npm/8edb837b-r-npm-inherits-2-0-1-package-tgz.lock
+1001 verbose tar unpack /Users/sspeicher/.npm/string_decoder/0.10.31/package.tgz
+1002 silly lockFile ab3eb516-ream-node-modules-string-decoder tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder
+1003 verbose lock tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder /Users/sspeicher/.npm/ab3eb516-ream-node-modules-string-decoder.lock
+1004 silly lockFile 04062ab2-ring-decoder-0-10-31-package-tgz tar:///Users/sspeicher/.npm/string_decoder/0.10.31/package.tgz
+1005 verbose lock tar:///Users/sspeicher/.npm/string_decoder/0.10.31/package.tgz /Users/sspeicher/.npm/04062ab2-ring-decoder-0-10-31-package-tgz.lock
+1006 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is
+1007 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray
+1008 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits
+1009 silly gunzTarPerm modes [ '755', '644' ]
+1010 silly gunzTarPerm modes [ '755', '644' ]
+1011 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder
+1012 silly gunzTarPerm modes [ '755', '644' ]
+1013 silly gunzTarPerm modes [ '755', '644' ]
+1014 silly gunzTarPerm extractEntry package.json
+1015 silly gunzTarPerm extractEntry package.json
+1016 silly gunzTarPerm extractEntry package.json
+1017 silly gunzTarPerm extractEntry package.json
+1018 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+1019 silly gunzTarPerm extractEntry README.md
+1020 silly gunzTarPerm extractEntry util.js
+1021 silly gunzTarPerm extractEntry README.md
+1022 silly gunzTarPerm extractEntry index.js
+1023 silly gunzTarPerm extractEntry README.md
+1024 silly gunzTarPerm extractEntry LICENSE
+1025 silly gunzTarPerm extractEntry .npmignore
+1026 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+1027 silly gunzTarPerm extractEntry README.md
+1028 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+1029 silly gunzTarPerm extractEntry build/build.js
+1030 silly gunzTarPerm extractEntry component.json
+1031 silly gunzTarPerm extractEntry float.patch
+1032 silly gunzTarPerm extractEntry lib/util.js
+1033 silly gunzTarPerm extractEntry LICENSE
+1034 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+1035 silly gunzTarPerm extractEntry index.js
+1036 silly gunzTarPerm modified mode [ 'index.js', 436, 420 ]
+1037 silly gunzTarPerm extractEntry inherits.js
+1038 silly gunzTarPerm extractEntry inherits_browser.js
+1039 silly gunzTarPerm extractEntry test.js
+1040 silly lockFile cd0164d4-able-stream-node-modules-isarray tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray
+1041 silly lockFile cd0164d4-able-stream-node-modules-isarray tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray
+1042 silly lockFile bc1dff8a-er-npm-isarray-0-0-1-package-tgz tar:///Users/sspeicher/.npm/isarray/0.0.1/package.tgz
+1043 silly lockFile bc1dff8a-er-npm-isarray-0-0-1-package-tgz tar:///Users/sspeicher/.npm/isarray/0.0.1/package.tgz
+1044 silly lockFile 6c84d236-ble-stream-node-modules-inherits tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits
+1045 silly lockFile 6c84d236-ble-stream-node-modules-inherits tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits
+1046 silly lockFile 8edb837b-r-npm-inherits-2-0-1-package-tgz tar:///Users/sspeicher/.npm/inherits/2.0.1/package.tgz
+1047 silly lockFile 8edb837b-r-npm-inherits-2-0-1-package-tgz tar:///Users/sspeicher/.npm/inherits/2.0.1/package.tgz
+1048 info preinstall isarray@0.0.1
+1049 silly lockFile ab3eb516-ream-node-modules-string-decoder tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder
+1050 silly lockFile ab3eb516-ream-node-modules-string-decoder tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder
+1051 silly lockFile 04062ab2-ring-decoder-0-10-31-package-tgz tar:///Users/sspeicher/.npm/string_decoder/0.10.31/package.tgz
+1052 silly lockFile 04062ab2-ring-decoder-0-10-31-package-tgz tar:///Users/sspeicher/.npm/string_decoder/0.10.31/package.tgz
+1053 verbose readDependencies using package.json deps
+1054 info preinstall inherits@2.0.1
+1055 verbose readDependencies using package.json deps
+1056 silly resolved []
+1057 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray
+1058 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/isarray
+1059 verbose linkStuff [ false,
+1059 verbose linkStuff   false,
+1059 verbose linkStuff   false,
+1059 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules' ]
+1060 info linkStuff isarray@0.0.1
+1061 verbose linkBins isarray@0.0.1
+1062 verbose linkMans isarray@0.0.1
+1063 verbose rebuildBundles isarray@0.0.1
+1064 info install isarray@0.0.1
+1065 info preinstall string_decoder@0.10.31
+1066 verbose readDependencies using package.json deps
+1067 info postinstall isarray@0.0.1
+1068 verbose readDependencies using package.json deps
+1069 silly resolved []
+1070 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits
+1071 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/inherits
+1072 verbose linkStuff [ false,
+1072 verbose linkStuff   false,
+1072 verbose linkStuff   false,
+1072 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules' ]
+1073 info linkStuff inherits@2.0.1
+1074 verbose linkBins inherits@2.0.1
+1075 verbose linkMans inherits@2.0.1
+1076 verbose rebuildBundles inherits@2.0.1
+1077 info install inherits@2.0.1
+1078 verbose readDependencies using package.json deps
+1079 verbose readDependencies using package.json deps
+1080 silly resolved []
+1081 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder
+1082 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/string_decoder
+1083 verbose linkStuff [ false,
+1083 verbose linkStuff   false,
+1083 verbose linkStuff   false,
+1083 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules' ]
+1084 info linkStuff string_decoder@0.10.31
+1085 verbose linkBins string_decoder@0.10.31
+1086 verbose linkMans string_decoder@0.10.31
+1087 verbose rebuildBundles string_decoder@0.10.31
+1088 info postinstall inherits@2.0.1
+1089 info install string_decoder@0.10.31
+1090 info postinstall string_decoder@0.10.31
+1091 silly lockFile a3ce8936-stream-node-modules-core-util-is tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is
+1092 silly lockFile a3ce8936-stream-node-modules-core-util-is tar:///Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is
+1093 silly lockFile 2ea4b2c4-m-core-util-is-1-0-1-package-tgz tar:///Users/sspeicher/.npm/core-util-is/1.0.1/package.tgz
+1094 silly lockFile 2ea4b2c4-m-core-util-is-1-0-1-package-tgz tar:///Users/sspeicher/.npm/core-util-is/1.0.1/package.tgz
+1095 info preinstall core-util-is@1.0.1
+1096 verbose readDependencies using package.json deps
+1097 verbose readDependencies using package.json deps
+1098 silly resolved []
+1099 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is
+1100 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules/core-util-is
+1101 verbose linkStuff [ false,
+1101 verbose linkStuff   false,
+1101 verbose linkStuff   false,
+1101 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream/node_modules' ]
+1102 info linkStuff core-util-is@1.0.1
+1103 verbose linkBins core-util-is@1.0.1
+1104 verbose linkMans core-util-is@1.0.1
+1105 verbose rebuildBundles core-util-is@1.0.1
+1106 info install core-util-is@1.0.1
+1107 info postinstall core-util-is@1.0.1
+1108 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+1109 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules/readable-stream
+1110 verbose linkStuff [ false,
+1110 verbose linkStuff   false,
+1110 verbose linkStuff   false,
+1110 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter/node_modules' ]
+1111 info linkStuff readable-stream@1.0.33
+1112 verbose linkBins readable-stream@1.0.33
+1113 verbose linkMans readable-stream@1.0.33
+1114 verbose rebuildBundles readable-stream@1.0.33
+1115 verbose rebuildBundles [ 'core-util-is', 'inherits', 'isarray', 'string_decoder' ]
+1116 info install readable-stream@1.0.33
+1117 info postinstall readable-stream@1.0.33
+1118 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter
+1119 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules/stream-counter
+1120 verbose linkStuff [ false,
+1120 verbose linkStuff   false,
+1120 verbose linkStuff   false,
+1120 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox/node_modules' ]
+1121 info linkStuff stream-counter@0.1.0
+1122 verbose linkBins stream-counter@0.1.0
+1123 verbose linkMans stream-counter@0.1.0
+1124 verbose rebuildBundles stream-counter@0.1.0
+1125 verbose rebuildBundles [ 'readable-stream' ]
+1126 info install stream-counter@0.1.0
+1127 info postinstall stream-counter@0.1.0
+1128 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+1129 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules/knox
+1130 verbose linkStuff [ false,
+1130 verbose linkStuff   false,
+1130 verbose linkStuff   false,
+1130 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3/node_modules' ]
+1131 info linkStuff knox@0.8.10
+1132 verbose linkBins knox@0.8.10
+1133 verbose linkMans knox@0.8.10
+1134 verbose rebuildBundles knox@0.8.10
+1135 verbose rebuildBundles [ 'debug', 'stream-counter', 'xml2js' ]
+1136 info install knox@0.8.10
+1137 info postinstall knox@0.8.10
+1138 verbose about to build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+1139 info build /Users/sspeicher/Github/pbt-explorer/node_modules/grunt-s3
+1140 verbose linkStuff [ false,
+1140 verbose linkStuff   false,
+1140 verbose linkStuff   false,
+1140 verbose linkStuff   '/Users/sspeicher/Github/pbt-explorer/node_modules' ]
+1141 info linkStuff grunt-s3@0.2.0-alpha.3
+1142 verbose linkBins grunt-s3@0.2.0-alpha.3
+1143 verbose link bins [ { 'grunt-s3': 'bin/grunt-s3' },
+1143 verbose link bins   '/Users/sspeicher/Github/pbt-explorer/node_modules/.bin',
+1143 verbose link bins   false ]
+1144 verbose linkMans grunt-s3@0.2.0-alpha.3
+1145 verbose rebuildBundles grunt-s3@0.2.0-alpha.3
+1146 verbose rebuildBundles [ 'knox', 'mime', 'temporary', 'underscore.deferred' ]
+1147 verbose gentlyRm vacuuming /Users/sspeicher/Github/pbt-explorer/node_modules/.bin/grunt-s3
+1148 info install grunt-s3@0.2.0-alpha.3
+1149 info postinstall grunt-s3@0.2.0-alpha.3
+1150 error peerinvalid The package grunt does not satisfy its siblings' peerDependencies requirements!
+1150 error peerinvalid Peer grunt-contrib-concat@0.3.0 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-contrib-copy@0.5.0 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-contrib-clean@0.5.0 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-newer@0.7.0 wants grunt@~0.4.1
+1150 error peerinvalid Peer grunt-usemin@2.1.1 wants grunt@>=0.4.0
+1150 error peerinvalid Peer grunt-contrib-htmlmin@0.2.0 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-concurrent@0.5.0 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-aws@0.4.0 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-contrib-sass@0.7.4 wants grunt@>=0.4.0
+1150 error peerinvalid Peer grunt-autoprefixer@0.7.6 wants grunt@~0.4.2
+1150 error peerinvalid Peer grunt-bower-install@1.4.1 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-contrib-connect@0.7.1 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-contrib-watch@0.6.1 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-svgmin@0.4.0 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-contrib-jshint@0.9.2 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-contrib-cssmin@0.9.0 wants grunt@~0.4.1
+1150 error peerinvalid Peer grunt-contrib-uglify@0.4.1 wants grunt@~0.4.0
+1150 error peerinvalid Peer grunt-mocha@0.4.11 wants grunt@~0.4
+1150 error peerinvalid Peer grunt-contrib-imagemin@0.7.1 wants grunt@^0.4.0
+1151 error System Darwin 13.4.0
+1152 error command "node" "/usr/local/bin/npm" "install" "grunt-s3" "--save-dev"
+1153 error cwd /Users/sspeicher/Github/pbt-explorer
+1154 error node -v v0.10.28
+1155 error npm -v 2.0.0-beta.3
+1156 error code EPEERINVALID
+1157 verbose exit [ 1, true ]

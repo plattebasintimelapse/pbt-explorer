@@ -277,15 +277,20 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
+                        'images/app{,*/}*.*',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*'
                     ]
                 }, {
                     expand: true,
                     dot: true,
+                    flatten: true,
                     cwd: '.',
-                    src: ['bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*'],
-                    dest: '<%= config.dist %>'
+                    dest: '<%= config.dist %>/fonts',
+                    src: [
+                        'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*',
+                        'bower_components/fontawesome/fonts/{,*/}*.*'
+                    ]
                 }]
             },
             styles: {
@@ -326,24 +331,27 @@ module.exports = function (grunt) {
             dist: [
                 'sass',
                 'copy:styles',
-                'imagemin',
+                // 'imagemin',
                 'svgmin'
             ]
         },
-        s3: {
+        aws_s3: {
             options: {
                 accessKeyId: "<%= aws.accessKeyId %>",
                 secretAccessKey: "<%= aws.secretAccessKey %>",
-                bucket: "projects.plattebasintimelapse.com"
+                region: 'us-west-2',
+                uploadConcurrency: 5,
+                bucket: 'projects.plattebasintimelapse.com'
             },
-            build: {
-                cwd: "dist/",
-                src: "**"
-            },
-            move: {
-                cwd: "dist/",
-                src: "**",
-                dest: "test/"
+            production: {
+                option: {
+                    params: {
+                        ContentEncoding: 'gzip'
+                    }
+                },
+                files: [
+                    {expand: true, cwd: 'dist/', src: ['**'], dest: 'explorer/'}
+                ]
             }
         }
     });
@@ -399,7 +407,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('deploy', [
-        's3'
+        'build',
+        'aws_s3'
     ]);
 
     grunt.registerTask('default', [
