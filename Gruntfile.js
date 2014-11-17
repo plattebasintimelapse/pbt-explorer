@@ -319,7 +319,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
                 'sass:server',
@@ -331,7 +330,6 @@ module.exports = function (grunt) {
             dist: [
                 'sass',
                 'copy:styles',
-                // 'imagemin',
                 'svgmin'
             ]
         },
@@ -340,14 +338,20 @@ module.exports = function (grunt) {
                 accessKeyId: "<%= aws.accessKeyId %>",
                 secretAccessKey: "<%= aws.secretAccessKey %>",
                 region: 'us-west-2',
-                uploadConcurrency: 5,
-                bucket: 'projects.plattebasintimelapse.com'
+                uploadConcurrency: 5
+                
             },
             production: {
-                option: {
-                    params: {
-                        ContentEncoding: 'gzip'
-                    }
+                options: {
+                    bucket: 'projects.plattebasintimelapse.com'
+                },
+                files: [
+                    {expand: true, cwd: 'dist/', src: ['**'], dest: 'explorer/'}
+                ]
+            },
+            staging: {
+                options: {
+                    bucket: 'staging.plattebasintimelapse.com'
                 },
                 files: [
                     {expand: true, cwd: 'dist/', src: ['**'], dest: 'explorer/'}
@@ -356,6 +360,13 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.registerTask('ysha', function (target) {
+        grunt.log.writeln( '*****************');
+        grunt.log.writeln( '*****************');
+        grunt.log.writeln( '** Ysha rules! **');
+        grunt.log.writeln( '*****************');
+        grunt.log.writeln( '*****************');
+    });
 
     grunt.registerTask('serve', function (target) {
         if (target === 'dist') {
@@ -406,13 +417,17 @@ module.exports = function (grunt) {
         'htmlmin'
     ]);
 
+    grunt.registerTask('stage', [
+        'build',
+        'aws_s3:staging'
+    ]);
+
     grunt.registerTask('deploy', [
         'build',
-        'aws_s3'
+        'aws_s3:production'
     ]);
 
     grunt.registerTask('default', [
-//        'newer:jshint',
         'test',
         'build'
     ]);
