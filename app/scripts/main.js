@@ -381,7 +381,7 @@ function toggleGroup(m, selection) {
     stories_on = true;
 
     $('#btn-timelapse').change(function() {
-        $('.theme-select input[value=all').prop('checked', true);
+        $('.theme-select input[value=all]').prop('checked', true);
         if (tl_on) {
             hideMarkers(tlMarkers);
             tl_on = false;
@@ -391,7 +391,7 @@ function toggleGroup(m, selection) {
         }
     });
     $('#btn-stills').change(function() {
-        $('.theme-select input[value=all').prop('checked', true);
+        $('.theme-select input[value=all]').prop('checked', true);
         if (stills_on) {
             hideMarkers(stillMarkers);
             stills_on = false;
@@ -401,7 +401,7 @@ function toggleGroup(m, selection) {
         }
     });
     $('#btn-stories').change(function() {
-        $('.theme-select input[value=all').prop('checked', true);
+        $('.theme-select input[value=all]').prop('checked', true);
         if (stories_on) {
             hideMarkers(storyMarkers);
             stories_on = false;
